@@ -1,0 +1,707 @@
+[
+  {
+    "id": 1,
+    "loanDetails": {
+      "score": 680,
+      "amount": 150000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Baker Street 221B",
+          "postalCode": "8000",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Jane Doe",
+      "housingSituation": "Lejer",
+      "email": "jane.doe@example.com"
+    },
+    "employment": {
+      "jobTitle": "Project Manager",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 42000,
+      "fixedExpenses": 18000,
+      "wealth": 120000,
+      "debts": 40000
+    },
+    "status": "UnderReview"
+  },
+  {
+    "id": 2,
+    "loanDetails": {
+      "score": 720,
+      "amount": 250000,
+      "purpose": {
+        "loanKind": "CarLoan",
+        "location": {
+          "address": "Nørrebrogade 45",
+          "postalCode": "2200",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Oliver Alexander Ladekarl Bengtsson",
+      "housingSituation": "Ejer",
+      "email": "mads.jensen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Softwareudvikler",
+      "jobStatus": "FullTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 48000,
+      "fixedExpenses": 20000,
+      "wealth": 250000,
+      "debts": 75000
+    },
+    "status": "Approved"
+  },
+  {
+    "id": 3,
+    "loanDetails": {
+      "score": 610,
+      "amount": 100000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Vestergade 12",
+          "postalCode": "8000",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Sofie Nielsen",
+      "housingSituation": "Lejer",
+      "email": "sofie.nielsen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Sygeplejerske",
+      "jobStatus": "PartTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 32000,
+      "fixedExpenses": 17000,
+      "wealth": 50000,
+      "debts": 60000
+    },
+    "status": "UnderReview"
+  },
+  {
+    "id": 4,
+    "loanDetails": {
+      "score": 540,
+      "amount": 200000,
+      "purpose": {
+        "loanKind": "RenovationLoan",
+        "location": {
+          "address": "Østerbrogade 88",
+          "postalCode": "2100",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Lars Pedersen",
+      "housingSituation": "Ejer",
+      "email": "lars.pedersen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Tømrer",
+      "jobStatus": "SelfEmployed",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 37000,
+      "fixedExpenses": 22000,
+      "wealth": 90000,
+      "debts": 120000
+    },
+    "status": "NeedsInfo"
+  },
+  {
+    "id": 5,
+    "loanDetails": {
+      "score": 790,
+      "amount": 500000,
+      "purpose": {
+        "loanKind": "Mortgage",
+        "location": {
+          "address": "Skovvej 7",
+          "postalCode": "9000",
+          "region": "NJ"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Camilla Andersen",
+      "housingSituation": "Lejer",
+      "email": "camilla.andersen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Læge",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 65000,
+      "fixedExpenses": 25000,
+      "wealth": 600000,
+      "debts": 150000
+    },
+    "status": "Approved"
+  },
+  {
+    "id": 6,
+    "loanDetails": {
+      "score": 500,
+      "amount": 75000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Havnegade 33",
+          "postalCode": "6700",
+          "region": "SD"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Jonas Kristensen",
+      "housingSituation": "Lejer",
+      "email": "jonas.kristensen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Lagermedarbejder",
+      "jobStatus": "FullTime",
+      "educationLevel": "HighSchool"
+    },
+    "economicData": {
+      "monthlyIncome": 26000,
+      "fixedExpenses": 16000,
+      "wealth": 15000,
+      "debts": 85000
+    },
+    "status": "Rejected"
+  },
+  {
+    "id": 7,
+    "loanDetails": {
+      "score": 660,
+      "amount": 180000,
+      "purpose": {
+        "loanKind": "CarLoan",
+        "location": {
+          "address": "Enghavevej 19",
+          "postalCode": "1674",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Frederikke Holm",
+      "housingSituation": "Lejer",
+      "email": "frederikke.holm@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Marketingkoordinator",
+      "jobStatus": "FullTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 41000,
+      "fixedExpenses": 19000,
+      "wealth": 80000,
+      "debts": 50000
+    },
+    "status": "Received"
+  },
+  {
+    "id": 8,
+    "loanDetails": {
+      "score": 705,
+      "amount": 300000,
+      "purpose": {
+        "loanKind": "RenovationLoan",
+        "location": {
+          "address": "Slotsgade 4",
+          "postalCode": "3400",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Thomas Møller",
+      "housingSituation": "Ejer",
+      "email": "thomas.moeller@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Ingeniør",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 52000,
+      "fixedExpenses": 21000,
+      "wealth": 300000,
+      "debts": 90000
+    },
+    "status": "UnderReview"
+  },
+  {
+    "id": 9,
+    "loanDetails": {
+      "score": 630,
+      "amount": 120000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Kirkegade 21",
+          "postalCode": "5000",
+          "region": "SD"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Maria Sørensen",
+      "housingSituation": "Lejer",
+      "email": "maria.soerensen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Butiksassistent",
+      "jobStatus": "PartTime",
+      "educationLevel": "HighSchool"
+    },
+    "economicData": {
+      "monthlyIncome": 29000,
+      "fixedExpenses": 15000,
+      "wealth": 40000,
+      "debts": 35000
+    },
+    "status": "NeedsInfo"
+  },
+  {
+    "id": 10,
+    "loanDetails": {
+      "score": 760,
+      "amount": 400000,
+      "purpose": {
+        "loanKind": "Mortgage",
+        "location": {
+          "address": "Parkvej 15",
+          "postalCode": "7100",
+          "region": "SYD"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Anders Rasmussen",
+      "housingSituation": "Ejer",
+      "email": "anders.rasmussen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Advokat",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 72000,
+      "fixedExpenses": 28000,
+      "wealth": 900000,
+      "debts": 200000
+    },
+    "status": "Approved"
+  },
+  {
+    "id": 11,
+    "loanDetails": {
+      "score": 580,
+      "amount": 90000,
+      "purpose": {
+        "loanKind": "CarLoan",
+        "location": {
+          "address": "Bredgade 101",
+          "postalCode": "7400",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Line Christiansen",
+      "housingSituation": "Lejer",
+      "email": "line.christiansen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Pædagog",
+      "jobStatus": "FullTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 33000,
+      "fixedExpenses": 18000,
+      "wealth": 35000,
+      "debts": 95000
+    },
+    "status": "Rejected"
+  },
+
+  {
+    "id": 100,
+    "loanDetails": {
+      "score": 680,
+      "amount": 150000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Baker Street 221B",
+          "postalCode": "8000",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Jane Doe",
+      "housingSituation": "Lejer",
+      "email": "jane.doe@example.com"
+    },
+    "employment": {
+      "jobTitle": "Project Manager",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 42000,
+      "fixedExpenses": 18000,
+      "wealth": 120000,
+      "debts": 40000
+    },
+    "status": "UnderReview"
+  },
+  {
+    "id": 200,
+    "loanDetails": {
+      "score": 720,
+      "amount": 250000,
+      "purpose": {
+        "loanKind": "CarLoan",
+        "location": {
+          "address": "Nørrebrogade 45",
+          "postalCode": "2200",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Mads Jensen",
+      "housingSituation": "Ejer",
+      "email": "mads.jensen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Softwareudvikler",
+      "jobStatus": "FullTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 48000,
+      "fixedExpenses": 20000,
+      "wealth": 250000,
+      "debts": 75000
+    },
+    "status": "Approved"
+  },
+  {
+    "id": 300,
+    "loanDetails": {
+      "score": 610,
+      "amount": 100000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Vestergade 12",
+          "postalCode": "8000",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Sofie Nielsen",
+      "housingSituation": "Lejer",
+      "email": "sofie.nielsen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Sygeplejerske",
+      "jobStatus": "PartTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 32000,
+      "fixedExpenses": 17000,
+      "wealth": 50000,
+      "debts": 60000
+    },
+    "status": "UnderReview"
+  },
+  {
+    "id": 400,
+    "loanDetails": {
+      "score": 540,
+      "amount": 200000,
+      "purpose": {
+        "loanKind": "RenovationLoan",
+        "location": {
+          "address": "Østerbrogade 88",
+          "postalCode": "2100",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Lars Pedersen",
+      "housingSituation": "Ejer",
+      "email": "lars.pedersen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Tømrer",
+      "jobStatus": "SelfEmployed",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 37000,
+      "fixedExpenses": 22000,
+      "wealth": 90000,
+      "debts": 120000
+    },
+    "status": "NeedsInfo"
+  },
+  {
+    "id": 500,
+    "loanDetails": {
+      "score": 790,
+      "amount": 500000,
+      "purpose": {
+        "loanKind": "Mortgage",
+        "location": {
+          "address": "Skovvej 7",
+          "postalCode": "9000",
+          "region": "NJ"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Camilla Andersen",
+      "housingSituation": "Lejer",
+      "email": "camilla.andersen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Læge",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 65000,
+      "fixedExpenses": 25000,
+      "wealth": 600000,
+      "debts": 150000
+    },
+    "status": "Approved"
+  },
+  {
+    "id": 600,
+    "loanDetails": {
+      "score": 500,
+      "amount": 75000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Havnegade 33",
+          "postalCode": "6700",
+          "region": "SD"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Jonas Kristensen",
+      "housingSituation": "Lejer",
+      "email": "jonas.kristensen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Lagermedarbejder",
+      "jobStatus": "FullTime",
+      "educationLevel": "HighSchool"
+    },
+    "economicData": {
+      "monthlyIncome": 26000,
+      "fixedExpenses": 16000,
+      "wealth": 15000,
+      "debts": 85000
+    },
+    "status": "Rejected"
+  },
+  {
+    "id": 700,
+    "loanDetails": {
+      "score": 660,
+      "amount": 180000,
+      "purpose": {
+        "loanKind": "CarLoan",
+        "location": {
+          "address": "Enghavevej 19",
+          "postalCode": "1674",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Frederikke Holm",
+      "housingSituation": "Lejer",
+      "email": "frederikke.holm@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Marketingkoordinator",
+      "jobStatus": "FullTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 41000,
+      "fixedExpenses": 19000,
+      "wealth": 80000,
+      "debts": 50000
+    },
+    "status": "Received"
+  },
+  {
+    "id": 800,
+    "loanDetails": {
+      "score": 705,
+      "amount": 300000,
+      "purpose": {
+        "loanKind": "RenovationLoan",
+        "location": {
+          "address": "Slotsgade 4",
+          "postalCode": "3400",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Thomas Møller",
+      "housingSituation": "Ejer",
+      "email": "thomas.moeller@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Ingeniør",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 52000,
+      "fixedExpenses": 21000,
+      "wealth": 300000,
+      "debts": 90000
+    },
+    "status": "UnderReview"
+  },
+  {
+    "id": 900,
+    "loanDetails": {
+      "score": 630,
+      "amount": 120000,
+      "purpose": {
+        "loanKind": "ConsumerLoan",
+        "location": {
+          "address": "Kirkegade 21",
+          "postalCode": "5000",
+          "region": "SD"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Maria Sørensen",
+      "housingSituation": "Lejer",
+      "email": "maria.soerensen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Butiksassistent",
+      "jobStatus": "PartTime",
+      "educationLevel": "HighSchool"
+    },
+    "economicData": {
+      "monthlyIncome": 29000,
+      "fixedExpenses": 15000,
+      "wealth": 40000,
+      "debts": 35000
+    },
+    "status": "NeedsInfo"
+  },
+  {
+    "id": 1000,
+    "loanDetails": {
+      "score": 760,
+      "amount": 400000,
+      "purpose": {
+        "loanKind": "Mortgage",
+        "location": {
+          "address": "Parkvej 15",
+          "postalCode": "7100",
+          "region": "SYD"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Anders Rasmussen",
+      "housingSituation": "Ejer",
+      "email": "anders.rasmussen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Advokat",
+      "jobStatus": "FullTime",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 72000,
+      "fixedExpenses": 28000,
+      "wealth": 900000,
+      "debts": 200000
+    },
+    "status": "Approved"
+  },
+  {
+    "id": 1100,
+    "loanDetails": {
+      "score": 580,
+      "amount": 90000,
+      "purpose": {
+        "loanKind": "CarLoan",
+        "location": {
+          "address": "Bredgade 101",
+          "postalCode": "7400",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Line Christiansen",
+      "housingSituation": "Lejer",
+      "email": "line.christiansen@mail.dk"
+    },
+    "employment": {
+      "jobTitle": "Pædagog",
+      "jobStatus": "FullTime",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 33000,
+      "fixedExpenses": 18000,
+      "wealth": 35000,
+      "debts": 95000
+    },
+    "status": "Rejected"
+  }
+]

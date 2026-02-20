@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --white: #f5f3ef;
+  --black: #0d1f2d;
+  --prime: #063a69;
+  --light-prime: #175893;
+  --contrast: #e56e15;
+  --light-contrast: #c94b38;
+  --content-width: 1600px;
+  --font-main: var(--font-tasa);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-main), sans-serif;
+  background: var(--white);
+  color: var(--black);
+  & > div {
+    display: grid;
+    grid-template-columns: 1fr [content] minmax(0, var(--content-width)) 1fr;
+    & > * {
+      grid-column: content;
+    }
+  }
+  h1 {
+    font-weight: 400;
+    font-size: 38px;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 24px;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  nav {
+    li {
+      font-weight: 400;
+      font-size: 24px;
+    }
+  }
+  p {
+    font-size: 16px;
+    color: #264154;
+  }
+  button {
+    font-size: 18px;
+  }
+}
+.nav-banner {
+  display: grid;
+  grid-template-columns: 70px 140px 1fr;
+}
+
+.body-banner {
+  display: grid;
+  grid-template-columns: 70px 140px 1fr;
+}
+.banner-rows {
+  display: grid;
+  grid-template-rows: 10px 50px 50px 50px 1fr;
+  gap: 30px;
+}
+
+.full-bleed {
+  grid-column: 1/-1;
+}
+
+.lk-box-shadow {
+  box-shadow: 0 4px 20px rgba(25, 27, 49, 0.452);
+}
+
+.lk-inner-shadow {
+  box-shadow: inset 0 0 20px rgba(25, 27, 49, 0.582);
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-fade-in {
+  animation: slideFadeIn 400ms cubic-bezier(0.34, 1.3, 0.64, 1) forwards;
+}
