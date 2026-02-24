@@ -29,22 +29,53 @@ export type RawRequest = {
       };
     };
   };
+
   personalInfo: {
     name: string;
     housingSituation: string;
     email: string;
   };
+
   employment: {
     jobTitle: string;
     jobStatus: string;
     educationLevel: string;
   };
+
   economicData: {
     monthlyIncome: number;
     fixedExpenses: number;
+
+    budget: {
+      id: string;
+      userId: string;
+      year: number;
+      month: number;
+      totalPlanned: number;
+      createdAt: string;
+
+      lines: {
+        id: string;
+        budgetId: string;
+        budget: null; // matches JSON
+        categoryKey: string;
+        displayName: string;
+        isRecurring: boolean;
+        plannedAmount: number;
+        avg: number;
+        p25: number;
+        p75: number;
+        lowRange: number;
+        highRange: number;
+        stdDev: number;
+        recurringAvg: number;
+      }[];
+    };
+
     wealth: number;
     debts: number;
   };
+
   status: string;
 };
 
@@ -71,6 +102,35 @@ export type Request = {
   raadighedsBeloeb: number;
   gaeldsfaktor: number;
   opsparing: number;
+  budget?: {
+    totalPlanned: number;
+    lines: {
+      id: string;
+      categoryKey: string;
+      displayName: string;
+      plannedAmount: number;
+      avg: number;
+      lowRange: number;
+      highRange: number;
+    }[];
+  };
+};
+
+export type BudgetLine = {
+  id: string;
+  budgetId: string;
+  budget: null;
+  categoryKey: string;
+  displayName: string;
+  isRecurring: boolean;
+  plannedAmount: number;
+  avg: number;
+  p25: number;
+  p75: number;
+  lowRange: number;
+  highRange: number;
+  stdDev: number;
+  recurringAvg: number;
 };
 
 /* =========================
@@ -126,6 +186,21 @@ const RequestContent = ({ search }: { search: string }) => {
         raadighedsBeloeb: disposableIncome,
         gaeldsfaktor: Number(debtFactor.toFixed(2)),
         opsparing: r.economicData.wealth,
+
+        budget: r.economicData.budget
+          ? {
+              totalPlanned: r.economicData.budget.totalPlanned,
+              lines: r.economicData.budget.lines.map((l) => ({
+                id: l.id,
+                categoryKey: l.categoryKey,
+                displayName: l.displayName,
+                plannedAmount: l.plannedAmount,
+                avg: l.avg,
+                lowRange: l.lowRange,
+                highRange: l.highRange,
+              })),
+            }
+          : undefined,
       };
     }),
   );
@@ -162,14 +237,14 @@ const RequestContent = ({ search }: { search: string }) => {
               setSelectedId(null);
               setSection("Ansøgninger");
             }}
-            className="pl-[10px] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
+            className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
           >
             Ansøgninger
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2px] 
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
               origin-left ${section === "Ansøgninger" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[150px] h-[40px] z-10 bg-(--contrast) row-1 col-1`}
+              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
         <div className="row-3 h-full items-center grid group relative">
@@ -178,14 +253,14 @@ const RequestContent = ({ search }: { search: string }) => {
               setSelectedId(null);
               setSection("Arkiv");
             }}
-            className="pl-[10px] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
+            className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
           >
             Arkiv
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2px] 
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
               origin-left ${section === "Arkiv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[150px] h-[40px] z-10 bg-(--contrast) row-1 col-1`}
+              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
       </div>

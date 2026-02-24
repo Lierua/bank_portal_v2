@@ -26,6 +26,48 @@
     "economicData": {
       "monthlyIncome": 42000,
       "fixedExpenses": 18000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 120000,
       "debts": 40000
     },
@@ -58,6 +100,48 @@
     "economicData": {
       "monthlyIncome": 48000,
       "fixedExpenses": 20000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 250000,
       "debts": 75000
     },
@@ -122,6 +206,48 @@
     "economicData": {
       "monthlyIncome": 37000,
       "fixedExpenses": 22000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 90000,
       "debts": 120000
     },
@@ -154,6 +280,48 @@
     "economicData": {
       "monthlyIncome": 65000,
       "fixedExpenses": 25000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 600000,
       "debts": 150000
     },
@@ -186,6 +354,48 @@
     "economicData": {
       "monthlyIncome": 26000,
       "fixedExpenses": 16000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 15000,
       "debts": 85000
     },
@@ -218,6 +428,48 @@
     "economicData": {
       "monthlyIncome": 41000,
       "fixedExpenses": 19000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 80000,
       "debts": 50000
     },
@@ -250,6 +502,48 @@
     "economicData": {
       "monthlyIncome": 52000,
       "fixedExpenses": 21000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 300000,
       "debts": 90000
     },
@@ -282,6 +576,48 @@
     "economicData": {
       "monthlyIncome": 29000,
       "fixedExpenses": 15000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 40000,
       "debts": 35000
     },
@@ -314,6 +650,48 @@
     "economicData": {
       "monthlyIncome": 72000,
       "fixedExpenses": 28000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 900000,
       "debts": 200000
     },
@@ -346,6 +724,48 @@
     "economicData": {
       "monthlyIncome": 33000,
       "fixedExpenses": 18000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 35000,
       "debts": 95000
     },
@@ -379,6 +799,48 @@
     "economicData": {
       "monthlyIncome": 42000,
       "fixedExpenses": 18000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 120000,
       "debts": 40000
     },
@@ -411,6 +873,48 @@
     "economicData": {
       "monthlyIncome": 48000,
       "fixedExpenses": 20000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 250000,
       "debts": 75000
     },
@@ -443,6 +947,48 @@
     "economicData": {
       "monthlyIncome": 32000,
       "fixedExpenses": 17000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 50000,
       "debts": 60000
     },
@@ -475,6 +1021,48 @@
     "economicData": {
       "monthlyIncome": 37000,
       "fixedExpenses": 22000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 90000,
       "debts": 120000
     },
@@ -507,6 +1095,48 @@
     "economicData": {
       "monthlyIncome": 65000,
       "fixedExpenses": 25000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 600000,
       "debts": 150000
     },
@@ -539,6 +1169,48 @@
     "economicData": {
       "monthlyIncome": 26000,
       "fixedExpenses": 16000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 15000,
       "debts": 85000
     },
@@ -571,6 +1243,48 @@
     "economicData": {
       "monthlyIncome": 41000,
       "fixedExpenses": 19000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 80000,
       "debts": 50000
     },
@@ -603,6 +1317,48 @@
     "economicData": {
       "monthlyIncome": 52000,
       "fixedExpenses": 21000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 300000,
       "debts": 90000
     },
@@ -635,6 +1391,48 @@
     "economicData": {
       "monthlyIncome": 29000,
       "fixedExpenses": 15000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 40000,
       "debts": 35000
     },
@@ -667,6 +1465,48 @@
     "economicData": {
       "monthlyIncome": 72000,
       "fixedExpenses": 28000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 900000,
       "debts": 200000
     },
@@ -699,6 +1539,64 @@
     "economicData": {
       "monthlyIncome": 33000,
       "fixedExpenses": 18000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-02-17T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          },
+          {
+            "id": "3333333",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963232eafa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
       "wealth": 35000,
       "debts": 95000
     },

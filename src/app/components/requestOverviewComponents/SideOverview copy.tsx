@@ -5,6 +5,7 @@ import { MdInbox } from "react-icons/md";
 import { FaBookmark } from "react-icons/fa6";
 import { FaRegBookmark } from "react-icons/fa6";
 import { useState } from "react";
+import ButtonOne from "../utilityComponents/ButtonOne";
 
 type Props = {
   request: Request | null;
@@ -29,9 +30,9 @@ export default function SideOverview({ request, setSection }: Props) {
         key={request ? request.id : "empty"}
         className={`p-5 h-full ${request ? "animate-slide-fade-in" : ""}`}
       >
-        <div className="bg-white h-full p-6 border-2 border-black/20 rounded-[5px]">
+        <div className="bg-white flex flex-col h-full p-6 border-2 border-black/20 rounded-[5px]">
           {/* HEADER */}
-          <div className="mb-10 flex flex-col gap-4">
+          <div className="mb-10 flex flex-col gap-4 h-fit">
             <div className="flex justify-between gap-4 items-start ">
               <h1 className="text-4xl! font-bold">{request.name}</h1>
               <div className=" self-end scale-y-110 mb-[5]">
@@ -69,8 +70,19 @@ export default function SideOverview({ request, setSection }: Props) {
               />
             </div>
 
-            <Info label="Lånetype" value={request.forWhat} />
-            <Info label="Adresse" value={request.location} />
+            <Info label="Gældsfaktor" value={request.gaeldsfaktor} />
+            <Info label="Indkomst" value={request.indkomst} />
+            <Info
+              label="RådighedsBeloeb"
+              value={`${request.postalCode} – ${request.raadighedsBeloeb}`}
+            />
+            <div className="mt-12 [&>*>*]:text-xl!">
+              <Info label="Uddannelse" value={`${request.educationLevel}`} />
+            </div>
+            <Info
+              label="JobTitle / JobStatus"
+              value={`${request.jobTitle} – ${request.jobStatus}`}
+            />
             <Info
               label="Postnr / Region"
               value={`${request.postalCode} – ${request.region}`}
@@ -78,19 +90,11 @@ export default function SideOverview({ request, setSection }: Props) {
           </div>
 
           {/* ACTION */}
-          <div className="mt-[80px]">
-            <button
+          <div className="mt-auto mb-6">
+            <ButtonOne
+              label="Se detaljer"
               onClick={() => setSection("person")}
-              className="
-              transition-all duration-200 ease-in
-              cursor-pointer text-white
-              hover:bg-(--contrast)/70
-              rounded-full bg-(--contrast)
-              py-1 px-8
-            "
-            >
-              Se detaljer
-            </button>
+            />
           </div>
         </div>
       </div>

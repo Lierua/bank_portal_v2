@@ -7,6 +7,7 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { FiCalendar } from "react-icons/fi";
 import { TbMapSearch } from "react-icons/tb";
 import { HiDotsHorizontal } from "react-icons/hi";
+import { useRouter } from "next/navigation";
 
 import SearchBar from "./SearchBar";
 
@@ -16,6 +17,17 @@ type Props = {
 };
 
 const NavComponent = ({ search, setSearch }: Props) => {
+  const router = useRouter();
+
+  const logout = () => {
+    // delete cookie
+    document.cookie = "dev-login=; Max-Age=0; path=/";
+
+    // redirect
+    router.push("/login");
+    router.refresh(); // ensures middleware re-check
+  };
+
   const [selectedDate, setSelectedDate] = useState("");
   const [showLocations, setShowLocations] = useState(false);
   const [showExtraFilters, setShowExtraFilters] = useState(false);
@@ -124,6 +136,7 @@ const NavComponent = ({ search, setSearch }: Props) => {
 
             <IoIosLogOut
               title="Log ud"
+              onClick={logout}
               className="text-(--black) text-[40px] cursor-pointer transition-colors hover:text-(--contrast)"
             />
           </div>

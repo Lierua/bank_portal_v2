@@ -14,6 +14,8 @@ export default function IndividualOverview({
   setRequests,
   setSection,
 }: Props) {
+  const formatKr = (value: number) => `${value.toLocaleString("da-DK")} kr.`;
+
   return (
     <div className="min-h-screen bg-white p-10">
       {/* Back */}
@@ -30,6 +32,7 @@ export default function IndividualOverview({
         <div>
           <h1 className="text-4xl font-bold">{request.name}</h1>
           <p>{request.email}</p>
+
           <div className="mt-6 flex items-center justify-between border border-(--black)/10 rounded-[5px] px-6 py-4 max-w-[400px]">
             <span className="text-sm uppercase tracking-wider text-(--black)/50">
               Credit Score
@@ -42,10 +45,7 @@ export default function IndividualOverview({
 
         {/* LOAN DETAILS */}
         <Section title="Låne Detaljer">
-          <Info
-            label="Lånebeløb"
-            value={`${request.amount.toLocaleString("da-DK")} kr.`}
-          />
+          <Info label="Lånebeløb" value={formatKr(request.amount)} />
           <Info label="Lånetype" value={request.forWhat} />
           <Info label="Adresse" value={request.location} />
           <Info
@@ -64,25 +64,47 @@ export default function IndividualOverview({
 
         {/* FINANCIAL */}
         <Section title="Økonomi">
-          <Info
-            label="Indkomst"
-            value={`${request.indkomst.toLocaleString("da-DK")} kr.`}
-          />
+          <Info label="Indkomst" value={formatKr(request.indkomst)} />
           <Info
             label="Rådighedsbeløb"
-            value={`${request.raadighedsBeloeb.toLocaleString("da-DK")} kr.`}
+            value={formatKr(request.raadighedsBeloeb)}
           />
           <Info label="Gældsfaktor" value={request.gaeldsfaktor} />
-          <Info
-            label="Formue"
-            value={`${request.opsparing.toLocaleString("da-DK")} kr.`}
-          />
+          <Info label="Formue" value={formatKr(request.opsparing)} />
         </Section>
 
+        {/* =========================
+            BUDGET (NEW)
+        ========================= */}
+        {request.budget && (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold">Budget Oversigt</h2>
+
+            {/* Budget Summary */}
+            <div className="border border-(--black)/10 rounded-[5px] p-6 flex justify-between items-center">
+              <span className="text-(--black)/70">
+                Planlagt månedligt forbrug
+              </span>
+              <span className="text-xl font-bold text-(--contrast)">
+                {formatKr(request.budget.totalPlanned)}
+              </span>
+            </div>
+
+            {/* Budget Lines */}
+            <div className="border border-(--black)/10 rounded-[10px] divide-y">
+              {request.budget.lines.map((line, index, arr) => (
+                <BudgetLine
+                  key={line.id}
+                  line={line}
+                  isLast={index === arr.length - 1}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* STATUS */}
-        <div className="pt-10 border-t border-(--black)/10">
-          <SetStatus request={request} setRequests={setRequests} />
-        </div>
+        <SetStatus request={request} setRequests={setRequests} />
       </div>
     </div>
   );
@@ -114,8 +136,46 @@ function Section({
 function Info({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex justify-between border-b border-(--black)/10 pb-2">
-      <span className="text-(--black)/60">{label}</span>
+      <span className="text-(--black)/70">{label}</span>
       <span className="font-semibold">{value}</span>
+    </div>
+  );
+}
+
+/* =========================
+   Budget Line Row
+========================= */
+
+function BudgetLine({
+  line,
+  isLast,
+}: {
+  line: {
+    displayName: string;
+    plannedAmount: number;
+    avg: number;
+    lowRange: number;
+    highRange: number;
+  };
+  isLast: boolean;
+}) {
+  const formatKr = (v: number) => `${v.toLocaleString("da-DK")} kr.`;
+
+  return (
+    <div
+      className={`flex justify-between items-center px-6 py-4 ${isLast ? "" : "border-b border-(--black)/10"}`}
+    >
+      <div>
+        <p className="font-semibold">{line.displayName}</p>
+        <p className="text-[15px]! text-(--black)/70!">
+          Gns: {formatKr(line.avg)} • Normal: {formatKr(line.lowRange)} –{" "}
+          {formatKr(line.highRange)}
+        </p>
+      </div>
+
+      <span className="font-bold text-(--contrast)">
+        {formatKr(line.plannedAmount)}
+      </span>
     </div>
   );
 }
