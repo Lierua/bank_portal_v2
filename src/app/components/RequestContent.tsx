@@ -104,6 +104,7 @@ export type Request = {
   opsparing: number;
   budget?: {
     totalPlanned: number;
+    createdAt: string;
     lines: {
       id: string;
       categoryKey: string;
@@ -190,6 +191,7 @@ const RequestContent = ({ search }: { search: string }) => {
         budget: r.economicData.budget
           ? {
               totalPlanned: r.economicData.budget.totalPlanned,
+              createdAt: r.economicData.budget.createdAt,
               lines: r.economicData.budget.lines.map((l) => ({
                 id: l.id,
                 categoryKey: l.categoryKey,
@@ -211,7 +213,7 @@ const RequestContent = ({ search }: { search: string }) => {
       : null;
 
   return (
-    <div className="body-banner rounded-tl-lg overflow-hidden flex-1 h-[calc(100dvh-120px)] lk-box-shadow">
+    <div className="body-banner rounded-tl-lg overflow-hidden h-[calc(100dvh-166px)] flex-1 lk-box-shadow">
       {/* Top Menu */}
       <div className="bg-(--prime) banner-rows lk-box-shadow z-20">
         <FaRegFileAlt

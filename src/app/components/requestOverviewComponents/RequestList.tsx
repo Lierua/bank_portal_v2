@@ -32,7 +32,7 @@ const RequestList = ({
     <div className="grid pt-[25] grid-rows-[40px_1fr]">
       <div
         className="col-span-full grid 
-      grid-cols-[minmax(0,220px)_minmax(0,185px)_minmax(0,185px)_minmax(0,185px)_1fr_minmax(0,100px)]
+      grid-cols-[minmax(0,220px)_minmax(0,185px)_minmax(0,185px)_minmax(0,185px)_1fr_minmax(0,110px)]
       border-(--black)/10 border-b-2 pl-10 h-[40] text-(--black)/60"
       >
         <h3>Emne</h3>
@@ -43,7 +43,7 @@ const RequestList = ({
         <h3 className="text-center">Liggetid</h3>
       </div>
 
-      <div className="flex flex-col col-span-full overflow-y-auto h-[calc(100dvh-285px)]">
+      <div className="flex flex-col col-span-full overflow-y-auto h-[calc(100dvh-355px)]">
         {filteredRequests.map((request, index) => {
           const styles = statusStyles[request.status];
 
