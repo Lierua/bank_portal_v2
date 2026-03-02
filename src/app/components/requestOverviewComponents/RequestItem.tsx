@@ -8,7 +8,6 @@ import {
   getOpenedRequests,
   setOpenedRequests,
 } from "@/app/components/utilityComponents/cookies";
-import { date } from "zod/mini";
 
 type Props = {
   request: Request;
@@ -50,33 +49,33 @@ const RequestItem = ({ request, styles, selectedId, setSelectedId }: Props) => {
       onClick={handleOpen}
       className={`
         cursor-pointer transition-all duration-200 ease-in shrink-0 ${hasOpened ? "opacity-90" : "bg-blue-100/50"}
-        grid grid-cols-[minmax(0,260px)_minmax(0,185px)_minmax(0,185px)_minmax(0,185px)_1fr_minmax(0,110px)]
+        grid grid-cols-[40px_minmax(0,220px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_1fr_minmax(0,110px)]
         h-[48] items-center border-b border-gray-200
         hover:bg-(--light-prime)/5
         ${isSelected ? "bg-(--light-prime)/10" : ""}
       `}
     >
-      <div className="flex pl-3 gap-3 items-center">
+      <div className="grid">
         <FaBookmark
           onClick={(e) => {
             e.stopPropagation();
             setMarked(!marked);
           }}
-          className={`transition-all duration-150 ease-in text-[15px]
-            ${
-              marked
-                ? "text-(--contrast)"
-                : "hover:text-(--contrast)/70 text-transparent"
-            }`}
+          className={`items-center mx-auto transition-all duration-150 ease-in text-[15px]
+          ${
+            marked
+              ? "text-(--contrast)"
+              : "hover:text-(--contrast)/70 text-transparent"
+          }`}
         />
-
-        {/* Example visual indicator */}
-        <p className={`font-bold truncate `}>
-          {request.name.length > 25
-            ? request.name.slice(0, 25) + "..."
-            : request.name}
-        </p>
       </div>
+
+      {/* Example visual indicator */}
+      <p className={`font-bold truncate `}>
+        {request.name.length > 25
+          ? request.name.slice(0, 25) + "..."
+          : request.name}
+      </p>
 
       <p>{request.amount.toLocaleString("da-DK")} kr.</p>
 
@@ -87,6 +86,7 @@ const RequestItem = ({ request, styles, selectedId, setSelectedId }: Props) => {
         <p className={`${styles.text} font-semibold`}>{request.status}</p>
       </div>
 
+      {marked ? <p>Line Christian</p> : <p></p>}
       <p></p>
       <p
         className="text-center"

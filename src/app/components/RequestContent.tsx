@@ -10,6 +10,7 @@ import rawRequests from "@/data/dummyRequests.json";
 import SideOverview from "./requestOverviewComponents/SideOverview";
 import SideOverviewCopy from "./requestOverviewComponents/SideOverview copy";
 import RequestStatusFilterCopy from "./requestOverviewComponents/RequestStatusFilter copy";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 
 /* =========================
    Backend JSON Type
@@ -97,7 +98,7 @@ export type Request = {
   educationLevel: string;
   housingSituation: string;
   email: string;
-  status: "Godkendt" | "Afslået" | "Pending";
+  status: "Godkendt" | "Afslået" | "Ubehandlet";
   indkomst: number;
   raadighedsBeloeb: number;
   gaeldsfaktor: number;
@@ -150,7 +151,7 @@ const RequestContent = ({ search }: { search: string }) => {
       case "Rejected":
         return "Afslået";
       default:
-        return "Pending";
+        return "Ubehandlet";
     }
   };
 
@@ -223,12 +224,19 @@ const RequestContent = ({ search }: { search: string }) => {
           }}
           className="text-(--white) text-4xl row-2 mx-auto mt-2 cursor-pointer"
         />
+        <BsFillPersonLinesFill
+          onClick={() => {
+            setSelectedId(null);
+            setSection("MineBehandlinger");
+          }}
+          className="text-(--white) text-4xl row-3 mx-auto mt-2 cursor-pointer"
+        />
         <FaRegFileArchive
           onClick={() => {
             setSelectedId(null);
             setSection("Arkiv");
           }}
-          className="text-(--white) text-4xl row-3 mx-auto mt-2 cursor-pointer"
+          className="text-(--white) text-4xl row-4 mx-auto mt-2 cursor-pointer"
         />
       </div>
 
@@ -246,10 +254,26 @@ const RequestContent = ({ search }: { search: string }) => {
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
               origin-left ${section === "Ansøgninger" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
         <div className="row-3 h-full items-center grid group relative">
+          <p
+            onClick={() => {
+              setSelectedId(null);
+              setSection("MineBehandlinger");
+            }}
+            className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
+          >
+            Mine Behandlinger
+          </p>
+          <div
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
+              origin-left ${section === "MineBehandlinger" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
+              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+          ></div>
+        </div>
+        <div className="row-4 h-full items-center grid group relative">
           <p
             onClick={() => {
               setSelectedId(null);
@@ -262,7 +286,7 @@ const RequestContent = ({ search }: { search: string }) => {
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
               origin-left ${section === "Arkiv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
       </div>
@@ -278,7 +302,9 @@ const RequestContent = ({ search }: { search: string }) => {
 
       {/* Show List */}
       {section === "Ansøgninger" && (
-        <div className="grid grid-cols-[4fr_2fr]">
+        <div
+          className={`grid ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
+        >
           <div className="bg-white grid grid-rows-[120px_1fr]">
             <RequestStatusFilterCopy
               requestPara={requestPara}
@@ -291,8 +317,13 @@ const RequestContent = ({ search }: { search: string }) => {
               setSelectedId={setSelectedId}
             />
           </div>
-
-          <SideOverviewCopy request={selectedRequest} setSection={setSection} />
+          {selectedRequest && (
+            <SideOverviewCopy
+              request={selectedRequest}
+              setSection={setSection}
+              setSelectedId={setSelectedId}
+            />
+          )}
         </div>
       )}
     </div>

@@ -4,14 +4,21 @@ import type { Request } from "../RequestContent";
 import { MdInbox } from "react-icons/md";
 import { FaBookmark } from "react-icons/fa6";
 import { FaRegBookmark } from "react-icons/fa6";
+import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import ButtonOne from "../utilityComponents/ButtonOne";
 
 type Props = {
   request: Request | null;
   setSection: React.Dispatch<React.SetStateAction<string>>;
+  setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
 };
-export default function SideOverview({ request, setSection }: Props) {
+
+export default function SideOverview({
+  request,
+  setSection,
+  setSelectedId,
+}: Props) {
   /* EMPTY STATE */
   if (!request) {
     return (
@@ -35,7 +42,7 @@ export default function SideOverview({ request, setSection }: Props) {
           <div className="mb-10 flex flex-col gap-4 h-fit">
             <div className="flex justify-between gap-4 items-start ">
               <h1 className="text-4xl! font-bold">{request.name}</h1>
-              <div className=" self-end scale-y-110 mb-[5]">
+              <div className=" self-end mb-[5] flex gap-2">
                 {!marked ? (
                   <FaRegBookmark
                     onClick={() => setMarked(!marked)}
@@ -47,6 +54,10 @@ export default function SideOverview({ request, setSection }: Props) {
                     className="text-[33px] text-(--contrast)"
                   />
                 )}
+                <IoCloseOutline
+                  onClick={() => setSelectedId(null)}
+                  className="text-[40px] mt-[-4]"
+                />
               </div>
             </div>
             <div className="mt-6 flex items-center justify-between border border-(--black)/10 rounded-[5px] px-4 py-3">

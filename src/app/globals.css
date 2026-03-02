@@ -57,7 +57,7 @@ body {
 
 .body-banner {
   display: grid;
-  grid-template-columns: 70px 140px 1fr;
+  grid-template-columns: 70px 160px 1fr;
 }
 .banner-rows {
   display: grid;
