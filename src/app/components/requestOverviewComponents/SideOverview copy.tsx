@@ -2,7 +2,9 @@
 
 import type { Request } from "../RequestContent";
 import { MdInbox } from "react-icons/md";
-import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
+import { FaBookmark } from "react-icons/fa6";
+import { FaRegBookmark } from "react-icons/fa6";
+import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import ButtonOne from "../utilityComponents/ButtonOne";
 import SetSideStatus from "./SetSideStatus";
@@ -12,14 +14,15 @@ type Props = {
   request: Request | null;
   setSection: React.Dispatch<React.SetStateAction<string>>;
   setRequests: React.Dispatch<React.SetStateAction<Request[]>>;
+  setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 export default function SideOverview({
   request,
   setSection,
-  setRequests,
+  setSelectedId,
 }: Props) {
-  /* ---------------- EMPTY STATE ---------------- */
+  /* EMPTY STATE */
   if (!request) {
     return (
       <div className="flex items-center justify-center bg-white h-full flex-col">
@@ -54,6 +57,10 @@ export default function SideOverview({
                     className="text-[33px] text-(--contrast) cursor-pointer"
                   />
                 )}
+                <IoCloseOutline
+                  onClick={() => setSelectedId(null)}
+                  className="text-[40px] mt-[-4]"
+                />
               </div>
             </div>
           </div>
