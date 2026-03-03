@@ -29,7 +29,7 @@ export default function NavHeader({
   };
 
   return (
-    <div className="grid grid-cols-[70px_200px_1fr] h-[70px] items-center">
+    <div className="grid grid-cols-[70px_140px_1fr] h-[70px] items-center">
       <div className="h-full bg-(--prime) text-4xl text-white flex items-center justify-center font-bold rounded-tl-lg">
         lk
       </div>
@@ -37,22 +37,19 @@ export default function NavHeader({
       <h2 className="pl-5 font-bold text-(--black)/90">Oversigt</h2>
 
       <div className="flex justify-between items-center px-5">
-        <div className="flex items-center gap-8">
-          <div className="w-[250px]">
-            <SearchBar search={search} setSearch={setSearch} />
-          </div>
+        <DateRangePicker />
 
-          <DateRangePicker />
-
-          {/*           <LocationDropdown location={location} setLocation={setLocation} /> */}
+        {/*           <LocationDropdown location={location} setLocation={setLocation} /> */}
+        <div className="w-full px-10">
+          <SearchBar search={search} setSearch={setSearch} />
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 min-w-[300]">
           <h3 className="font-bold">Line Christiansen</h3>
           <IoPersonCircleOutline className="text-5xl" />
           <IoIosLogOut
             onClick={logout}
-            className="text-[40px] cursor-pointer hover:text-(--contrast)"
+            className="text-[40px] cursor-pointer hover:text-(--contrast) ml-auto"
           />
         </div>
       </div>

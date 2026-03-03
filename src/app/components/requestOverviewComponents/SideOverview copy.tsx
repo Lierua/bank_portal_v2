@@ -2,95 +2,100 @@
 
 import type { Request } from "../RequestContent";
 import { MdInbox } from "react-icons/md";
-import { FaBookmark } from "react-icons/fa6";
-import { FaRegBookmark } from "react-icons/fa6";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import { useState } from "react";
 import ButtonOne from "../utilityComponents/ButtonOne";
+import SetSideStatus from "./SetSideStatus";
+import SideComments from "./SideComments";
 
 type Props = {
   request: Request | null;
   setSection: React.Dispatch<React.SetStateAction<string>>;
+  setRequests: React.Dispatch<React.SetStateAction<Request[]>>;
 };
-export default function SideOverview({ request, setSection }: Props) {
-  /* EMPTY STATE */
+
+export default function SideOverview({
+  request,
+  setSection,
+  setRequests,
+}: Props) {
+  /* ---------------- EMPTY STATE ---------------- */
   if (!request) {
     return (
       <div className="flex items-center justify-center bg-white h-full flex-col">
-        <p className="text-2xl! text-(--black)/60!">Vælg en ansøgning</p>
+        <p className="text-2xl text-(--black)/60">Vælg en ansøgning</p>
         <MdInbox className="text-8xl text-(--black)/20" />
       </div>
     );
   }
+
+  /* ---------------- LOCAL STATE ---------------- */
   const [marked, setMarked] = useState(false);
 
-  /* CONTENT STATE */
+  /* ---------------- CONTENT ---------------- */
   return (
     <div className="bg-white">
-      <div
-        key={request ? request.id : "empty"}
-        className={`p-5 h-full ${request ? "animate-slide-fade-in" : ""}`}
-      >
+      <div key={request.id} className="p-5 h-full animate-slide-fade-in">
         <div className="bg-white flex flex-col h-full p-6 border-2 border-black/20 rounded-[5px]">
           {/* HEADER */}
-          <div className="mb-10 flex flex-col gap-4 h-fit">
-            <div className="flex justify-between gap-4 items-start ">
-              <h1 className="text-4xl! font-bold">{request.name}</h1>
-              <div className=" self-end scale-y-110 mb-[5]">
+          <div className="mb-5 flex flex-col gap-4">
+            <div className="flex justify-between items-start">
+              <h1 className="text-4xl font-bold">{request.name}</h1>
+
+              <div className="self-end scale-y-110 mb-[5px]">
                 {!marked ? (
                   <FaRegBookmark
-                    onClick={() => setMarked(!marked)}
-                    className="text-[33px] opacity-65"
+                    onClick={() => setMarked(true)}
+                    className="text-[33px] opacity-65 cursor-pointer"
                   />
                 ) : (
                   <FaBookmark
-                    onClick={() => setMarked(!marked)}
-                    className="text-[33px] text-(--contrast)"
+                    onClick={() => setMarked(false)}
+                    className="text-[33px] text-(--contrast) cursor-pointer"
                   />
                 )}
               </div>
-            </div>
-            <div className="mt-6 flex items-center justify-between border border-(--black)/10 rounded-[5px] px-4 py-3">
-              <span className="text-sm uppercase tracking-wider text-(--black)/50">
-                Credit Score
-              </span>
-              <span className="text-2xl font-bold text-(--contrast)">
-                {request.score}
-              </span>
             </div>
           </div>
 
           {/* LOAN DETAILS */}
           <div className="space-y-6">
-            <h2 className="text-3xl! font-semibold">Opsummering</h2>
+            <div className="flex gap-2">
+              <h1 className="font-semibold text-[25px]!">Status:</h1>
 
-            <div className="[&>*>*]:text-2xl!">
-              <Info
-                label="Lånebeløb"
-                value={`${request.amount.toLocaleString("da-DK")} kr.`}
-              />
+              <h1
+                className={`font-semibold text-[25px]!
+            ${request.status === "Godkendt" && "text-green-500"}
+            ${request.status === "Afslået" && "text-red-500"}
+            ${request.status === "Pending" && "text-blue-500"}
+          `}
+              >
+                {request.status}
+              </h1>
             </div>
+            <Info
+              label="Lånebeløb"
+              value={`${request.amount.toLocaleString("da-DK")} kr.`}
+            />
 
             <Info label="Gældsfaktor" value={request.gaeldsfaktor} />
             <Info label="Indkomst" value={request.indkomst} />
+
             <Info
-              label="RådighedsBeloeb"
+              label="Rådighedsbeløb"
               value={`${request.postalCode} – ${request.raadighedsBeloeb}`}
             />
-            <div className="mt-12 [&>*>*]:text-xl!">
-              <Info label="Uddannelse" value={`${request.educationLevel}`} />
-            </div>
-            <Info
-              label="JobTitle / JobStatus"
-              value={`${request.jobTitle} – ${request.jobStatus}`}
-            />
-            <Info
-              label="Postnr / Region"
-              value={`${request.postalCode} – ${request.region}`}
-            />
+          </div>
+          <div className="mt-6">
+            <SideComments />
+          </div>
+          {/* STATUS CONTROL */}
+          <div className="my-4">
+            <SetSideStatus request={request} setRequests={setRequests} />
           </div>
 
           {/* ACTION */}
-          <div className="mt-auto mb-6">
+          <div className="mt-auto mb-0">
             <ButtonOne
               label="Se detaljer"
               onClick={() => setSection("person")}
@@ -102,7 +107,7 @@ export default function SideOverview({ request, setSection }: Props) {
   );
 }
 
-/* Clean Info Component */
+/* ---------------- INFO ROW ---------------- */
 function Info({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex justify-between border-b border-(--black)/10 pb-2">

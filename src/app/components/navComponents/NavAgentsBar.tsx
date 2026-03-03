@@ -13,8 +13,10 @@ export default function NavAgentsBar({
         className={`bg-(--prime) ${showExtraFilters == "closed" && "rounded-bl-lg"}`}
       />
       <div className="flex items-center">
-        <h3 className="pl-5 font-semibold!">Søgeagenter</h3>
-        <div className="py-4 flex pl-5 gap-5 flex-wrap">
+        <h3 className="pl-5 font-semibold! text-(--prime) mb-auto">
+          Søgeagenter
+        </h3>
+        <div className="pb-4 flex pl-5 gap-5 flex-wrap">
           {["Middelfart", "Aarhus", "København"].map((a) => (
             <div className="flex gap-2 items-center">
               <div
