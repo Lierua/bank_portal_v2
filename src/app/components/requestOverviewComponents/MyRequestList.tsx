@@ -1,5 +1,5 @@
-import RequestItem from "./RequestItem";
 import type { Request } from "../RequestContent";
+import RequestItem from "./RequestItem";
 
 type Props = {
   search: string;
@@ -9,7 +9,7 @@ type Props = {
   toggleFlag: (id: number) => void;
 };
 
-const RequestList = ({
+const MyRequestList = ({
   search,
   requests,
   setSelectedId,
@@ -24,12 +24,15 @@ const RequestList = ({
       Behandles: { text: "text-yellow-500!", dot: "bg-yellow-400" }, // added since your type includes it
     };
 
-  const filteredRequests = requests.filter((request) => {
-    const query = search.toLowerCase();
-    return Object.values(request).some((value) =>
-      value?.toString().toLowerCase().includes(query),
+  const MY_AGENT_ID = 2;
+
+  const filteredRequests = requests
+    .filter((request) => request.flagged === MY_AGENT_ID)
+    .filter((request) =>
+      Object.values(request).some((value) =>
+        value?.toString().toLowerCase().includes(search.toLowerCase()),
+      ),
     );
-  });
 
   return (
     <div className="grid pt-[25] grid-rows-[40px_1fr]">
@@ -67,4 +70,4 @@ const RequestList = ({
   );
 };
 
-export default RequestList;
+export default MyRequestList;

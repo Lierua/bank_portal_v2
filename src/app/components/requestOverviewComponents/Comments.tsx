@@ -1,6 +1,5 @@
 "use client";
 
-import { FaCommentAlt } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import ButtonOne from "../utilityComponents/ButtonOne";
 
@@ -29,9 +28,11 @@ const initialComments = [
   },
 ];
 
-type Props = {};
+type Props = {
+  large: boolean;
+};
 
-const SideComments = () => {
+const Comments = ({ large }: Props) => {
   const [open, setOpen] = useState(false);
   const [comments, setComments] = useState(initialComments);
   const [inputValue, setInputValue] = useState("");
@@ -76,16 +77,18 @@ const SideComments = () => {
       <div
         className={`
           top-[30px]
-          w-[406px] bg-white border-2 border-black/20
+          ${large ? "max-w-full" : "w-[406px]"} bg-white border-2 border-black/20
           rounded-xl z-20 flex flex-col
           animate-fade-in
         `}
       >
         {/* Comment List */}
-        <div className="h-[200px] overflow-y-auto">
+        <div
+          className={`${large ? "max-h-[300px]" : "max-h-[190px]"}  overflow-y-auto shrink-0`}
+        >
           {comments.map((c, index) => (
             <div key={c.id}>
-              <div className="px-4 py-2 flex flex-col gap-1">
+              <div className="px-4 py-2 flex flex-col gap-1 shrink-0">
                 <div className="flex justify-between text-sm text-(--black)/60">
                   <span className="font-semibold text-(--black)">
                     {c.author}
@@ -112,7 +115,7 @@ const SideComments = () => {
             }}
           />
 
-          <div className="[&>*]:py-2">
+          <div className="[&>*]:py-2 ">
             <ButtonOne type="button" label="Submit" onClick={handleSubmit} />
           </div>
         </div>
@@ -121,4 +124,4 @@ const SideComments = () => {
   );
 };
 
-export default SideComments;
+export default Comments;

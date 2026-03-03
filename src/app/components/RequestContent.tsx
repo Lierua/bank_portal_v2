@@ -9,6 +9,7 @@ import rawRequests from "@/data/dummyRequests.json";
 import SideOverviewCopy from "./requestOverviewComponents/SideOverview copy";
 import RequestStatusFilterCopy from "./requestOverviewComponents/RequestStatusFilter copy";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import MyRequestList from "./requestOverviewComponents/MyRequestList";
 
 /* =========================
    Backend JSON Type
@@ -74,7 +75,7 @@ export type RawRequest = {
     wealth: number;
     debts: number;
   };
-
+  flagged: number | null;
   status: string;
 };
 
@@ -96,7 +97,7 @@ export type Request = {
   educationLevel: string;
   housingSituation: string;
   email: string;
-  status: "Godkendt" | "Afslået" | "Ubehandlet";
+  status: "Godkendt" | "Afslået" | "Ubehandlet" | "Behandles";
   indkomst: number;
   raadighedsBeloeb: number;
   gaeldsfaktor: number;
@@ -114,6 +115,7 @@ export type Request = {
       highRange: number;
     }[];
   };
+  flagged: number | null;
 };
 
 export type BudgetLine = {
@@ -131,6 +133,7 @@ export type BudgetLine = {
   highRange: number;
   stdDev: number;
   recurringAvg: number;
+  flagged: number | null;
 };
 
 /* =========================
@@ -148,6 +151,8 @@ const RequestContent = ({ search }: { search: string }) => {
         return "Godkendt";
       case "Rejected":
         return "Afslået";
+      case "UnderReview":
+        return "Behandles";
       default:
         return "Ubehandlet";
     }
@@ -186,7 +191,7 @@ const RequestContent = ({ search }: { search: string }) => {
         raadighedsBeloeb: disposableIncome,
         gaeldsfaktor: Number(debtFactor.toFixed(2)),
         opsparing: r.economicData.wealth,
-
+        flagged: r.flagged ?? null,
         budget: r.economicData.budget
           ? {
               totalPlanned: r.economicData.budget.totalPlanned,
@@ -210,6 +215,35 @@ const RequestContent = ({ search }: { search: string }) => {
     selectedId !== null
       ? (requests.find((r) => r.id === selectedId) ?? null)
       : null;
+
+  const MY_AGENT_ID = 2;
+
+  const toggleFlag = (id: number) => {
+    setRequests((prev) =>
+      prev.map((r) => {
+        if (r.id !== id) return r;
+
+        const isCurrentlyMine = r.flagged === MY_AGENT_ID;
+        const newFlag = isCurrentlyMine ? null : MY_AGENT_ID;
+
+        let newStatus = r.status;
+
+        if (!isCurrentlyMine && r.status === "Ubehandlet") {
+          newStatus = "Behandles";
+        }
+
+        if (isCurrentlyMine && r.status === "Behandles") {
+          newStatus = "Ubehandlet";
+        }
+
+        return {
+          ...r,
+          flagged: newFlag,
+          status: newStatus,
+        };
+      }),
+    );
+  };
 
   return (
     <div className="body-banner rounded-tl-lg overflow-hidden h-[calc(100dvh-166px)] flex-1 lk-box-shadow">
@@ -295,6 +329,7 @@ const RequestContent = ({ search }: { search: string }) => {
           request={selectedRequest}
           setRequests={setRequests}
           setSection={setSection}
+          toggleFlag={toggleFlag}
         />
       )}
 
@@ -313,6 +348,7 @@ const RequestContent = ({ search }: { search: string }) => {
               requests={requests}
               selectedId={selectedId}
               setSelectedId={setSelectedId}
+              toggleFlag={toggleFlag}
             />
           </div>
           {selectedRequest && (
@@ -320,6 +356,37 @@ const RequestContent = ({ search }: { search: string }) => {
               request={selectedRequest}
               setSection={setSection}
               setSelectedId={setSelectedId}
+              setRequests={setRequests}
+              toggleFlag={toggleFlag}
+            />
+          )}
+        </div>
+      )}
+      {/* Show List */}
+      {section === "MineBehandlinger" && (
+        <div
+          className={`grid transition-all duration-300 ease-in ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
+        >
+          <div className="bg-white grid grid-rows-[120px_1fr]">
+            <RequestStatusFilterCopy
+              requestPara={requestPara}
+              setRequestPara={setRequestPara}
+            />
+            <MyRequestList
+              search={search}
+              requests={requests}
+              selectedId={selectedId}
+              setSelectedId={setSelectedId}
+              toggleFlag={toggleFlag}
+            />
+          </div>
+          {selectedRequest && (
+            <SideOverviewCopy
+              request={selectedRequest}
+              setSection={setSection}
+              setSelectedId={setSelectedId}
+              setRequests={setRequests}
+              toggleFlag={toggleFlag}
             />
           )}
         </div>

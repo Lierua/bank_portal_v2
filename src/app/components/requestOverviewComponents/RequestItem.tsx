@@ -3,11 +3,12 @@
 import type { Request } from "../RequestContent";
 import { FaBookmark } from "react-icons/fa6";
 import { useState, useEffect } from "react";
-
 import {
   getOpenedRequests,
   setOpenedRequests,
 } from "@/app/components/utilityComponents/cookies";
+
+const MY_AGENT_ID = 2;
 
 type Props = {
   request: Request;
@@ -17,16 +18,24 @@ type Props = {
   };
   selectedId: number | null;
   setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
+  toggleFlag: (id: number) => void;
 };
 
-const RequestItem = ({ request, styles, selectedId, setSelectedId }: Props) => {
+const RequestItem = ({
+  request,
+  styles,
+  selectedId,
+  setSelectedId,
+  toggleFlag,
+}: Props) => {
   const isSelected = selectedId === request.id;
+  const isMine = request.flagged === MY_AGENT_ID;
+  const isTakenByOther =
+    request.flagged !== null && request.flagged !== MY_AGENT_ID;
 
-  const [marked, setMarked] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
   const [hovered, setHovered] = useState(false);
 
-  // Load cookie state
   useEffect(() => {
     const opened = getOpenedRequests();
     setHasOpened(opened.includes(request.id));
@@ -38,7 +47,6 @@ const RequestItem = ({ request, styles, selectedId, setSelectedId }: Props) => {
     if (!hasOpened) {
       const opened = getOpenedRequests();
       const updated = [...opened, request.id];
-
       setOpenedRequests(updated);
       setHasOpened(true);
     }
@@ -47,38 +55,32 @@ const RequestItem = ({ request, styles, selectedId, setSelectedId }: Props) => {
   return (
     <div
       onClick={handleOpen}
-      className={`
-        cursor-pointer transition-all duration-200 ease-in shrink-0 ${hasOpened ? "opacity-90" : "bg-blue-100/50"}
-        grid grid-cols-[40px_minmax(0,220px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_1fr_minmax(0,110px)]
-        h-[48] items-center border-b border-gray-200
-        hover:bg-(--light-prime)/5
+      className={`cursor-pointer transition-all duration-200 ease-in shrink-0
+        ${hasOpened ? "opacity-90" : "bg-blue-100/50"}
         ${isSelected ? "bg-(--light-prime)/10" : ""}
-      `}
+        ${isTakenByOther ? "opacity-50" : ""}
+        grid grid-cols-[40px_minmax(0,220px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_1fr_minmax(0,110px)]
+        h-[48] items-center border-b border-gray-200`}
     >
       <div className="grid">
-        <FaBookmark
-          onClick={(e) => {
-            e.stopPropagation();
-            setMarked(!marked);
-          }}
-          className={`items-center mx-auto transition-all duration-150 ease-in text-[15px]
-          ${
-            marked
-              ? "text-(--contrast)"
-              : "hover:text-(--contrast)/70 text-transparent"
-          }`}
-        />
+        {!isTakenByOther && (
+          <FaBookmark
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleFlag(request.id);
+            }}
+            className={`mx-auto text-[15px] transition-all duration-150
+              ${
+                isMine
+                  ? "text-(--contrast)"
+                  : "text-transparent hover:text-(--contrast)/70"
+              }`}
+          />
+        )}
       </div>
 
-      {/* Example visual indicator */}
-      <p className={`font-bold truncate `}>
-        {request.name.length > 25
-          ? request.name.slice(0, 25) + "..."
-          : request.name}
-      </p>
-
+      <p className="font-bold truncate">{request.name}</p>
       <p>{request.amount.toLocaleString("da-DK")} kr.</p>
-
       <p className="truncate">{request.forWhat}</p>
 
       <div className="flex items-center gap-2">
@@ -86,8 +88,9 @@ const RequestItem = ({ request, styles, selectedId, setSelectedId }: Props) => {
         <p className={`${styles.text} font-semibold`}>{request.status}</p>
       </div>
 
-      {marked ? <p>Line Christian</p> : <p></p>}
+      {isMine ? <p className="">Dig</p> : <p></p>}
       <p></p>
+
       <p
         className="text-center"
         onMouseEnter={() => setHovered(true)}

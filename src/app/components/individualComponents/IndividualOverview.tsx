@@ -2,60 +2,55 @@
 
 import SetStatus from "./SetStatus";
 import type { Request } from "../RequestContent";
-import SideComments from "../requestOverviewComponents/SideComments";
+import Comments from "../requestOverviewComponents/Comments";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
-import { useState } from "react";
+
+const MY_AGENT_ID = 2;
 
 type Props = {
   request: Request;
   setRequests: React.Dispatch<React.SetStateAction<Request[]>>;
   setSection: React.Dispatch<React.SetStateAction<string>>;
+  toggleFlag: (id: number) => void;
 };
 
 export default function IndividualOverview({
   request,
   setRequests,
   setSection,
+  toggleFlag,
 }: Props) {
   const formatKr = (value: number) => `${value.toLocaleString("da-DK")} kr.`;
 
-  /* ---------------- LOCAL STATE ---------------- */
-  const [marked, setMarked] = useState(false);
+  const isMine = request.flagged === MY_AGENT_ID;
+  const isTakenByOther =
+    request.flagged !== null && request.flagged !== MY_AGENT_ID;
+
   return (
     <div className="min-h-screen bg-white p-10">
-      {/* Back */}
       <button
         onClick={() => setSection("Ansøgninger")}
-        className="mb-8 text-sm tracking-wide hover:text-(--contrast) transition"
+        className="mb-8 text-sm hover:text-(--contrast)"
       >
         ← Tilbage
       </button>
 
-      {/* MAIN CARD */}
       <div className="border-2 border-black/20 rounded-[5px] p-8 space-y-8">
-        {/* HEADER */}
-        <div>
-          <div className="flex justify-between items-start w-[450]">
-            <h1 className="text-4xl font-bold">{request.name}</h1>
+        <div className="flex justify-between items-start">
+          <h1 className="text-4xl font-bold">{request.name}</h1>
 
-            <div className="self-end scale-y-110 mb-[5px]">
-              {!marked ? (
-                <FaRegBookmark
-                  onClick={() => setMarked(true)}
-                  className="text-[33px] opacity-65 cursor-pointer"
-                />
-              ) : (
-                <FaBookmark
-                  onClick={() => setMarked(false)}
-                  className="text-[33px] text-(--contrast) cursor-pointer"
-                />
-              )}
-            </div>
-          </div>
-          <p>{request.email}</p>
-          <div className="mt-2">
-            <SideComments />
-          </div>
+          {!isTakenByOther &&
+            (isMine ? (
+              <FaBookmark
+                onClick={() => toggleFlag(request.id)}
+                className="text-[30px] text-(--contrast) cursor-pointer"
+              />
+            ) : (
+              <FaRegBookmark
+                onClick={() => toggleFlag(request.id)}
+                className="text-[30px] opacity-65 cursor-pointer"
+              />
+            ))}
         </div>
 
         {/* LOAN DETAILS */}
@@ -88,14 +83,11 @@ export default function IndividualOverview({
           <Info label="Formue" value={formatKr(request.opsparing)} />
         </Section>
 
-        {/* =========================
-            BUDGET (NEW)
-        ========================= */}
+        {/* BUDGET */}
         {request.budget && (
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold">Budget Oversigt</h2>
 
-            {/* Budget Summary */}
             <div className="border border-(--black)/10 rounded-[5px] p-6 flex justify-between items-center">
               <span className="text-(--black)/70">
                 Planlagt månedligt forbrug
@@ -105,7 +97,6 @@ export default function IndividualOverview({
               </span>
             </div>
 
-            {/* Budget Lines */}
             <div className="border border-(--black)/10 rounded-[10px] divide-y">
               {request.budget.lines.map((line, index, arr) => (
                 <BudgetLine
@@ -118,7 +109,7 @@ export default function IndividualOverview({
           </div>
         )}
 
-        {/* STATUS */}
+        <Comments large={true} />
         <SetStatus request={request} setRequests={setRequests} />
       </div>
     </div>
@@ -178,7 +169,9 @@ function BudgetLine({
 
   return (
     <div
-      className={`flex justify-between items-center px-6 py-4 ${isLast ? "" : "border-b border-(--black)/10"}`}
+      className={`flex justify-between items-center px-6 py-4 ${
+        isLast ? "" : "border-b border-(--black)/10"
+      }`}
     >
       <div>
         <p className="font-semibold">{line.displayName}</p>

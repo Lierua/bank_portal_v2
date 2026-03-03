@@ -26,8 +26,8 @@ const filters: FilterItem[] = [
     inactiveBg: "bg-(--prime)/90",
   },
   {
-    label: "Pending",
-    value: "Pending",
+    label: "Ubehandlet",
+    value: "Ubehandlet",
     count: 101,
     activeBg: "bg-(--light-prime)",
     inactiveBg: "bg-(--light-prime)/90",

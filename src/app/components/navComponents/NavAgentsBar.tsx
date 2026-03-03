@@ -18,7 +18,7 @@ export default function NavAgentsBar({
         </h3>
         <div className="pb-4 flex pl-5 gap-5 flex-wrap">
           {["Middelfart", "Aarhus", "København"].map((a) => (
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" key={a}>
               <div
                 className="font-semibold! px-4 py-1 cursor-pointer border-3 border-(--prime) rounded-[8] text-(--prime)! px-2 items-center
           hover:bg-(--contrast) hover:border-(--contrast) hover:text-white! transition-all duration-200 ease-in"
