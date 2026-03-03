@@ -1,7 +1,10 @@
 "use client";
 
-import SetStatus from "../individualComponents/SetStatus";
+import SetStatus from "./SetStatus";
 import type { Request } from "../RequestContent";
+import SideComments from "../requestOverviewComponents/SideComments";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
+import { useState } from "react";
 
 type Props = {
   request: Request;
@@ -16,6 +19,8 @@ export default function IndividualOverview({
 }: Props) {
   const formatKr = (value: number) => `${value.toLocaleString("da-DK")} kr.`;
 
+  /* ---------------- LOCAL STATE ---------------- */
+  const [marked, setMarked] = useState(false);
   return (
     <div className="min-h-screen bg-white p-10">
       {/* Back */}
@@ -27,19 +32,29 @@ export default function IndividualOverview({
       </button>
 
       {/* MAIN CARD */}
-      <div className="border-2 border-black/20 rounded-[5px] p-8 space-y-12">
+      <div className="border-2 border-black/20 rounded-[5px] p-8 space-y-8">
         {/* HEADER */}
         <div>
-          <h1 className="text-4xl font-bold">{request.name}</h1>
-          <p>{request.email}</p>
+          <div className="flex justify-between items-start w-[450]">
+            <h1 className="text-4xl font-bold">{request.name}</h1>
 
-          <div className="mt-6 flex items-center justify-between border border-(--black)/10 rounded-[5px] px-6 py-4 max-w-[400px]">
-            <span className="text-sm uppercase tracking-wider text-(--black)/50">
-              Credit Score
-            </span>
-            <span className="text-3xl font-bold text-(--contrast)">
-              {request.score}
-            </span>
+            <div className="self-end scale-y-110 mb-[5px]">
+              {!marked ? (
+                <FaRegBookmark
+                  onClick={() => setMarked(true)}
+                  className="text-[33px] opacity-65 cursor-pointer"
+                />
+              ) : (
+                <FaBookmark
+                  onClick={() => setMarked(false)}
+                  className="text-[33px] text-(--contrast) cursor-pointer"
+                />
+              )}
+            </div>
+          </div>
+          <p>{request.email}</p>
+          <div className="mt-2">
+            <SideComments />
           </div>
         </div>
 

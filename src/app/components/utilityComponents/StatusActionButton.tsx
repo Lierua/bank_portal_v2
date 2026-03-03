@@ -17,7 +17,7 @@ const StatusActionButton = ({
   const isApprove = type === "godkend";
 
   const baseStyles =
-    " shadow-[0_4px_10px_black]/30 px-4 text-center w-[150px] py-2 rounded-full text-sm font-semibold transition-all duration-200 ease-in focus:outline-none";
+    " shadow-[0_4px_10px_black]/30 px-4 text-center w-[150px] py-2 rounded-full text-sm transition-all duration-200 ease-in focus:outline-none";
 
   const activeStyles = isApprove
     ? "bg-[#12C46B] text-white hover:bg-green-400 active:shadow-[0_2px_5px_black]/30"

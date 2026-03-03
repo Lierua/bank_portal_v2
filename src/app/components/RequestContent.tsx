@@ -1,13 +1,11 @@
 "use client";
 
 import { FaRegFileAlt, FaRegFileArchive } from "react-icons/fa";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
-import RequestStatusFilter from "./requestOverviewComponents/RequestStatusFilter";
 import RequestList from "./requestOverviewComponents/RequestList";
-import IndividualOverview from "./requestOverviewComponents/IndividualOverview";
+import IndividualOverview from "./individualComponents/IndividualOverview";
 import rawRequests from "@/data/dummyRequests.json";
-import SideOverview from "./requestOverviewComponents/SideOverview";
 import SideOverviewCopy from "./requestOverviewComponents/SideOverview copy";
 import RequestStatusFilterCopy from "./requestOverviewComponents/RequestStatusFilter copy";
 import { BsFillPersonLinesFill } from "react-icons/bs";

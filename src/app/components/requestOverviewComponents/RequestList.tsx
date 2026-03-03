@@ -44,7 +44,7 @@ const RequestList = ({
         <h3 className="text-center">Liggetid</h3>
       </div>
 
-      <div className="flex flex-col col-span-full overflow-y-auto h-[calc(100dvh-355px)]">
+      <div className="flex flex-col col-span-full overflow-y-auto h-[calc(100dvh-340px)]">
         {filteredRequests.map((request, index) => {
           const styles = statusStyles[request.status];
 

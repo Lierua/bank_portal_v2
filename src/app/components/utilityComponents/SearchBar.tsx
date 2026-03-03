@@ -7,7 +7,7 @@ type Props = {
 
 const SearchBar = ({ search, setSearch }: Props) => {
   return (
-    <div className="w-full max-w-sm">
+    <div className="w-full">
       <input
         type="text"
         value={search}
