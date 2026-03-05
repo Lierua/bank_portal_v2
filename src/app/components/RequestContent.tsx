@@ -97,7 +97,7 @@ export type Request = {
   educationLevel: string;
   housingSituation: string;
   email: string;
-  status: "Godkendt" | "Afslået" | "Ubehandlet" | "Behandles";
+  status: "Godkendt" | "Afslået" | "Afventer" | "Behandles";
   indkomst: number;
   raadighedsBeloeb: number;
   gaeldsfaktor: number;
@@ -154,7 +154,7 @@ const RequestContent = ({ search }: { search: string }) => {
       case "UnderReview":
         return "Behandles";
       default:
-        return "Ubehandlet";
+        return "Afventer";
     }
   };
 
@@ -228,12 +228,12 @@ const RequestContent = ({ search }: { search: string }) => {
 
         let newStatus = r.status;
 
-        if (!isCurrentlyMine && r.status === "Ubehandlet") {
+        if (!isCurrentlyMine && r.status === "Afventer") {
           newStatus = "Behandles";
         }
 
         if (isCurrentlyMine && r.status === "Behandles") {
-          newStatus = "Ubehandlet";
+          newStatus = "Afventer";
         }
 
         return {
@@ -259,7 +259,7 @@ const RequestContent = ({ search }: { search: string }) => {
         <BsFillPersonLinesFill
           onClick={() => {
             setSelectedId(null);
-            setSection("MineBehandlinger");
+            setSection("MineEmner");
           }}
           className="text-(--white) text-4xl row-3 mx-auto mt-2 cursor-pointer"
         />
@@ -293,15 +293,15 @@ const RequestContent = ({ search }: { search: string }) => {
           <p
             onClick={() => {
               setSelectedId(null);
-              setSection("MineBehandlinger");
+              setSection("MineEmner");
             }}
             className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
           >
-            Mine Behandlinger
+            Mine Emner
           </p>
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "MineBehandlinger" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
+              origin-left ${section === "MineEmner" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
               w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
@@ -363,9 +363,9 @@ const RequestContent = ({ search }: { search: string }) => {
         </div>
       )}
       {/* Show List */}
-      {section === "MineBehandlinger" && (
+      {section === "MineEmner" && (
         <div
-          className={`grid transition-all duration-300 ease-in ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
+          className={`grid transition-all duration-800 ease-in ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
         >
           <div className="bg-white grid grid-rows-[120px_1fr]">
             <RequestStatusFilterCopy

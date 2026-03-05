@@ -40,7 +40,7 @@ const tasaOrbiter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "låneklar",
+  title: "Låneklar",
   description: "Bank Portal af låneklar",
 };
 

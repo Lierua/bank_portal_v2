@@ -46,10 +46,10 @@ export default function NavHeader({
 
         <div className="flex items-center gap-4 min-w-[300]">
           <h3 className="font-bold">Line Christiansen</h3>
-          <IoPersonCircleOutline className="text-5xl" />
+          <IoPersonCircleOutline className="text-5xl text-(--black)" />
           <IoIosLogOut
             onClick={logout}
-            className="text-[40px] cursor-pointer hover:text-(--contrast) ml-auto"
+            className="text-[40px] cursor-pointer text-(--black) hover:text-(--contrast) ml-auto"
           />
         </div>
       </div>

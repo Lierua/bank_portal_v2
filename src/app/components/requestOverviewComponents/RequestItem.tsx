@@ -56,8 +56,9 @@ const RequestItem = ({
     <div
       onClick={handleOpen}
       className={`cursor-pointer transition-all duration-200 ease-in shrink-0
-        ${hasOpened ? "opacity-90" : "bg-blue-100/50"}
-        ${isSelected ? "bg-(--light-prime)/10" : ""}
+        transition-all duration-200 ease-in hover:bg-blue-100 hover:border-blue-100
+        ${hasOpened ? "opacity-80" : "bg-blue-100/50"}
+        ${isSelected ? "bg-blue-200/70 border-blue-200/70" : ""}
         ${isTakenByOther ? "opacity-50" : ""}
         grid grid-cols-[40px_minmax(0,220px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_1fr_minmax(0,110px)]
         h-[48] items-center border-b border-gray-200`}
@@ -79,7 +80,7 @@ const RequestItem = ({
         )}
       </div>
 
-      <p className="font-bold truncate">{request.name}</p>
+      <p className="font-bold truncate pr-1 text-(--black)!">{request.name}</p>
       <p>{request.amount.toLocaleString("da-DK")} kr.</p>
       <p className="truncate">{request.forWhat}</p>
 
@@ -88,11 +89,15 @@ const RequestItem = ({
         <p className={`${styles.text} font-semibold`}>{request.status}</p>
       </div>
 
-      {isMine ? <p className="">Dig</p> : <p></p>}
+      {isMine ? (
+        <p className="truncate pr-1">Line Christiansen</p>
+      ) : (
+        <p className="truncate pr-1"></p>
+      )}
       <p></p>
 
       <p
-        className="text-center"
+        className="text-center mx-auto"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -119,8 +124,20 @@ export function getDate(dateString?: string) {
   const diffMs = now.getTime() - created.getTime();
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-  if (diffDays === 0) return "I dag";
-  if (diffDays === 1) return "I går";
+  if (diffDays === 0)
+    return (
+      <div className="flex gap-4 items-center">
+        <span className="h-[8] w-[8] rounded-full bg-blue-400"></span>
+        <p>I dag</p>
+      </div>
+    );
+  if (diffDays === 1)
+    return (
+      <div className="flex gap-4 items-center">
+        <span className="h-[8] w-[8] rounded-full bg-blue-400"></span>
+        <p>I går</p>
+      </div>
+    );
   if (diffDays < 7) return `${diffDays} dage siden`;
 
   const weeks = Math.floor(diffDays / 7);

@@ -88,15 +88,20 @@ const Comments = ({ large }: Props) => {
         >
           {comments.map((c, index) => (
             <div key={c.id}>
-              <div className="px-4 py-2 flex flex-col gap-1 shrink-0">
-                <div className="flex justify-between text-sm text-(--black)/60">
+              <div
+                className="px-4 py-2 flex flex-col gap-1 shrink-0
+               transition-all duration-200 ease-in hover:bg-blue-100"
+              >
+                <div className="flex gap-8 text-sm">
                   <span className="font-semibold text-(--black)">
                     {c.author}
                   </span>
-                  <span>{c.createdAt}</span>
+                  <span className="text-[12px] pt-[2] text-(--black)/60">
+                    {c.createdAt}
+                  </span>
                 </div>
 
-                <p>{c.message}</p>
+                <p className="text-(--black)/60!">{c.message}</p>
               </div>
             </div>
           ))}
@@ -116,7 +121,7 @@ const Comments = ({ large }: Props) => {
           />
 
           <div className="[&>*]:py-2 ">
-            <ButtonOne type="button" label="Submit" onClick={handleSubmit} />
+            <ButtonOne type="submit" label="arrow" onClick={handleSubmit} />
           </div>
         </div>
       </div>

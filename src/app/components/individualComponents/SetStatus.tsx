@@ -37,7 +37,7 @@ const SetStatus = ({ request, setRequests }: Props) => {
           className={`font-semibold text-[36px]!
             ${request.status === "Godkendt" && "text-green-500"}
             ${request.status === "Afslået" && "text-red-500"}
-            ${request.status === "Pending" && "text-blue-500"}
+            ${request.status === "Afventer" && "text-blue-500"}
           `}
         >
           {request.status}
@@ -48,14 +48,18 @@ const SetStatus = ({ request, setRequests }: Props) => {
         <StatusActionButton
           type="godkend"
           onClick={handleApprove}
-          disabled={request.status !== "Pending"}
+          disabled={
+            request.status !== "Afventer" && request.status !== "Behandles"
+          }
           request={request}
         />
 
         <StatusActionButton
           type="afslå"
           onClick={handleReject}
-          disabled={request.status !== "Pending"}
+          disabled={
+            request.status !== "Afventer" && request.status !== "Behandles"
+          }
           request={request}
         />
       </div>

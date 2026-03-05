@@ -40,13 +40,15 @@ export default function SideOverview({
 
   return (
     <div className="bg-white">
-      <div className="p-5 h-full animate-slide-fade-in">
+      <div key={request.id} className="p-5 h-full animate-slide-fade-in">
         <div className="bg-white flex flex-col h-full p-6 border-2 border-black/20 rounded-[5px]">
           <div className="mb-5 flex justify-between items-start">
-            <h1 className="text-4xl font-bold">{request.name}</h1>
+            <h1 className="text-4xl font-bold text-(--black)">
+              {request.name}
+            </h1>
 
             <div className="flex items-center gap-3">
-              {!isTakenByOther &&
+              {/*               {!isTakenByOther &&
                 (isMine ? (
                   <FaBookmark
                     onClick={() => toggleFlag(request.id)}
@@ -57,7 +59,7 @@ export default function SideOverview({
                     onClick={() => toggleFlag(request.id)}
                     className="text-[28px] opacity-65 cursor-pointer"
                   />
-                ))}
+                ))} */}
 
               <IoCloseOutline
                 onClick={() => setSelectedId(null)}
@@ -69,13 +71,16 @@ export default function SideOverview({
           {/* LOAN DETAILS */}
           <div className="space-y-6">
             <div className="flex gap-2">
-              <h1 className="font-semibold text-[25px]!">Status:</h1>
+              <h1 className="font-semibold text-[25px]! text-(--black)">
+                Status:
+              </h1>
 
               <h1
                 className={`font-semibold text-[25px]!
+            ${request.status === "Behandles" && "text-yellow-400"}
             ${request.status === "Godkendt" && "text-green-500"}
             ${request.status === "Afslået" && "text-red-500"}
-            ${request.status === "Ubehandlet" && "text-blue-500"}
+            ${request.status === "Afventer" && "text-blue-500"}
           `}
               >
                 {request.status}
@@ -99,7 +104,11 @@ export default function SideOverview({
               <Comments large={false} />
             </div>
 
-            <SetSideStatus request={request} setRequests={setRequests} />
+            <SetSideStatus
+              request={request}
+              setRequests={setRequests}
+              toggleFlag={toggleFlag}
+            />
 
             <ButtonOne
               label="Se detaljer"

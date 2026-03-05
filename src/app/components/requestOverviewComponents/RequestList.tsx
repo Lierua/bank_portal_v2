@@ -20,7 +20,7 @@ const RequestList = ({
     {
       Godkendt: { text: "text-green-500!", dot: "bg-green-400" },
       Afslået: { text: "text-red-500!", dot: "bg-red-400" },
-      Ubehandlet: { text: "text-blue-500!", dot: "bg-blue-400" },
+      Afventer: { text: "text-blue-500!", dot: "bg-blue-400" },
       Behandles: { text: "text-yellow-500!", dot: "bg-yellow-400" }, // added since your type includes it
     };
 
@@ -47,7 +47,7 @@ const RequestList = ({
         <h3 className="text-center">Liggetid</h3>
       </div>
 
-      <div className="flex flex-col col-span-full overflow-y-auto h-[calc(100dvh-340px)]">
+      <div className="flex flex-col col-span-full overflow-y-auto my-container">
         {filteredRequests.map((request) => {
           const styles = statusStyles[request.status];
 

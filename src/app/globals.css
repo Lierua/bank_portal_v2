@@ -44,7 +44,7 @@ body {
   }
   p {
     font-size: 16px;
-    color: #264154;
+    color: var(--black);
   }
   button {
     font-size: 18px;
@@ -91,4 +91,8 @@ body {
 
 .animate-slide-fade-in {
   animation: slideFadeIn 400ms cubic-bezier(0.34, 1.3, 0.64, 1) forwards;
+}
+
+.my-container {
+  max-height: max(640px, calc(100dvh - 340px));
 }

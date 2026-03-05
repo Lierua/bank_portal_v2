@@ -109,7 +109,7 @@ export default function ExtraFiltersPanel({ show }: { show: string }) {
       className={`
         grid grid-cols-[70px_1fr]
         overflow-hidden transition-all duration-300
-        ${show != "closed" ? "max-h-[800]" : "max-h-[0]"}
+        ${show != "closed" ? "max-h-[800]" : "max-h-0"}
       `}
     >
       <div className="bg-(--prime) rounded-bl-lg" />

@@ -13,15 +13,14 @@ export default function NavAgentsBar({
         className={`bg-(--prime) ${showExtraFilters == "closed" && "rounded-bl-lg"}`}
       />
       <div className="flex items-center">
-        <h3 className="pl-5 font-semibold! text-(--prime) mb-auto">
-          Søgeagenter
-        </h3>
+        <h3 className="pl-5 text-(--black)/60 my-auto mt-1">Søgeagenter</h3>
         <div className="pb-4 flex pl-5 gap-5 flex-wrap">
           {["Middelfart", "Aarhus", "København"].map((a) => (
             <div className="flex gap-2 items-center" key={a}>
               <div
-                className="font-semibold! px-4 py-1 cursor-pointer border-3 border-(--prime) rounded-[8] text-(--prime)! px-2 items-center
-          hover:bg-(--contrast) hover:border-(--contrast) hover:text-white! transition-all duration-200 ease-in"
+                className="px-6 py-1 w-full bg-(--contrast) text-white rounded-full self-end mt-auto
+              transition-all duration-100 ease-in hover:shadow-[inset_0_-30px_60px_-30px_var(--light-contrast)]
+              text-center"
               >
                 {a}
               </div>
@@ -29,7 +28,7 @@ export default function NavAgentsBar({
                 onClick={() =>
                   setShowExtraFilters(showExtraFilters === a ? "closed" : a)
                 }
-                className={`text-3xl cursor-pointer transition-colors 
+                className={`pt-1 text-4xl cursor-pointer transition-colors 
                   ${showExtraFilters === a ? "text-(--contrast) translate(-1,-1)" : "text-(--black)"}`}
               />
             </div>

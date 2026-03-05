@@ -1,3 +1,5 @@
+import { FaArrowUp } from "react-icons/fa";
+
 type ButtonProps = {
   label: string;
   onClick?: () => void;
@@ -23,7 +25,7 @@ const ButtonOne = ({
         ${className}
       `}
     >
-      {label}
+      {label === "arrow" ? <FaArrowUp /> : label}
     </button>
   );
 };
