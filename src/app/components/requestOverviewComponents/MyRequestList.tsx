@@ -20,8 +20,8 @@ const MyRequestList = ({
     {
       Godkendt: { text: "text-green-500!", dot: "bg-green-400" },
       Afslået: { text: "text-red-500!", dot: "bg-red-400" },
-      Ubehandlet: { text: "text-blue-500!", dot: "bg-blue-400" },
-      Behandles: { text: "text-yellow-500!", dot: "bg-yellow-400" }, // added since your type includes it
+      Afventer: { text: "text-blue-500!", dot: "bg-blue-400" },
+      Behandles: { text: "text-yellow-500!", dot: "bg-yellow-400" },
     };
 
   const MY_AGENT_ID = 2;
