@@ -1,6 +1,6 @@
 "use client";
 
-import type { Request } from "../RequestContent";
+import type { Request } from "../../types/request";
 import { FaBookmark } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import {
@@ -55,8 +55,8 @@ const RequestItem = ({
   return (
     <div
       onClick={handleOpen}
-      className={`cursor-pointer transition-all duration-200 ease-in shrink-0
-        transition-all duration-200 ease-in hover:bg-blue-100 hover:border-blue-100
+      className={`cursor-pointer ease-in shrink-0
+        transition-all duration-200 hover:bg-blue-100 hover:border-blue-100
         ${hasOpened ? "opacity-80" : "bg-blue-100/50"}
         ${isSelected ? "bg-blue-200/70 border-blue-200/70" : ""}
         ${isTakenByOther ? "opacity-50" : ""}

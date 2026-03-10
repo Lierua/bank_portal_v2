@@ -14,12 +14,7 @@ type Props = {
   setLocation: (v: string) => void;
 };
 
-export default function NavHeader({
-  search,
-  setSearch,
-  location,
-  setLocation,
-}: Props) {
+export default function NavHeader({ search, setSearch }: Props) {
   const router = useRouter();
 
   const logout = () => {
@@ -39,7 +34,6 @@ export default function NavHeader({
       <div className="flex justify-between items-center px-5">
         <DateRangePicker />
 
-        {/*           <LocationDropdown location={location} setLocation={setLocation} /> */}
         <div className="w-full px-10">
           <SearchBar search={search} setSearch={setSearch} />
         </div>

@@ -62,7 +62,7 @@ body {
 }
 .banner-rows {
   display: grid;
-  grid-template-rows: 10px 50px 50px 50px 1fr;
+  grid-template-rows: 10px 50px 50px 50px 50px 1fr;
   gap: 30px;
 }
 

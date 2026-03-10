@@ -1,5 +1,5 @@
 import RequestItem from "./RequestItem";
-import type { Request } from "../RequestContent";
+import type { Request } from "../../types/request";
 
 type Props = {
   search: string;

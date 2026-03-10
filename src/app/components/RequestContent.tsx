@@ -10,131 +10,10 @@ import SideOverviewCopy from "./requestOverviewComponents/SideOverview copy";
 import RequestStatusFilterCopy from "./requestOverviewComponents/RequestStatusFilter copy";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import MyRequestList from "./requestOverviewComponents/MyRequestList";
+import { RiListSettingsLine } from "react-icons/ri";
 
-/* =========================
-   Backend JSON Type
-========================= */
-
-export type RawRequest = {
-  id: number;
-  loanDetails: {
-    score: number;
-    amount: number;
-    purpose: {
-      loanKind: string;
-      location: {
-        address: string;
-        postalCode: string;
-        region: string;
-      };
-    };
-  };
-
-  personalInfo: {
-    name: string;
-    housingSituation: string;
-    email: string;
-  };
-
-  employment: {
-    jobTitle: string;
-    jobStatus: string;
-    educationLevel: string;
-  };
-
-  economicData: {
-    monthlyIncome: number;
-    fixedExpenses: number;
-
-    budget: {
-      id: string;
-      userId: string;
-      year: number;
-      month: number;
-      totalPlanned: number;
-      createdAt: string;
-
-      lines: {
-        id: string;
-        budgetId: string;
-        budget: null; // matches JSON
-        categoryKey: string;
-        displayName: string;
-        isRecurring: boolean;
-        plannedAmount: number;
-        avg: number;
-        p25: number;
-        p75: number;
-        lowRange: number;
-        highRange: number;
-        stdDev: number;
-        recurringAvg: number;
-      }[];
-    };
-
-    wealth: number;
-    debts: number;
-  };
-  flagged: number | null;
-  status: string;
-};
-
-/* =========================
-   UI Type
-========================= */
-
-export type Request = {
-  id: number;
-  name: string;
-  amount: number;
-  forWhat: string;
-  location: string;
-  postalCode: string;
-  region: string;
-  score: number;
-  jobTitle: string;
-  jobStatus: string;
-  educationLevel: string;
-  housingSituation: string;
-  email: string;
-  status: "Godkendt" | "Afslået" | "Afventer" | "Behandles";
-  indkomst: number;
-  raadighedsBeloeb: number;
-  gaeldsfaktor: number;
-  opsparing: number;
-  budget?: {
-    totalPlanned: number;
-    createdAt: string;
-    lines: {
-      id: string;
-      categoryKey: string;
-      displayName: string;
-      plannedAmount: number;
-      avg: number;
-      lowRange: number;
-      highRange: number;
-    }[];
-  };
-  flagged: number | null;
-};
-
-export type BudgetLine = {
-  id: string;
-  budgetId: string;
-  budget: null;
-  categoryKey: string;
-  displayName: string;
-  isRecurring: boolean;
-  plannedAmount: number;
-  avg: number;
-  p25: number;
-  p75: number;
-  lowRange: number;
-  highRange: number;
-  stdDev: number;
-  recurringAvg: number;
-  flagged: number | null;
-};
+import type { RawRequest, Request } from "@/app/types/request";
+import AffiliationComponent from "./affiliationComponents/AffiliationComponent";
 
 /* =========================
    Component
@@ -270,6 +149,13 @@ const RequestContent = ({ search }: { search: string }) => {
           }}
           className="text-(--white) text-4xl row-4 mx-auto mt-2 cursor-pointer"
         />
+        <RiListSettingsLine
+          onClick={() => {
+            setSelectedId(null);
+            setSection("Affiliate");
+          }}
+          className="text-(--white) text-4xl row-5 mx-auto mt-2 cursor-pointer"
+        />
       </div>
 
       <div className="bg-(--light-prime) banner-rows lk-inner-shadow">
@@ -321,6 +207,22 @@ const RequestContent = ({ search }: { search: string }) => {
               w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
+        <div className="row-5 h-full items-center grid group relative">
+          <p
+            onClick={() => {
+              setSelectedId(null);
+              setSection("Affiliate");
+            }}
+            className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
+          >
+            Affiliate Sætop
+          </p>
+          <div
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
+              origin-left ${section === "Affiliate" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
+              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+          ></div>
+        </div>
       </div>
 
       {/* Show Individual */}
@@ -362,7 +264,7 @@ const RequestContent = ({ search }: { search: string }) => {
           )}
         </div>
       )}
-      {/* Show List */}
+
       {section === "MineEmner" && (
         <div
           className={`grid transition-all duration-800 ease-in ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
@@ -391,6 +293,8 @@ const RequestContent = ({ search }: { search: string }) => {
           )}
         </div>
       )}
+
+      {section === "Affiliate" && <AffiliationComponent />}
     </div>
   );
 };
