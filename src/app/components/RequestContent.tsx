@@ -286,7 +286,7 @@ const RequestContent = ({ search }: { search: string }) => {
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
               origin-left ${section === "Ansøgninger" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
         <div className="row-3 h-full items-center grid group relative">
@@ -302,7 +302,7 @@ const RequestContent = ({ search }: { search: string }) => {
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
               origin-left ${section === "MineEmner" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
         <div className="row-4 h-full items-center grid group relative">
@@ -318,7 +318,7 @@ const RequestContent = ({ search }: { search: string }) => {
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
               origin-left ${section === "Arkiv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
       </div>
