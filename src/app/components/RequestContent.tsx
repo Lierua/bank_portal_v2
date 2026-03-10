@@ -87,42 +87,35 @@ const RequestContent = ({ search }: { search: string }) => {
       : null;
 
   /* =========================
-     Toggle Handler
-  ========================= */
+   Toggle Handler
+========================= */
 
   const toggleFlag = async (id: number) => {
-    if (!profile?.id) return;
+    if (!profile) return;
 
     const request = requests.find((r) => r.id === id);
     if (!request) return;
 
-    const isCurrentlyMine = request.flagged === profile.id;
+    const claiming = request.flagged !== profile.full_name;
 
-    const newHandlerId = isCurrentlyMine ? null : profile.id;
-    const newHandlerName = isCurrentlyMine ? null : profile.full_name;
+    const newHandler = claiming ? profile.full_name : null;
 
-    const updated = await toggleRequestHandler(id, newHandlerId);
+    const updated = await toggleRequestHandler(id, newHandler);
     if (!updated) return;
 
     setRequests((prev) =>
       prev.map((r) => {
         if (r.id !== id) return r;
 
-        let newStatus = r.status;
-
-        if (!isCurrentlyMine && r.status === "Afventer") {
-          newStatus = "Behandles";
-        }
-
-        if (isCurrentlyMine && r.status === "Behandles") {
-          newStatus = "Afventer";
-        }
-
         return {
           ...r,
-          flagged: newHandlerId,
-          handlerName: newHandlerName,
-          status: newStatus,
+          flagged: newHandler,
+          status:
+            claiming && r.status === "Afventer"
+              ? "Behandles"
+              : !claiming && r.status === "Behandles"
+                ? "Afventer"
+                : r.status,
         };
       }),
     );

@@ -6,24 +6,19 @@ export async function getRequests(): Promise<Request[]> {
   const supabase = createClient();
 
   const { data, error } = await supabase.from("loan_requests").select(`
-  *,
-  handler:profiles!loan_requests_flagged_fkey (
-    full_name
-  ),
-  budgets (
-    *,
-    budget_lines (*)
-  )
-`);
+      *,
+      budgets (
+        *,
+        budget_lines (*)
+      )
+    `);
 
   if (error) {
-    console.error("Supabase error:", error);
+    console.error("Supabase error:", error.message);
     return [];
   }
 
-  if (!data) {
-    return [];
-  }
+  if (!data) return [];
 
   return data.map(transformRequest);
 }

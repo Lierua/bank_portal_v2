@@ -8,7 +8,6 @@ import {
   setOpenedRequests,
 } from "@/app/components/utilityComponents/cookies";
 
-import { createClient } from "@/app/components/utilityComponents/supabase/client";
 import { useUser } from "@/app/hooks/useUser";
 
 type Props = {
@@ -31,10 +30,10 @@ const RequestItem = ({
 }: Props) => {
   const { profile } = useUser();
   const isSelected = selectedId === request.id;
-  const isMine = request.flagged === profile?.id;
+  const isMine = request.flagged === profile?.full_name;
 
   const isTakenByOther =
-    request.flagged !== null && request.flagged !== profile?.id;
+    request.flagged !== null && request.flagged !== profile?.full_name;
 
   const [hasOpened, setHasOpened] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -92,7 +91,7 @@ const RequestItem = ({
         <p className={`${styles.text} font-semibold`}>{request.status}</p>
       </div>
 
-      <p className="truncate pr-1">{request.handlerName ?? ""}</p>
+      <p className="truncate pr-1">{request.flagged ?? ""}</p>
       <p></p>
 
       <p
