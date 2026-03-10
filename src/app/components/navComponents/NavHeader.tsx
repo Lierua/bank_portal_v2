@@ -3,29 +3,26 @@
 import { IoIosLogOut } from "react-icons/io";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+
+import { createClient } from "@/app/components/utilityComponents/supabase/client";
+import { useUser } from "@/app/hooks/useUser";
+
 import SearchBar from "../utilityComponents/SearchBar";
 import DateRangePicker from "../utilityComponents/DateRangePicker";
-import LocationDropdown from "./LocationDropdown";
 
 type Props = {
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
-  location: string;
-  setLocation: (v: string) => void;
 };
 
-export default function NavHeader({
-  search,
-  setSearch,
-  location,
-  setLocation,
-}: Props) {
+export default function NavHeader({ search, setSearch }: Props) {
   const router = useRouter();
+  const supabase = createClient();
+  const { profile } = useUser();
 
-  const logout = () => {
-    document.cookie = "dev-login=; Max-Age=0; path=/";
+  const logout = async () => {
+    await supabase.auth.signOut();
     router.push("/login");
-    router.refresh();
   };
 
   return (
@@ -39,14 +36,17 @@ export default function NavHeader({
       <div className="flex justify-between items-center px-5">
         <DateRangePicker />
 
-        {/*           <LocationDropdown location={location} setLocation={setLocation} /> */}
         <div className="w-full px-10">
           <SearchBar search={search} setSearch={setSearch} />
         </div>
 
         <div className="flex items-center gap-4 min-w-[300]">
-          <h3 className="font-bold">Line Christiansen</h3>
+          <h3 className="font-bold truncate pr-1">
+            {profile?.full_name ?? ""}
+          </h3>
+
           <IoPersonCircleOutline className="text-5xl text-(--black)" />
+
           <IoIosLogOut
             onClick={logout}
             className="text-[40px] cursor-pointer text-(--black) hover:text-(--contrast) ml-auto"

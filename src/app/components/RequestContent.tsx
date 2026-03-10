@@ -1,83 +1,20 @@
 "use client";
 
 import { FaRegFileAlt, FaRegFileArchive } from "react-icons/fa";
-import { useState } from "react";
+import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useState, useEffect } from "react";
 
 import RequestList from "./requestOverviewComponents/RequestList";
 import IndividualOverview from "./individualComponents/IndividualOverview";
-import rawRequests from "@/data/dummyRequests.json";
 import SideOverviewCopy from "./requestOverviewComponents/SideOverview copy";
 import RequestStatusFilterCopy from "./requestOverviewComponents/RequestStatusFilter copy";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import MyRequestList from "./requestOverviewComponents/MyRequestList";
 
-/* =========================
-   Backend JSON Type
-========================= */
-
-export type RawRequest = {
-  id: number;
-  loanDetails: {
-    score: number;
-    amount: number;
-    purpose: {
-      loanKind: string;
-      location: {
-        address: string;
-        postalCode: string;
-        region: string;
-      };
-    };
-  };
-
-  personalInfo: {
-    name: string;
-    housingSituation: string;
-    email: string;
-  };
-
-  employment: {
-    jobTitle: string;
-    jobStatus: string;
-    educationLevel: string;
-  };
-
-  economicData: {
-    monthlyIncome: number;
-    fixedExpenses: number;
-
-    budget: {
-      id: string;
-      userId: string;
-      year: number;
-      month: number;
-      totalPlanned: number;
-      createdAt: string;
-
-      lines: {
-        id: string;
-        budgetId: string;
-        budget: null; // matches JSON
-        categoryKey: string;
-        displayName: string;
-        isRecurring: boolean;
-        plannedAmount: number;
-        avg: number;
-        p25: number;
-        p75: number;
-        lowRange: number;
-        highRange: number;
-        stdDev: number;
-        recurringAvg: number;
-      }[];
-    };
-
-    wealth: number;
-    debts: number;
-  };
-  flagged: number | null;
-  status: string;
-};
+import {
+  toggleRequestHandler,
+  getRequests,
+} from "@/app/services/requestService";
+import { useUser } from "@/app/hooks/useUser";
 
 /* =========================
    UI Type
@@ -115,25 +52,8 @@ export type Request = {
       highRange: number;
     }[];
   };
-  flagged: number | null;
-};
-
-export type BudgetLine = {
-  id: string;
-  budgetId: string;
-  budget: null;
-  categoryKey: string;
-  displayName: string;
-  isRecurring: boolean;
-  plannedAmount: number;
-  avg: number;
-  p25: number;
-  p75: number;
-  lowRange: number;
-  highRange: number;
-  stdDev: number;
-  recurringAvg: number;
-  flagged: number | null;
+  flagged: string | null;
+  handlerName?: string | null;
 };
 
 /* =========================
@@ -144,87 +64,49 @@ const RequestContent = ({ search }: { search: string }) => {
   const [requestPara, setRequestPara] = useState("Alle");
   const [section, setSection] = useState("Ansøgninger");
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [requests, setRequests] = useState<Request[]>([]);
 
-  const mapStatus = (status: string): Request["status"] => {
-    switch (status) {
-      case "Approved":
-        return "Godkendt";
-      case "Rejected":
-        return "Afslået";
-      case "UnderReview":
-        return "Behandles";
-      default:
-        return "Afventer";
-    }
-  };
+  const { profile } = useUser();
 
   /* =========================
-     Transform JSON → UI Data
+   Fetch Supabase Data
+========================= */
+  useEffect(() => {
+    (async () => {
+      setRequests(await getRequests());
+    })();
+  }, []);
+
+  /* =========================
+     Selected Request
   ========================= */
-
-  const [requests, setRequests] = useState<Request[]>(
-    (rawRequests as RawRequest[]).map((r) => {
-      const disposableIncome =
-        r.economicData.monthlyIncome - r.economicData.fixedExpenses;
-
-      const debtFactor =
-        r.economicData.monthlyIncome > 0
-          ? r.loanDetails.amount / r.economicData.monthlyIncome
-          : 0;
-
-      return {
-        id: r.id,
-        name: r.personalInfo.name,
-        amount: r.loanDetails.amount,
-        forWhat: r.loanDetails.purpose.loanKind,
-        location: r.loanDetails.purpose.location.address,
-        postalCode: r.loanDetails.purpose.location.postalCode,
-        region: r.loanDetails.purpose.location.region,
-        score: r.loanDetails.score,
-        jobTitle: r.employment.jobTitle,
-        jobStatus: r.employment.jobStatus,
-        educationLevel: r.employment.educationLevel,
-        housingSituation: r.personalInfo.housingSituation,
-        email: r.personalInfo.email,
-        status: mapStatus(r.status),
-        indkomst: r.economicData.monthlyIncome,
-        raadighedsBeloeb: disposableIncome,
-        gaeldsfaktor: Number(debtFactor.toFixed(2)),
-        opsparing: r.economicData.wealth,
-        flagged: r.flagged ?? null,
-        budget: r.economicData.budget
-          ? {
-              totalPlanned: r.economicData.budget.totalPlanned,
-              createdAt: r.economicData.budget.createdAt,
-              lines: r.economicData.budget.lines.map((l) => ({
-                id: l.id,
-                categoryKey: l.categoryKey,
-                displayName: l.displayName,
-                plannedAmount: l.plannedAmount,
-                avg: l.avg,
-                lowRange: l.lowRange,
-                highRange: l.highRange,
-              })),
-            }
-          : undefined,
-      };
-    }),
-  );
 
   const selectedRequest =
     selectedId !== null
       ? (requests.find((r) => r.id === selectedId) ?? null)
       : null;
 
-  const MY_AGENT_ID = 2;
+  /* =========================
+     Toggle Handler
+  ========================= */
 
-  const toggleFlag = (id: number) => {
+  const toggleFlag = async (id: number) => {
+    if (!profile?.id) return;
+
+    const request = requests.find((r) => r.id === id);
+    if (!request) return;
+
+    const isCurrentlyMine = request.flagged === profile.id;
+
+    const newHandlerId = isCurrentlyMine ? null : profile.id;
+    const newHandlerName = isCurrentlyMine ? null : profile.full_name;
+
+    const updated = await toggleRequestHandler(id, newHandlerId);
+    if (!updated) return;
+
     setRequests((prev) =>
       prev.map((r) => {
         if (r.id !== id) return r;
-
-        const isCurrentlyMine = r.flagged === MY_AGENT_ID;
-        const newFlag = isCurrentlyMine ? null : MY_AGENT_ID;
 
         let newStatus = r.status;
 
@@ -238,7 +120,8 @@ const RequestContent = ({ search }: { search: string }) => {
 
         return {
           ...r,
-          flagged: newFlag,
+          flagged: newHandlerId,
+          handlerName: newHandlerName,
           status: newStatus,
         };
       }),
@@ -284,11 +167,16 @@ const RequestContent = ({ search }: { search: string }) => {
             Ansøgninger
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "Ansøgninger" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
+            origin-left ${
+              section === "Ansøgninger"
+                ? "scale-x-100"
+                : "scale-x-0 group-hover:scale-x-100"
+            }
+            w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
+
         <div className="row-3 h-full items-center grid group relative">
           <p
             onClick={() => {
@@ -300,11 +188,16 @@ const RequestContent = ({ search }: { search: string }) => {
             Mine Emner
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "MineEmner" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
+            origin-left ${
+              section === "MineEmner"
+                ? "scale-x-100"
+                : "scale-x-0 group-hover:scale-x-100"
+            }
+            w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
+
         <div className="row-4 h-full items-center grid group relative">
           <p
             onClick={() => {
@@ -316,15 +209,19 @@ const RequestContent = ({ search }: { search: string }) => {
             Arkiv
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "Arkiv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
-              w-[170] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
+            origin-left ${
+              section === "Arkiv"
+                ? "scale-x-100"
+                : "scale-x-0 group-hover:scale-x-100"
+            }
+            w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           ></div>
         </div>
       </div>
 
-      {/* Show Individual */}
-      {selectedRequest && section == "person" && (
+      {/* Individual view */}
+      {selectedRequest && section === "person" && (
         <IndividualOverview
           request={selectedRequest}
           setRequests={setRequests}
@@ -333,10 +230,12 @@ const RequestContent = ({ search }: { search: string }) => {
         />
       )}
 
-      {/* Show List */}
+      {/* All requests */}
       {section === "Ansøgninger" && (
         <div
-          className={`grid ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
+          className={`grid ${
+            selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"
+          }`}
         >
           <div className="bg-white grid grid-rows-[120px_1fr]">
             <RequestStatusFilterCopy
@@ -351,6 +250,7 @@ const RequestContent = ({ search }: { search: string }) => {
               toggleFlag={toggleFlag}
             />
           </div>
+
           {selectedRequest && (
             <SideOverviewCopy
               request={selectedRequest}
@@ -362,10 +262,13 @@ const RequestContent = ({ search }: { search: string }) => {
           )}
         </div>
       )}
-      {/* Show List */}
+
+      {/* My requests */}
       {section === "MineEmner" && (
         <div
-          className={`grid transition-all duration-800 ease-in ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
+          className={`grid transition-all duration-800 ease-in ${
+            selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"
+          }`}
         >
           <div className="bg-white grid grid-rows-[120px_1fr]">
             <RequestStatusFilterCopy
@@ -380,6 +283,7 @@ const RequestContent = ({ search }: { search: string }) => {
               toggleFlag={toggleFlag}
             />
           </div>
+
           {selectedRequest && (
             <SideOverviewCopy
               request={selectedRequest}

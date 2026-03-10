@@ -1,6 +1,8 @@
 import type { Request } from "../RequestContent";
 import RequestItem from "./RequestItem";
 
+import { useUser } from "@/app/hooks/useUser";
+
 type Props = {
   search: string;
   requests: Request[];
@@ -16,18 +18,19 @@ const MyRequestList = ({
   selectedId,
   toggleFlag,
 }: Props) => {
+  const { profile } = useUser();
   const statusStyles: Record<Request["status"], { text: string; dot: string }> =
     {
       Godkendt: { text: "text-green-500!", dot: "bg-green-400" },
       Afslået: { text: "text-red-500!", dot: "bg-red-400" },
-      Ubehandlet: { text: "text-blue-500!", dot: "bg-blue-400" },
+      Afventer: { text: "text-blue-500!", dot: "bg-blue-400" },
       Behandles: { text: "text-yellow-500!", dot: "bg-yellow-400" }, // added since your type includes it
     };
 
   const MY_AGENT_ID = 2;
 
   const filteredRequests = requests
-    .filter((request) => request.flagged === MY_AGENT_ID)
+    .filter((request) => request.flagged === profile?.id)
     .filter((request) =>
       Object.values(request).some((value) =>
         value?.toString().toLowerCase().includes(search.toLowerCase()),

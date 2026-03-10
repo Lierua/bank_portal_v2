@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { createClient } from "@/app/components/utilityComponents/supabase/client";
+import { createClient } from "@/app/components/utilityComponents/supabase/server";
 
 /* ============================
    SCHEMA
@@ -51,7 +51,9 @@ export async function submitLogin(
 
   const supabase = createClient();
 
-  const { error } = await supabase.auth.signInWithPassword({
+  const { error } = await (
+    await supabase
+  ).auth.signInWithPassword({
     email: accountMail,
     password,
   });
