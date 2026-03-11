@@ -1,7 +1,7 @@
 "use client";
 
 import SetStatus from "./SetStatus";
-import type { Request } from "../RequestContent";
+import type { Request } from "@/app/types/request";
 import Comments from "../requestOverviewComponents/Comments";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 

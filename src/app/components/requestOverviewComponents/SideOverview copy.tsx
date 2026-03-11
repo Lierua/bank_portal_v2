@@ -1,6 +1,6 @@
 "use client";
 
-import type { Request } from "../RequestContent";
+import type { Request } from "@/app/types/request";
 import { MdInbox } from "react-icons/md";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";

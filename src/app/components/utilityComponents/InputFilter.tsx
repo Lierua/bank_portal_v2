@@ -1,8 +1,11 @@
+import type React from "react";
+
 type InputProps = {
   dataInput: string;
   type: React.InputHTMLAttributes<HTMLInputElement>["type"];
   placeholder?: string;
   defaultValue?: string | number;
+  value?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -11,15 +14,17 @@ const InputFilter = ({
   type,
   placeholder,
   defaultValue,
+  value,
   onChange,
 }: InputProps) => {
   return (
     <input
-      className={`border-3 border-(--black)/20 mt-auto p-2 pl-5 w-full h-[40px] rounded-[6] transition-allborder-(--white)
-      `}
+      data-input={dataInput}
+      className="border-3 border-(--black)/20 mt-auto p-2 pl-5 w-full h-[40px] rounded-[6px] transition-all border-(--white)"
       type={type}
       placeholder={placeholder}
-      defaultValue={defaultValue ?? ""}
+      defaultValue={defaultValue}
+      value={value}
       onChange={onChange}
     />
   );

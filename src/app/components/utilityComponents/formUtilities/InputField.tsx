@@ -23,7 +23,7 @@ const InputField = <T extends ErrorState>({
 
   return (
     <input
-      className={`border-3 mt-auto p-2 pl-5 w-full h-[60px] rounded-2xl transition-all ${
+      className={`border-3 mt-auto p-2 pl-5 w-full h-[60] rounded-2xl transition-all ${
         hasError ? "border-red-400" : "border-(--white)"
       }`}
       type={type}

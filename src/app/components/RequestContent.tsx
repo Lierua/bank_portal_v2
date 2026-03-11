@@ -1,19 +1,22 @@
 "use client";
 
-import { FaRegFileAlt, FaRegFileArchive } from "react-icons/fa";
 import { useState } from "react";
+import { FaRegFileAlt, FaRegFileArchive } from "react-icons/fa";
+import { BsFillPersonLinesFill } from "react-icons/bs";
+import { RiListSettingsLine } from "react-icons/ri";
 
 import RequestList from "./requestOverviewComponents/RequestList";
 import IndividualOverview from "./individualComponents/IndividualOverview";
-import rawRequests from "@/data/dummyRequests.json";
 import SideOverviewCopy from "./requestOverviewComponents/SideOverview copy";
 import RequestStatusFilterCopy from "./requestOverviewComponents/RequestStatusFilter copy";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import MyRequestList from "./requestOverviewComponents/MyRequestList";
-import { RiListSettingsLine } from "react-icons/ri";
+import AffiliationComponent from "./affiliationComponents/AffiliationComponent";
+import AffiliationSetup from "./affiliationComponents/affiliationSetup/AffiliationSetup";
+
+import rawRequests from "@/data/dummyRequests.json";
 
 import type { RawRequest, Request } from "@/app/types/request";
-import AffiliationComponent from "./affiliationComponents/AffiliationComponent";
+import type { Bank, FilialAgent } from "@/app/types/filial";
 
 /* =========================
    Component
@@ -23,6 +26,14 @@ const RequestContent = ({ search }: { search: string }) => {
   const [requestPara, setRequestPara] = useState("Alle");
   const [section, setSection] = useState("Ansøgninger");
   const [selectedId, setSelectedId] = useState<number | null>(null);
+
+  const [banks, setBanks] = useState<Bank[]>([
+    {
+      id: 1,
+      name: "Middelfart",
+      affiliations: [],
+    },
+  ]);
 
   const mapStatus = (status: string): Request["status"] => {
     switch (status) {
@@ -124,6 +135,21 @@ const RequestContent = ({ search }: { search: string }) => {
     );
   };
 
+  const addAffiliation = (agent: FilialAgent) => {
+    setBanks((prev) =>
+      prev.map((bank) =>
+        bank.id === 1
+          ? {
+              ...bank,
+              affiliations: [...bank.affiliations, agent],
+            }
+          : bank,
+      ),
+    );
+
+    console.log("Updated banks:", banks);
+  };
+
   return (
     <div className="body-banner rounded-tl-lg overflow-hidden h-[calc(100dvh-166px)] flex-1 lk-box-shadow">
       {/* Top Menu */}
@@ -170,11 +196,16 @@ const RequestContent = ({ search }: { search: string }) => {
             Ansøgninger
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "Ansøgninger" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
+              origin-left ${
+                section === "Ansøgninger"
+                  ? "scale-x-100"
+                  : "scale-x-0 group-hover:scale-x-100"
+              }
               w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
-          ></div>
+          />
         </div>
+
         <div className="row-3 h-full items-center grid group relative">
           <p
             onClick={() => {
@@ -186,11 +217,16 @@ const RequestContent = ({ search }: { search: string }) => {
             Mine Emner
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "MineEmner" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
+              origin-left ${
+                section === "MineEmner"
+                  ? "scale-x-100"
+                  : "scale-x-0 group-hover:scale-x-100"
+              }
               w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
-          ></div>
+          />
         </div>
+
         <div className="row-4 h-full items-center grid group relative">
           <p
             onClick={() => {
@@ -202,11 +238,16 @@ const RequestContent = ({ search }: { search: string }) => {
             Arkiv
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "Arkiv" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
+              origin-left ${
+                section === "Arkiv"
+                  ? "scale-x-100"
+                  : "scale-x-0 group-hover:scale-x-100"
+              }
               w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
-          ></div>
+          />
         </div>
+
         <div className="row-5 h-full items-center grid group relative">
           <p
             onClick={() => {
@@ -215,18 +256,22 @@ const RequestContent = ({ search }: { search: string }) => {
             }}
             className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
           >
-            Affiliate Sætop
+            Filial Setup
           </p>
           <div
-            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2] 
-              origin-left ${section === "Affiliate" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} 
+            className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
+              origin-left ${
+                section === "Affiliate"
+                  ? "scale-x-100"
+                  : "scale-x-0 group-hover:scale-x-100"
+              }
               w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
-          ></div>
+          />
         </div>
       </div>
 
       {/* Show Individual */}
-      {selectedRequest && section == "person" && (
+      {selectedRequest && section === "person" && (
         <IndividualOverview
           request={selectedRequest}
           setRequests={setRequests}
@@ -235,10 +280,12 @@ const RequestContent = ({ search }: { search: string }) => {
         />
       )}
 
-      {/* Show List */}
+      {/* Ansøgninger */}
       {section === "Ansøgninger" && (
         <div
-          className={`grid ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
+          className={`grid ${
+            selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"
+          }`}
         >
           <div className="bg-white grid grid-rows-[120px_1fr]">
             <RequestStatusFilterCopy
@@ -253,6 +300,7 @@ const RequestContent = ({ search }: { search: string }) => {
               toggleFlag={toggleFlag}
             />
           </div>
+
           {selectedRequest && (
             <SideOverviewCopy
               request={selectedRequest}
@@ -265,9 +313,12 @@ const RequestContent = ({ search }: { search: string }) => {
         </div>
       )}
 
+      {/* Mine Emner */}
       {section === "MineEmner" && (
         <div
-          className={`grid transition-all duration-800 ease-in ${selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"}`}
+          className={`grid transition-all duration-800 ease-in ${
+            selectedRequest ? "grid-cols-[4fr_2fr]" : "grid-cols-[4fr_0fr]"
+          }`}
         >
           <div className="bg-white grid grid-rows-[120px_1fr]">
             <RequestStatusFilterCopy
@@ -282,6 +333,7 @@ const RequestContent = ({ search }: { search: string }) => {
               toggleFlag={toggleFlag}
             />
           </div>
+
           {selectedRequest && (
             <SideOverviewCopy
               request={selectedRequest}
@@ -294,7 +346,18 @@ const RequestContent = ({ search }: { search: string }) => {
         </div>
       )}
 
-      {section === "Affiliate" && <AffiliationComponent />}
+      {/* Filial oversigt */}
+      {section === "Affiliate" && (
+        <AffiliationComponent setSection={setSection} banks={banks} />
+      )}
+
+      {/* Filial setup */}
+      {section === "AffiliationSetup" && (
+        <AffiliationSetup
+          setSection={setSection}
+          addAffiliation={addAffiliation}
+        />
+      )}
     </div>
   );
 };

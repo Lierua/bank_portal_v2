@@ -25,7 +25,7 @@ function SelectFilter({
       <select
         data-input={dataInput}
         defaultValue=""
-        className="h-[40px] rounded-md border border-(--black)/20 px-3"
+        className="h-[40] rounded-md border border-(--black)/20 px-3"
       >
         <option value="" disabled>
           {placeholder}
@@ -91,7 +91,7 @@ function FilterSection({
       <div
         className={`
           transition-all duration-300 overflow-hidden
-          ${open ? "max-h-[1000px] p-4" : "max-h-0 px-4"}
+          ${open ? "max-h-[1000] p-4" : "max-h-0 px-4"}
         `}
       >
         {children}
@@ -122,14 +122,6 @@ export default function ExtraFiltersPanel({ show }: { show: string }) {
             <InputBlock label="Lånebeløb (min)">
               <InputFilter dataInput="loanAmountMin" type="number" />
             </InputBlock>
-
-            {/*             <InputBlock label="Lånebeløb (max)">
-              <InputFilter dataInput="loanAmountMax" type="number" />
-            </InputBlock> */}
-
-            {/*   <InputBlock label="Låneklar Score (min)">
-              <InputFilter dataInput="scoreMin" type="number" />
-            </InputBlock> */}
 
             <SelectFilter
               label="Låneformål"
@@ -165,10 +157,6 @@ export default function ExtraFiltersPanel({ show }: { show: string }) {
             <InputBlock label="Indkomst (min)">
               <InputFilter dataInput="incomeMin" type="number" />
             </InputBlock>
-
-            {/*             <InputBlock label="Indkomst (max)">
-              <InputFilter dataInput="incomeMax" type="number" />
-            </InputBlock> */}
 
             <InputBlock label="Faste udgifter (max)">
               <InputFilter dataInput="fixedExpensesMax" type="number" />

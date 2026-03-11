@@ -24,7 +24,7 @@ export default function NavHeader({ search, setSearch }: Props) {
   };
 
   return (
-    <div className="grid grid-cols-[70px_140px_1fr] h-[70px] items-center">
+    <div className="grid grid-cols-[70px_140px_1fr] h-[70] items-center">
       <div className="h-full bg-(--prime) text-4xl text-white flex items-center justify-center font-bold rounded-tl-lg">
         lk
       </div>
