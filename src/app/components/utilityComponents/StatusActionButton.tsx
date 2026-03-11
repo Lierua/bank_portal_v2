@@ -1,5 +1,5 @@
 "use client";
-import type { Request } from "../RequestContent";
+import type { Request } from "@/app/types/request";
 
 type Props = {
   type: "godkend" | "afslå" | "behandel";

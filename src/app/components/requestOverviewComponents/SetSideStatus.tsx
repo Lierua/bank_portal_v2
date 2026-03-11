@@ -1,7 +1,7 @@
 "use client";
 
 import StatusActionButton from "../utilityComponents/StatusActionButton";
-import type { Request } from "../RequestContent";
+import type { Request } from "@/app/types/request";
 
 type Props = {
   request: Request;

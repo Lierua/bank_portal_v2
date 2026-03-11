@@ -1,4 +1,4 @@
-import type { Request } from "../RequestContent";
+import type { Request } from "@/app/types/request";
 import RequestItem from "./RequestItem";
 
 type Props = {
