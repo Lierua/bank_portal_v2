@@ -1,0 +1,1672 @@
+[
+  {
+    "name": "København",
+    "code": "101",
+    "postcodes": [
+      { "postcode": "1050", "cityName": "København K" },
+      { "postcode": "1051", "cityName": "København K" },
+      { "postcode": "1052", "cityName": "København K" },
+      { "postcode": "1053", "cityName": "København K" },
+      { "postcode": "1054", "cityName": "København K" },
+      { "postcode": "1055", "cityName": "København K" },
+      { "postcode": "1056", "cityName": "København K" },
+      { "postcode": "1057", "cityName": "København K" },
+      { "postcode": "1058", "cityName": "København K" },
+      { "postcode": "1059", "cityName": "København K" },
+      { "postcode": "1061", "cityName": "København K" },
+      { "postcode": "1070", "cityName": "København K" },
+      { "postcode": "1100", "cityName": "København K" },
+      { "postcode": "1200", "cityName": "København K" },
+      { "postcode": "1300", "cityName": "København K" },
+      { "postcode": "1350", "cityName": "København K" },
+      { "postcode": "1400", "cityName": "København K" },
+      { "postcode": "1420", "cityName": "København K" },
+      { "postcode": "1432", "cityName": "København K" },
+      { "postcode": "1433", "cityName": "København K" },
+      { "postcode": "1434", "cityName": "København K" },
+      { "postcode": "1435", "cityName": "København K" },
+      { "postcode": "1440", "cityName": "København K" },
+      { "postcode": "1450", "cityName": "København K" },
+      { "postcode": "1460", "cityName": "København K" },
+      { "postcode": "1470", "cityName": "København K" },
+      { "postcode": "1500", "cityName": "København V" },
+      { "postcode": "1550", "cityName": "København V" },
+      { "postcode": "1560", "cityName": "København V" },
+      { "postcode": "1577", "cityName": "København V" },
+      { "postcode": "1600", "cityName": "København V" },
+      { "postcode": "1610", "cityName": "København V" },
+      { "postcode": "1620", "cityName": "København V" },
+      { "postcode": "1650", "cityName": "København V" },
+      { "postcode": "1660", "cityName": "København V" },
+      { "postcode": "1670", "cityName": "København V" },
+      { "postcode": "1700", "cityName": "København V" },
+      { "postcode": "1720", "cityName": "København V" },
+      { "postcode": "1730", "cityName": "København V" },
+      { "postcode": "1750", "cityName": "København V" },
+      { "postcode": "1760", "cityName": "København V" },
+      { "postcode": "1770", "cityName": "København V" },
+      { "postcode": "1799", "cityName": "København V" },
+      { "postcode": "2000", "cityName": "Frederiksberg" },
+      { "postcode": "2100", "cityName": "København Ø" },
+      { "postcode": "2150", "cityName": "Nordhavn" },
+      { "postcode": "2200", "cityName": "København N" },
+      { "postcode": "2300", "cityName": "København S" },
+      { "postcode": "2400", "cityName": "København NV" },
+      { "postcode": "2450", "cityName": "København SV" },
+      { "postcode": "2500", "cityName": "Valby" },
+      { "postcode": "2610", "cityName": "Rødovre" },
+      { "postcode": "2700", "cityName": "Brønshøj" },
+      { "postcode": "2720", "cityName": "Vanløse" },
+      { "postcode": "2770", "cityName": "Kastrup" },
+      { "postcode": "2860", "cityName": "Søborg" },
+      { "postcode": "2900", "cityName": "Hellerup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Frederiksberg",
+    "code": "147",
+    "postcodes": [
+      { "postcode": "1800", "cityName": "Frederiksberg C" },
+      { "postcode": "1820", "cityName": "Frederiksberg C" },
+      { "postcode": "1850", "cityName": "Frederiksberg C" },
+      { "postcode": "1860", "cityName": "Frederiksberg C" },
+      { "postcode": "1870", "cityName": "Frederiksberg C" },
+      { "postcode": "1900", "cityName": "Frederiksberg C" },
+      { "postcode": "1920", "cityName": "Frederiksberg C" },
+      { "postcode": "1950", "cityName": "Frederiksberg C" },
+      { "postcode": "1960", "cityName": "Frederiksberg C" },
+      { "postcode": "1970", "cityName": "Frederiksberg C" },
+      { "postcode": "2000", "cityName": "Frederiksberg" },
+      { "postcode": "2200", "cityName": "København N" },
+      { "postcode": "2720", "cityName": "Vanløse" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Ballerup",
+    "code": "151",
+    "postcodes": [
+      { "postcode": "2730", "cityName": "Herlev" },
+      { "postcode": "2740", "cityName": "Skovlunde" },
+      { "postcode": "2750", "cityName": "Ballerup" },
+      { "postcode": "2760", "cityName": "Måløv" },
+      { "postcode": "3500", "cityName": "Værløse" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Brøndby",
+    "code": "153",
+    "postcodes": [
+      { "postcode": "2605", "cityName": "Brøndby" },
+      { "postcode": "2650", "cityName": "Hvidovre" },
+      { "postcode": "2660", "cityName": "Brøndby Strand" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Dragør",
+    "code": "155",
+    "postcodes": [
+      { "postcode": "2791", "cityName": "Dragør" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Gentofte",
+    "code": "157",
+    "postcodes": [
+      { "postcode": "2800", "cityName": "Kgs. Lyngby" },
+      { "postcode": "2820", "cityName": "Gentofte" },
+      { "postcode": "2870", "cityName": "Dyssegård" },
+      { "postcode": "2900", "cityName": "Hellerup" },
+      { "postcode": "2920", "cityName": "Charlottenlund" },
+      { "postcode": "2930", "cityName": "Klampenborg" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Gladsaxe",
+    "code": "159",
+    "postcodes": [
+      { "postcode": "2730", "cityName": "Herlev" },
+      { "postcode": "2800", "cityName": "Kgs. Lyngby" },
+      { "postcode": "2820", "cityName": "Gentofte" },
+      { "postcode": "2860", "cityName": "Søborg" },
+      { "postcode": "2880", "cityName": "Bagsværd" },
+      { "postcode": "3500", "cityName": "Værløse" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Glostrup",
+    "code": "161",
+    "postcodes": [
+      { "postcode": "2600", "cityName": "Glostrup" },
+      { "postcode": "2605", "cityName": "Brøndby" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Herlev",
+    "code": "163",
+    "postcodes": [
+      { "postcode": "2730", "cityName": "Herlev" },
+      { "postcode": "2740", "cityName": "Skovlunde" },
+      { "postcode": "2880", "cityName": "Bagsværd" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Albertslund",
+    "code": "165",
+    "postcodes": [
+      { "postcode": "2600", "cityName": "Glostrup" },
+      { "postcode": "2620", "cityName": "Albertslund" },
+      { "postcode": "2750", "cityName": "Ballerup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Hvidovre",
+    "code": "167",
+    "postcodes": [
+      { "postcode": "2610", "cityName": "Rødovre" },
+      { "postcode": "2650", "cityName": "Hvidovre" },
+      { "postcode": "2660", "cityName": "Brøndby Strand" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Høje-Taastrup",
+    "code": "169",
+    "postcodes": [
+      { "postcode": "2630", "cityName": "Taastrup" },
+      { "postcode": "2640", "cityName": "Hedehusene" },
+      { "postcode": "4000", "cityName": "Roskilde" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Lyngby-Taarbæk",
+    "code": "173",
+    "postcodes": [
+      { "postcode": "2800", "cityName": "Kgs. Lyngby" },
+      { "postcode": "2830", "cityName": "Virum" },
+      { "postcode": "2840", "cityName": "Holte" },
+      { "postcode": "2930", "cityName": "Klampenborg" },
+      { "postcode": "3500", "cityName": "Værløse" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Rødovre",
+    "code": "175",
+    "postcodes": [
+      { "postcode": "2610", "cityName": "Rødovre" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Ishøj",
+    "code": "183",
+    "postcodes": [
+      { "postcode": "2635", "cityName": "Ishøj" },
+      { "postcode": "2640", "cityName": "Hedehusene" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Tårnby",
+    "code": "185",
+    "postcodes": [
+      { "postcode": "2300", "cityName": "København S" },
+      { "postcode": "2770", "cityName": "Kastrup" },
+      { "postcode": "2791", "cityName": "Dragør" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Vallensbæk",
+    "code": "187",
+    "postcodes": [
+      { "postcode": "2625", "cityName": "Vallensbæk" },
+      { "postcode": "2665", "cityName": "Vallensbæk Strand" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Furesø",
+    "code": "190",
+    "postcodes": [
+      { "postcode": "2880", "cityName": "Bagsværd" },
+      { "postcode": "3460", "cityName": "Birkerød" },
+      { "postcode": "3500", "cityName": "Værløse" },
+      { "postcode": "3520", "cityName": "Farum" },
+      { "postcode": "3540", "cityName": "Lynge" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Allerød",
+    "code": "201",
+    "postcodes": [
+      { "postcode": "3400", "cityName": "Hillerød" },
+      { "postcode": "3450", "cityName": "Allerød" },
+      { "postcode": "3460", "cityName": "Birkerød" },
+      { "postcode": "3520", "cityName": "Farum" },
+      { "postcode": "3540", "cityName": "Lynge" },
+      { "postcode": "3550", "cityName": "Slangerup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Fredensborg",
+    "code": "210",
+    "postcodes": [
+      { "postcode": "2970", "cityName": "Hørsholm" },
+      { "postcode": "2980", "cityName": "Kokkedal" },
+      { "postcode": "2990", "cityName": "Nivå" },
+      { "postcode": "3050", "cityName": "Humlebæk" },
+      { "postcode": "3060", "cityName": "Espergærde" },
+      { "postcode": "3400", "cityName": "Hillerød" },
+      { "postcode": "3450", "cityName": "Allerød" },
+      { "postcode": "3480", "cityName": "Fredensborg" },
+      { "postcode": "3490", "cityName": "Kvistgård" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Helsingør",
+    "code": "217",
+    "postcodes": [
+      { "postcode": "3000", "cityName": "Helsingør" },
+      { "postcode": "3050", "cityName": "Humlebæk" },
+      { "postcode": "3060", "cityName": "Espergærde" },
+      { "postcode": "3070", "cityName": "Snekkersten" },
+      { "postcode": "3080", "cityName": "Tikøb" },
+      { "postcode": "3100", "cityName": "Hornbæk" },
+      { "postcode": "3140", "cityName": "Ålsgårde" },
+      { "postcode": "3150", "cityName": "Hellebæk" },
+      { "postcode": "3230", "cityName": "Græsted" },
+      { "postcode": "3480", "cityName": "Fredensborg" },
+      { "postcode": "3490", "cityName": "Kvistgård" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Hillerød",
+    "code": "219",
+    "postcodes": [
+      { "postcode": "3200", "cityName": "Helsinge" },
+      { "postcode": "3230", "cityName": "Græsted" },
+      { "postcode": "3310", "cityName": "Ølsted" },
+      { "postcode": "3320", "cityName": "Skævinge" },
+      { "postcode": "3330", "cityName": "Gørløse" },
+      { "postcode": "3400", "cityName": "Hillerød" },
+      { "postcode": "3450", "cityName": "Allerød" },
+      { "postcode": "3480", "cityName": "Fredensborg" },
+      { "postcode": "3540", "cityName": "Lynge" },
+      { "postcode": "3550", "cityName": "Slangerup" },
+      { "postcode": "3600", "cityName": "Frederikssund" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Hørsholm",
+    "code": "223",
+    "postcodes": [
+      { "postcode": "2950", "cityName": "Vedbæk" },
+      { "postcode": "2960", "cityName": "Rungsted Kyst" },
+      { "postcode": "2970", "cityName": "Hørsholm" },
+      { "postcode": "2980", "cityName": "Kokkedal" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Rudersdal",
+    "code": "230",
+    "postcodes": [
+      { "postcode": "2800", "cityName": "Kgs. Lyngby" },
+      { "postcode": "2830", "cityName": "Virum" },
+      { "postcode": "2840", "cityName": "Holte" },
+      { "postcode": "2850", "cityName": "Nærum" },
+      { "postcode": "2942", "cityName": "Skodsborg" },
+      { "postcode": "2950", "cityName": "Vedbæk" },
+      { "postcode": "2970", "cityName": "Hørsholm" },
+      { "postcode": "3460", "cityName": "Birkerød" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Egedal",
+    "code": "240",
+    "postcodes": [
+      { "postcode": "2750", "cityName": "Ballerup" },
+      { "postcode": "2765", "cityName": "Smørum" },
+      { "postcode": "3500", "cityName": "Værløse" },
+      { "postcode": "3520", "cityName": "Farum" },
+      { "postcode": "3540", "cityName": "Lynge" },
+      { "postcode": "3550", "cityName": "Slangerup" },
+      { "postcode": "3650", "cityName": "Ølstykke" },
+      { "postcode": "3660", "cityName": "Stenløse" },
+      { "postcode": "3670", "cityName": "Veksø Sjælland" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Frederikssund",
+    "code": "250",
+    "postcodes": [
+      { "postcode": "3550", "cityName": "Slangerup" },
+      { "postcode": "3600", "cityName": "Frederikssund" },
+      { "postcode": "3630", "cityName": "Jægerspris" },
+      { "postcode": "3650", "cityName": "Ølstykke" },
+      { "postcode": "4050", "cityName": "Skibby" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Greve",
+    "code": "253",
+    "postcodes": [
+      { "postcode": "2640", "cityName": "Hedehusene" },
+      { "postcode": "2670", "cityName": "Greve" },
+      { "postcode": "2690", "cityName": "Karlslunde" },
+      { "postcode": "4000", "cityName": "Roskilde" },
+      { "postcode": "4030", "cityName": "Tune" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Køge",
+    "code": "259",
+    "postcodes": [
+      { "postcode": "4000", "cityName": "Roskilde" },
+      { "postcode": "4100", "cityName": "Ringsted" },
+      { "postcode": "4130", "cityName": "Viby Sjælland" },
+      { "postcode": "4140", "cityName": "Borup" },
+      { "postcode": "4174", "cityName": "Jystrup Midtsj" },
+      { "postcode": "4320", "cityName": "Lejre" },
+      { "postcode": "4600", "cityName": "Køge" },
+      { "postcode": "4623", "cityName": "Lille Skensved" },
+      { "postcode": "4632", "cityName": "Bjæverskov" },
+      { "postcode": "4681", "cityName": "Herfølge" },
+      { "postcode": "4682", "cityName": "Tureby" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Halsnæs",
+    "code": "260",
+    "postcodes": [
+      { "postcode": "3300", "cityName": "Frederiksværk" },
+      { "postcode": "3310", "cityName": "Ølsted" },
+      { "postcode": "3320", "cityName": "Skævinge" },
+      { "postcode": "3360", "cityName": "Liseleje" },
+      { "postcode": "3370", "cityName": "Melby" },
+      { "postcode": "3390", "cityName": "Hundested" },
+      { "postcode": "3600", "cityName": "Frederikssund" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Roskilde",
+    "code": "265",
+    "postcodes": [
+      { "postcode": "2640", "cityName": "Hedehusene" },
+      { "postcode": "3670", "cityName": "Veksø Sjælland" },
+      { "postcode": "4000", "cityName": "Roskilde" },
+      { "postcode": "4030", "cityName": "Tune" },
+      { "postcode": "4040", "cityName": "Jyllinge" },
+      { "postcode": "4130", "cityName": "Viby Sjælland" },
+      { "postcode": "4140", "cityName": "Borup" },
+      { "postcode": "4320", "cityName": "Lejre" },
+      { "postcode": "4621", "cityName": "Gadstrup" },
+      { "postcode": "4622", "cityName": "Havdrup" },
+      { "postcode": "4623", "cityName": "Lille Skensved" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Solrød",
+    "code": "269",
+    "postcodes": [
+      { "postcode": "2680", "cityName": "Solrød Strand" },
+      { "postcode": "2690", "cityName": "Karlslunde" },
+      { "postcode": "4622", "cityName": "Havdrup" },
+      { "postcode": "4623", "cityName": "Lille Skensved" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Gribskov",
+    "code": "270",
+    "postcodes": [
+      { "postcode": "3100", "cityName": "Hornbæk" },
+      { "postcode": "3120", "cityName": "Dronningmølle" },
+      { "postcode": "3200", "cityName": "Helsinge" },
+      { "postcode": "3210", "cityName": "Vejby" },
+      { "postcode": "3220", "cityName": "Tisvildeleje" },
+      { "postcode": "3230", "cityName": "Græsted" },
+      { "postcode": "3250", "cityName": "Gilleleje" },
+      { "postcode": "3300", "cityName": "Frederiksværk" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Odsherred",
+    "code": "306",
+    "postcodes": [
+      { "postcode": "4500", "cityName": "Nykøbing Sj" },
+      { "postcode": "4534", "cityName": "Hørve" },
+      { "postcode": "4540", "cityName": "Fårevejle" },
+      { "postcode": "4550", "cityName": "Asnæs" },
+      { "postcode": "4560", "cityName": "Vig" },
+      { "postcode": "4571", "cityName": "Grevinge" },
+      { "postcode": "4572", "cityName": "Nørre Asmindrup" },
+      { "postcode": "4573", "cityName": "Højby" },
+      { "postcode": "4581", "cityName": "Rørvig" },
+      { "postcode": "4583", "cityName": "Sjællands Odde" },
+      { "postcode": "4591", "cityName": "Føllenslev" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Holbæk",
+    "code": "316",
+    "postcodes": [
+      { "postcode": "4100", "cityName": "Ringsted" },
+      { "postcode": "4295", "cityName": "Stenlille" },
+      { "postcode": "4296", "cityName": "Nyrup" },
+      { "postcode": "4300", "cityName": "Holbæk" },
+      { "postcode": "4305", "cityName": "Orø" },
+      { "postcode": "4330", "cityName": "Hvalsø" },
+      { "postcode": "4340", "cityName": "Tølløse" },
+      { "postcode": "4350", "cityName": "Ugerløse" },
+      { "postcode": "4360", "cityName": "Kirke Eskilstrup" },
+      { "postcode": "4370", "cityName": "Store Merløse" },
+      { "postcode": "4390", "cityName": "Vipperød" },
+      { "postcode": "4420", "cityName": "Regstrup" },
+      { "postcode": "4440", "cityName": "Mørkøv" },
+      { "postcode": "4450", "cityName": "Jyderup" },
+      { "postcode": "4460", "cityName": "Snertinge" },
+      { "postcode": "4470", "cityName": "Svebølle" },
+      { "postcode": "4520", "cityName": "Svinninge" },
+      { "postcode": "4532", "cityName": "Gislinge" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Faxe",
+    "code": "320",
+    "postcodes": [
+      { "postcode": "4100", "cityName": "Ringsted" },
+      { "postcode": "4160", "cityName": "Herlufmagle" },
+      { "postcode": "4640", "cityName": "Faxe" },
+      { "postcode": "4652", "cityName": "Hårlev" },
+      { "postcode": "4653", "cityName": "Karise" },
+      { "postcode": "4654", "cityName": "Faxe Ladeplads" },
+      { "postcode": "4682", "cityName": "Tureby" },
+      { "postcode": "4683", "cityName": "Rønnede" },
+      { "postcode": "4684", "cityName": "Holmegaard" },
+      { "postcode": "4690", "cityName": "Haslev" },
+      { "postcode": "4733", "cityName": "Tappernøje" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Kalundborg",
+    "code": "326",
+    "postcodes": [
+      { "postcode": "4200", "cityName": "Slagelse" },
+      { "postcode": "4270", "cityName": "Høng" },
+      { "postcode": "4281", "cityName": "Gørlev" },
+      { "postcode": "4291", "cityName": "Ruds Vedby" },
+      { "postcode": "4293", "cityName": "Dianalund" },
+      { "postcode": "4400", "cityName": "Kalundborg" },
+      { "postcode": "4450", "cityName": "Jyderup" },
+      { "postcode": "4460", "cityName": "Snertinge" },
+      { "postcode": "4470", "cityName": "Svebølle" },
+      { "postcode": "4480", "cityName": "Store Fuglede" },
+      { "postcode": "4490", "cityName": "Jerslev Sjælland" },
+      { "postcode": "4534", "cityName": "Hørve" },
+      { "postcode": "4591", "cityName": "Føllenslev" },
+      { "postcode": "4592", "cityName": "Sejerø" },
+      { "postcode": "4593", "cityName": "Eskebjerg" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Ringsted",
+    "code": "329",
+    "postcodes": [
+      { "postcode": "4100", "cityName": "Ringsted" },
+      { "postcode": "4140", "cityName": "Borup" },
+      { "postcode": "4173", "cityName": "Fjenneslev" },
+      { "postcode": "4174", "cityName": "Jystrup Midtsj" },
+      { "postcode": "4180", "cityName": "Sorø" },
+      { "postcode": "4330", "cityName": "Hvalsø" },
+      { "postcode": "4360", "cityName": "Kirke Eskilstrup" },
+      { "postcode": "4370", "cityName": "Store Merløse" },
+      { "postcode": "4690", "cityName": "Haslev" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Slagelse",
+    "code": "330",
+    "postcodes": [
+      { "postcode": "4180", "cityName": "Sorø" },
+      { "postcode": "4190", "cityName": "Munke Bjergby" },
+      { "postcode": "4200", "cityName": "Slagelse" },
+      { "postcode": "4220", "cityName": "Korsør" },
+      { "postcode": "4230", "cityName": "Skælskør" },
+      { "postcode": "4241", "cityName": "Vemmelev" },
+      { "postcode": "4242", "cityName": "Boeslunde" },
+      { "postcode": "4243", "cityName": "Rude" },
+      { "postcode": "4244", "cityName": "Agersø" },
+      { "postcode": "4245", "cityName": "Omø" },
+      { "postcode": "4250", "cityName": "Fuglebjerg" },
+      { "postcode": "4261", "cityName": "Dalmose" },
+      { "postcode": "4262", "cityName": "Sandved" },
+      { "postcode": "4270", "cityName": "Høng" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Stevns",
+    "code": "336",
+    "postcodes": [
+      { "postcode": "4600", "cityName": "Køge" },
+      { "postcode": "4652", "cityName": "Hårlev" },
+      { "postcode": "4653", "cityName": "Karise" },
+      { "postcode": "4660", "cityName": "Store Heddinge" },
+      { "postcode": "4671", "cityName": "Strøby" },
+      { "postcode": "4672", "cityName": "Klippinge" },
+      { "postcode": "4673", "cityName": "Rødvig Stevns" },
+      { "postcode": "4682", "cityName": "Tureby" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Sorø",
+    "code": "340",
+    "postcodes": [
+      { "postcode": "4100", "cityName": "Ringsted" },
+      { "postcode": "4173", "cityName": "Fjenneslev" },
+      { "postcode": "4180", "cityName": "Sorø" },
+      { "postcode": "4190", "cityName": "Munke Bjergby" },
+      { "postcode": "4200", "cityName": "Slagelse" },
+      { "postcode": "4291", "cityName": "Ruds Vedby" },
+      { "postcode": "4293", "cityName": "Dianalund" },
+      { "postcode": "4295", "cityName": "Stenlille" },
+      { "postcode": "4296", "cityName": "Nyrup" },
+      { "postcode": "4370", "cityName": "Store Merløse" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Lejre",
+    "code": "350",
+    "postcodes": [
+      { "postcode": "4000", "cityName": "Roskilde" },
+      { "postcode": "4060", "cityName": "Kirke Såby" },
+      { "postcode": "4070", "cityName": "Kirke Hyllinge" },
+      { "postcode": "4140", "cityName": "Borup" },
+      { "postcode": "4320", "cityName": "Lejre" },
+      { "postcode": "4330", "cityName": "Hvalsø" },
+      { "postcode": "4340", "cityName": "Tølløse" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Lolland",
+    "code": "360",
+    "postcodes": [
+      { "postcode": "4894", "cityName": "Øster Ulslev" },
+      { "postcode": "4895", "cityName": "Errindlev" },
+      { "postcode": "4900", "cityName": "Nakskov" },
+      { "postcode": "4912", "cityName": "Harpelunde" },
+      { "postcode": "4913", "cityName": "Horslunde" },
+      { "postcode": "4920", "cityName": "Søllested" },
+      { "postcode": "4930", "cityName": "Maribo" },
+      { "postcode": "4941", "cityName": "Bandholm" },
+      { "postcode": "4942", "cityName": "Askø" },
+      { "postcode": "4943", "cityName": "Torrig L" },
+      { "postcode": "4944", "cityName": "Fejø" },
+      { "postcode": "4945", "cityName": "Femø" },
+      { "postcode": "4951", "cityName": "Nørreballe" },
+      { "postcode": "4952", "cityName": "Stokkemarke" },
+      { "postcode": "4953", "cityName": "Vesterborg" },
+      { "postcode": "4960", "cityName": "Holeby" },
+      { "postcode": "4970", "cityName": "Rødby" },
+      { "postcode": "4983", "cityName": "Dannemare" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Næstved",
+    "code": "370",
+    "postcodes": [
+      { "postcode": "4100", "cityName": "Ringsted" },
+      { "postcode": "4160", "cityName": "Herlufmagle" },
+      { "postcode": "4171", "cityName": "Glumsø" },
+      { "postcode": "4200", "cityName": "Slagelse" },
+      { "postcode": "4243", "cityName": "Rude" },
+      { "postcode": "4250", "cityName": "Fuglebjerg" },
+      { "postcode": "4261", "cityName": "Dalmose" },
+      { "postcode": "4262", "cityName": "Sandved" },
+      { "postcode": "4640", "cityName": "Faxe" },
+      { "postcode": "4683", "cityName": "Rønnede" },
+      { "postcode": "4684", "cityName": "Holmegaard" },
+      { "postcode": "4690", "cityName": "Haslev" },
+      { "postcode": "4700", "cityName": "Næstved" },
+      { "postcode": "4733", "cityName": "Tappernøje" },
+      { "postcode": "4736", "cityName": "Karrebæksminde" },
+      { "postcode": "4750", "cityName": "Lundby" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Guldborgsund",
+    "code": "376",
+    "postcodes": [
+      { "postcode": "4800", "cityName": "Nykøbing F" },
+      { "postcode": "4840", "cityName": "Nørre Alslev" },
+      { "postcode": "4850", "cityName": "Stubbekøbing" },
+      { "postcode": "4862", "cityName": "Guldborg" },
+      { "postcode": "4863", "cityName": "Eskilstrup" },
+      { "postcode": "4871", "cityName": "Horbelev" },
+      { "postcode": "4872", "cityName": "Idestrup" },
+      { "postcode": "4873", "cityName": "Væggerløse" },
+      { "postcode": "4874", "cityName": "Gedser" },
+      { "postcode": "4880", "cityName": "Nysted" },
+      { "postcode": "4891", "cityName": "Toreby L" },
+      { "postcode": "4892", "cityName": "Kettinge" },
+      { "postcode": "4894", "cityName": "Øster Ulslev" },
+      { "postcode": "4930", "cityName": "Maribo" },
+      { "postcode": "4990", "cityName": "Sakskøbing" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Vordingborg",
+    "code": "390",
+    "postcodes": [
+      { "postcode": "4720", "cityName": "Præstø" },
+      { "postcode": "4733", "cityName": "Tappernøje" },
+      { "postcode": "4735", "cityName": "Mern" },
+      { "postcode": "4750", "cityName": "Lundby" },
+      { "postcode": "4760", "cityName": "Vordingborg" },
+      { "postcode": "4771", "cityName": "Kalvehave" },
+      { "postcode": "4772", "cityName": "Langebæk" },
+      { "postcode": "4773", "cityName": "Stensved" },
+      { "postcode": "4780", "cityName": "Stege" },
+      { "postcode": "4791", "cityName": "Borre" },
+      { "postcode": "4792", "cityName": "Askeby" },
+      { "postcode": "4793", "cityName": "Bogø By" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Bornholm",
+    "code": "400",
+    "postcodes": [
+      { "postcode": "3700", "cityName": "Rønne" },
+      { "postcode": "3720", "cityName": "Aakirkeby" },
+      { "postcode": "3730", "cityName": "Nexø" },
+      { "postcode": "3740", "cityName": "Svaneke" },
+      { "postcode": "3751", "cityName": "Østermarie" },
+      { "postcode": "3760", "cityName": "Gudhjem" },
+      { "postcode": "3770", "cityName": "Allinge" },
+      { "postcode": "3782", "cityName": "Klemensker" },
+      { "postcode": "3790", "cityName": "Hasle" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Middelfart",
+    "code": "410",
+    "postcodes": [
+      { "postcode": "5463", "cityName": "Harndrup" },
+      { "postcode": "5464", "cityName": "Brenderup Fyn" },
+      { "postcode": "5466", "cityName": "Asperup" },
+      { "postcode": "5500", "cityName": "Middelfart" },
+      { "postcode": "5560", "cityName": "Aarup" },
+      { "postcode": "5580", "cityName": "Nørre Aaby" },
+      { "postcode": "5591", "cityName": "Gelsted" },
+      { "postcode": "5592", "cityName": "Ejby" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Christiansø",
+    "code": "411",
+    "postcodes": [
+      { "postcode": "3760", "cityName": "Gudhjem" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Assens",
+    "code": "420",
+    "postcodes": [
+      { "postcode": "5492", "cityName": "Vissenbjerg" },
+      { "postcode": "5560", "cityName": "Aarup" },
+      { "postcode": "5610", "cityName": "Assens" },
+      { "postcode": "5620", "cityName": "Glamsbjerg" },
+      { "postcode": "5631", "cityName": "Ebberup" },
+      { "postcode": "5642", "cityName": "Millinge" },
+      { "postcode": "5683", "cityName": "Haarby" },
+      { "postcode": "5690", "cityName": "Tommerup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Faaborg-Midtfyn",
+    "code": "430",
+    "postcodes": [
+      { "postcode": "5550", "cityName": "Langeskov" },
+      { "postcode": "5600", "cityName": "Faaborg" },
+      { "postcode": "5601", "cityName": "Lyø" },
+      { "postcode": "5602", "cityName": "Avernakø" },
+      { "postcode": "5603", "cityName": "Bjørnø" },
+      { "postcode": "5642", "cityName": "Millinge" },
+      { "postcode": "5672", "cityName": "Broby" },
+      { "postcode": "5750", "cityName": "Ringe" },
+      { "postcode": "5762", "cityName": "Vester Skerninge" },
+      { "postcode": "5771", "cityName": "Stenstrup" },
+      { "postcode": "5772", "cityName": "Kværndrup" },
+      { "postcode": "5792", "cityName": "Årslev" },
+      { "postcode": "5853", "cityName": "Ørbæk" },
+      { "postcode": "5854", "cityName": "Gislev" },
+      { "postcode": "5856", "cityName": "Ryslinge" },
+      { "postcode": "5863", "cityName": "Ferritslev Fyn" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Kerteminde",
+    "code": "440",
+    "postcodes": [
+      { "postcode": "5290", "cityName": "Marslev" },
+      { "postcode": "5300", "cityName": "Kerteminde" },
+      { "postcode": "5330", "cityName": "Munkebo" },
+      { "postcode": "5350", "cityName": "Rynkeby" },
+      { "postcode": "5370", "cityName": "Mesinge" },
+      { "postcode": "5380", "cityName": "Dalby" },
+      { "postcode": "5390", "cityName": "Martofte" },
+      { "postcode": "5540", "cityName": "Ullerslev" },
+      { "postcode": "5550", "cityName": "Langeskov" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Nyborg",
+    "code": "450",
+    "postcodes": [
+      { "postcode": "5540", "cityName": "Ullerslev" },
+      { "postcode": "5550", "cityName": "Langeskov" },
+      { "postcode": "5800", "cityName": "Nyborg" },
+      { "postcode": "5853", "cityName": "Ørbæk" },
+      { "postcode": "5871", "cityName": "Frørup" },
+      { "postcode": "5874", "cityName": "Hesselager" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Odense",
+    "code": "461",
+    "postcodes": [
+      { "postcode": "5000", "cityName": "Odense C" },
+      { "postcode": "5200", "cityName": "Odense V" },
+      { "postcode": "5210", "cityName": "Odense NV" },
+      { "postcode": "5220", "cityName": "Odense SØ" },
+      { "postcode": "5230", "cityName": "Odense M" },
+      { "postcode": "5240", "cityName": "Odense NØ" },
+      { "postcode": "5250", "cityName": "Odense SV" },
+      { "postcode": "5260", "cityName": "Odense S" },
+      { "postcode": "5270", "cityName": "Odense N" },
+      { "postcode": "5320", "cityName": "Agedrup" },
+      { "postcode": "5330", "cityName": "Munkebo" },
+      { "postcode": "5491", "cityName": "Blommenslyst" },
+      { "postcode": "5492", "cityName": "Vissenbjerg" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Svendborg",
+    "code": "479",
+    "postcodes": [
+      { "postcode": "5700", "cityName": "Svendborg" },
+      { "postcode": "5762", "cityName": "Vester Skerninge" },
+      { "postcode": "5771", "cityName": "Stenstrup" },
+      { "postcode": "5772", "cityName": "Kværndrup" },
+      { "postcode": "5874", "cityName": "Hesselager" },
+      { "postcode": "5881", "cityName": "Skårup Fyn" },
+      { "postcode": "5882", "cityName": "Vejstrup" },
+      { "postcode": "5883", "cityName": "Oure" },
+      { "postcode": "5884", "cityName": "Gudme" },
+      { "postcode": "5892", "cityName": "Gudbjerg Sydfyn" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Nordfyns",
+    "code": "480",
+    "postcodes": [
+      { "postcode": "5270", "cityName": "Odense N" },
+      { "postcode": "5400", "cityName": "Bogense" },
+      { "postcode": "5450", "cityName": "Otterup" },
+      { "postcode": "5462", "cityName": "Morud" },
+      { "postcode": "5471", "cityName": "Søndersø" },
+      { "postcode": "5474", "cityName": "Veflinge" },
+      { "postcode": "5485", "cityName": "Skamby" },
+      { "postcode": "5491", "cityName": "Blommenslyst" },
+      { "postcode": "5492", "cityName": "Vissenbjerg" },
+      { "postcode": "5560", "cityName": "Aarup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Langeland",
+    "code": "482",
+    "postcodes": [
+      { "postcode": "5900", "cityName": "Rudkøbing" },
+      { "postcode": "5932", "cityName": "Humble" },
+      { "postcode": "5935", "cityName": "Bagenkop" },
+      { "postcode": "5943", "cityName": "Strynø" },
+      { "postcode": "5953", "cityName": "Tranekær" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Ærø",
+    "code": "492",
+    "postcodes": [
+      { "postcode": "5960", "cityName": "Marstal" },
+      { "postcode": "5965", "cityName": "Birkholm" },
+      { "postcode": "5970", "cityName": "Ærøskøbing" },
+      { "postcode": "5985", "cityName": "Søby Ærø" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Haderslev",
+    "code": "510",
+    "postcodes": [
+      { "postcode": "6070", "cityName": "Christiansfeld" },
+      { "postcode": "6094", "cityName": "Hejls" },
+      { "postcode": "6100", "cityName": "Haderslev" },
+      { "postcode": "6500", "cityName": "Vojens" },
+      { "postcode": "6510", "cityName": "Gram" },
+      { "postcode": "6520", "cityName": "Toftlund" },
+      { "postcode": "6534", "cityName": "Agerskov" },
+      { "postcode": "6541", "cityName": "Bevtoft" },
+      { "postcode": "6560", "cityName": "Sommersted" },
+      { "postcode": "6630", "cityName": "Rødding" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Billund",
+    "code": "530",
+    "postcodes": [
+      { "postcode": "6623", "cityName": "Vorbasse" },
+      { "postcode": "6823", "cityName": "Ansager" },
+      { "postcode": "7190", "cityName": "Billund" },
+      { "postcode": "7200", "cityName": "Grindsted" },
+      { "postcode": "7250", "cityName": "Hejnsvig" },
+      { "postcode": "7260", "cityName": "Sønder Omme" },
+      { "postcode": "7270", "cityName": "Stakroge" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Sønderborg",
+    "code": "540",
+    "postcodes": [
+      { "postcode": "6300", "cityName": "Gråsten" },
+      { "postcode": "6310", "cityName": "Broager" },
+      { "postcode": "6320", "cityName": "Egernsund" },
+      { "postcode": "6400", "cityName": "Sønderborg" },
+      { "postcode": "6430", "cityName": "Nordborg" },
+      { "postcode": "6440", "cityName": "Augustenborg" },
+      { "postcode": "6470", "cityName": "Sydals" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Tønder",
+    "code": "550",
+    "postcodes": [
+      { "postcode": "6240", "cityName": "Løgumkloster" },
+      { "postcode": "6261", "cityName": "Bredebro" },
+      { "postcode": "6270", "cityName": "Tønder" },
+      { "postcode": "6280", "cityName": "Højer" },
+      { "postcode": "6520", "cityName": "Toftlund" },
+      { "postcode": "6534", "cityName": "Agerskov" },
+      { "postcode": "6535", "cityName": "Branderup J" },
+      { "postcode": "6541", "cityName": "Bevtoft" },
+      { "postcode": "6780", "cityName": "Skærbæk" },
+      { "postcode": "6792", "cityName": "Rømø" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Esbjerg",
+    "code": "561",
+    "postcodes": [
+      { "postcode": "6510", "cityName": "Gram" },
+      { "postcode": "6670", "cityName": "Holsted" },
+      { "postcode": "6683", "cityName": "Føvling" },
+      { "postcode": "6690", "cityName": "Gørding" },
+      { "postcode": "6700", "cityName": "Esbjerg" },
+      { "postcode": "6705", "cityName": "Esbjerg Ø" },
+      { "postcode": "6710", "cityName": "Esbjerg V" },
+      { "postcode": "6715", "cityName": "Esbjerg N" },
+      { "postcode": "6731", "cityName": "Tjæreborg" },
+      { "postcode": "6740", "cityName": "Bramming" },
+      { "postcode": "6760", "cityName": "Ribe" },
+      { "postcode": "6771", "cityName": "Gredstedbro" },
+      { "postcode": "6818", "cityName": "Årre" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Fanø",
+    "code": "563",
+    "postcodes": [
+      { "postcode": "6720", "cityName": "Fanø" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Varde",
+    "code": "573",
+    "postcodes": [
+      { "postcode": "6682", "cityName": "Hovborg" },
+      { "postcode": "6753", "cityName": "Agerbæk" },
+      { "postcode": "6800", "cityName": "Varde" },
+      { "postcode": "6818", "cityName": "Årre" },
+      { "postcode": "6823", "cityName": "Ansager" },
+      { "postcode": "6830", "cityName": "Nørre Nebel" },
+      { "postcode": "6840", "cityName": "Oksbøl" },
+      { "postcode": "6851", "cityName": "Janderup Vestj" },
+      { "postcode": "6852", "cityName": "Billum" },
+      { "postcode": "6853", "cityName": "Vejers Strand" },
+      { "postcode": "6854", "cityName": "Henne" },
+      { "postcode": "6855", "cityName": "Outrup" },
+      { "postcode": "6857", "cityName": "Blåvand" },
+      { "postcode": "6862", "cityName": "Tistrup" },
+      { "postcode": "6870", "cityName": "Ølgod" },
+      { "postcode": "6880", "cityName": "Tarm" },
+      { "postcode": "7200", "cityName": "Grindsted" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Vejen",
+    "code": "575",
+    "postcodes": [
+      { "postcode": "6510", "cityName": "Gram" },
+      { "postcode": "6600", "cityName": "Vejen" },
+      { "postcode": "6621", "cityName": "Gesten" },
+      { "postcode": "6622", "cityName": "Bække" },
+      { "postcode": "6623", "cityName": "Vorbasse" },
+      { "postcode": "6630", "cityName": "Rødding" },
+      { "postcode": "6650", "cityName": "Brørup" },
+      { "postcode": "6660", "cityName": "Lintrup" },
+      { "postcode": "6670", "cityName": "Holsted" },
+      { "postcode": "6682", "cityName": "Hovborg" },
+      { "postcode": "6683", "cityName": "Føvling" },
+      { "postcode": "6690", "cityName": "Gørding" },
+      { "postcode": "6752", "cityName": "Glejbjerg" },
+      { "postcode": "6753", "cityName": "Agerbæk" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Aabenraa",
+    "code": "580",
+    "postcodes": [
+      { "postcode": "6200", "cityName": "Aabenraa" },
+      { "postcode": "6210", "cityName": "Barsø" },
+      { "postcode": "6230", "cityName": "Rødekro" },
+      { "postcode": "6330", "cityName": "Padborg" },
+      { "postcode": "6340", "cityName": "Kruså" },
+      { "postcode": "6360", "cityName": "Tinglev" },
+      { "postcode": "6372", "cityName": "Bylderup-Bov" },
+      { "postcode": "6392", "cityName": "Bolderslev" },
+      { "postcode": "6534", "cityName": "Agerskov" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Fredericia",
+    "code": "607",
+    "postcodes": [
+      { "postcode": "6000", "cityName": "Kolding" },
+      { "postcode": "7000", "cityName": "Fredericia" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Horsens",
+    "code": "615",
+    "postcodes": [
+      { "postcode": "8300", "cityName": "Odder" },
+      { "postcode": "8654", "cityName": "Bryrup" },
+      { "postcode": "8660", "cityName": "Skanderborg" },
+      { "postcode": "8680", "cityName": "Ry" },
+      { "postcode": "8700", "cityName": "Horsens" },
+      { "postcode": "8732", "cityName": "Hovedgård" },
+      { "postcode": "8740", "cityName": "Brædstrup" },
+      { "postcode": "8751", "cityName": "Gedved" },
+      { "postcode": "8752", "cityName": "Østbirk" },
+      { "postcode": "8762", "cityName": "Flemming" },
+      { "postcode": "8765", "cityName": "Klovborg" },
+      { "postcode": "8781", "cityName": "Stenderup" },
+      { "postcode": "8783", "cityName": "Hornsyld" },
+      { "postcode": "8789", "cityName": "Endelave" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Kolding",
+    "code": "621",
+    "postcodes": [
+      { "postcode": "6000", "cityName": "Kolding" },
+      { "postcode": "6040", "cityName": "Egtved" },
+      { "postcode": "6051", "cityName": "Almind" },
+      { "postcode": "6052", "cityName": "Viuf" },
+      { "postcode": "6064", "cityName": "Jordrup" },
+      { "postcode": "6070", "cityName": "Christiansfeld" },
+      { "postcode": "6091", "cityName": "Bjert" },
+      { "postcode": "6092", "cityName": "Sønder Stenderup" },
+      { "postcode": "6093", "cityName": "Sjølund" },
+      { "postcode": "6094", "cityName": "Hejls" },
+      { "postcode": "6100", "cityName": "Haderslev" },
+      { "postcode": "6560", "cityName": "Sommersted" },
+      { "postcode": "6580", "cityName": "Vamdrup" },
+      { "postcode": "6640", "cityName": "Lunderskov" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Vejle",
+    "code": "630",
+    "postcodes": [
+      { "postcode": "6040", "cityName": "Egtved" },
+      { "postcode": "6052", "cityName": "Viuf" },
+      { "postcode": "6623", "cityName": "Vorbasse" },
+      { "postcode": "7000", "cityName": "Fredericia" },
+      { "postcode": "7080", "cityName": "Børkop" },
+      { "postcode": "7100", "cityName": "Vejle" },
+      { "postcode": "7120", "cityName": "Vejle Øst" },
+      { "postcode": "7160", "cityName": "Tørring" },
+      { "postcode": "7173", "cityName": "Vonge" },
+      { "postcode": "7182", "cityName": "Bredsten" },
+      { "postcode": "7183", "cityName": "Randbøl" },
+      { "postcode": "7184", "cityName": "Vandel" },
+      { "postcode": "7190", "cityName": "Billund" },
+      { "postcode": "7200", "cityName": "Grindsted" },
+      { "postcode": "7300", "cityName": "Jelling" },
+      { "postcode": "7321", "cityName": "Gadbjerg" },
+      { "postcode": "7323", "cityName": "Give" },
+      { "postcode": "7330", "cityName": "Brande" },
+      { "postcode": "7361", "cityName": "Ejstrupholm" },
+      { "postcode": "8721", "cityName": "Daugård" },
+      { "postcode": "8722", "cityName": "Hedensted" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Herning",
+    "code": "657",
+    "postcodes": [
+      { "postcode": "6933", "cityName": "Kibæk" },
+      { "postcode": "6973", "cityName": "Ørnhøj" },
+      { "postcode": "6990", "cityName": "Ulfborg" },
+      { "postcode": "7260", "cityName": "Sønder Omme" },
+      { "postcode": "7270", "cityName": "Stakroge" },
+      { "postcode": "7280", "cityName": "Sønder Felding" },
+      { "postcode": "7330", "cityName": "Brande" },
+      { "postcode": "7400", "cityName": "Herning" },
+      { "postcode": "7451", "cityName": "Sunds" },
+      { "postcode": "7470", "cityName": "Karup J" },
+      { "postcode": "7480", "cityName": "Vildbjerg" },
+      { "postcode": "7490", "cityName": "Aulum" },
+      { "postcode": "7500", "cityName": "Holstebro" },
+      { "postcode": "7540", "cityName": "Haderup" },
+      { "postcode": "7550", "cityName": "Sørvad" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Holstebro",
+    "code": "661",
+    "postcodes": [
+      { "postcode": "6990", "cityName": "Ulfborg" },
+      { "postcode": "7500", "cityName": "Holstebro" },
+      { "postcode": "7540", "cityName": "Haderup" },
+      { "postcode": "7560", "cityName": "Hjerm" },
+      { "postcode": "7570", "cityName": "Vemb" },
+      { "postcode": "7600", "cityName": "Struer" },
+      { "postcode": "7800", "cityName": "Skive" },
+      { "postcode": "7830", "cityName": "Vinderup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Lemvig",
+    "code": "665",
+    "postcodes": [
+      { "postcode": "6990", "cityName": "Ulfborg" },
+      { "postcode": "7570", "cityName": "Vemb" },
+      { "postcode": "7600", "cityName": "Struer" },
+      { "postcode": "7620", "cityName": "Lemvig" },
+      { "postcode": "7650", "cityName": "Bøvlingbjerg" },
+      { "postcode": "7660", "cityName": "Bækmarksbro" },
+      { "postcode": "7673", "cityName": "Harboøre" },
+      { "postcode": "7680", "cityName": "Thyborøn" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Struer",
+    "code": "671",
+    "postcodes": [
+      { "postcode": "7500", "cityName": "Holstebro" },
+      { "postcode": "7560", "cityName": "Hjerm" },
+      { "postcode": "7600", "cityName": "Struer" },
+      { "postcode": "7660", "cityName": "Bækmarksbro" },
+      { "postcode": "7760", "cityName": "Hurup Thy" },
+      { "postcode": "7790", "cityName": "Thyholm" },
+      { "postcode": "7830", "cityName": "Vinderup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Syddjurs",
+    "code": "706",
+    "postcodes": [
+      { "postcode": "8370", "cityName": "Hadsten" },
+      { "postcode": "8400", "cityName": "Ebeltoft" },
+      { "postcode": "8410", "cityName": "Rønde" },
+      { "postcode": "8420", "cityName": "Knebel" },
+      { "postcode": "8444", "cityName": "Balle" },
+      { "postcode": "8543", "cityName": "Hornslet" },
+      { "postcode": "8544", "cityName": "Mørke" },
+      { "postcode": "8550", "cityName": "Ryomgård" },
+      { "postcode": "8560", "cityName": "Kolind" },
+      { "postcode": "8570", "cityName": "Trustrup" },
+      { "postcode": "8581", "cityName": "Nimtofte" },
+      { "postcode": "8963", "cityName": "Auning" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Norddjurs",
+    "code": "707",
+    "postcodes": [
+      { "postcode": "8444", "cityName": "Balle" },
+      { "postcode": "8500", "cityName": "Grenaa" },
+      { "postcode": "8544", "cityName": "Mørke" },
+      { "postcode": "8550", "cityName": "Ryomgård" },
+      { "postcode": "8560", "cityName": "Kolind" },
+      { "postcode": "8570", "cityName": "Trustrup" },
+      { "postcode": "8581", "cityName": "Nimtofte" },
+      { "postcode": "8585", "cityName": "Glesborg" },
+      { "postcode": "8586", "cityName": "Ørum Djurs" },
+      { "postcode": "8592", "cityName": "Anholt" },
+      { "postcode": "8950", "cityName": "Ørsted" },
+      { "postcode": "8961", "cityName": "Allingåbro" },
+      { "postcode": "8963", "cityName": "Auning" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Favrskov",
+    "code": "710",
+    "postcodes": [
+      { "postcode": "8370", "cityName": "Hadsten" },
+      { "postcode": "8380", "cityName": "Trige" },
+      { "postcode": "8382", "cityName": "Hinnerup" },
+      { "postcode": "8450", "cityName": "Hammel" },
+      { "postcode": "8464", "cityName": "Galten" },
+      { "postcode": "8471", "cityName": "Sabro" },
+      { "postcode": "8472", "cityName": "Sporup" },
+      { "postcode": "8641", "cityName": "Sorring" },
+      { "postcode": "8850", "cityName": "Bjerringbro" },
+      { "postcode": "8860", "cityName": "Ulstrup" },
+      { "postcode": "8870", "cityName": "Langå" },
+      { "postcode": "8881", "cityName": "Thorsø" },
+      { "postcode": "8882", "cityName": "Fårvang" },
+      { "postcode": "8900", "cityName": "Randers C" },
+      { "postcode": "8940", "cityName": "Randers SV" },
+      { "postcode": "8960", "cityName": "Randers SØ" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Odder",
+    "code": "727",
+    "postcodes": [
+      { "postcode": "8300", "cityName": "Odder" },
+      { "postcode": "8340", "cityName": "Malling" },
+      { "postcode": "8350", "cityName": "Hundslund" },
+      { "postcode": "8660", "cityName": "Skanderborg" },
+      { "postcode": "8799", "cityName": "Tunø" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Randers",
+    "code": "730",
+    "postcodes": [
+      { "postcode": "8860", "cityName": "Ulstrup" },
+      { "postcode": "8870", "cityName": "Langå" },
+      { "postcode": "8900", "cityName": "Randers C" },
+      { "postcode": "8920", "cityName": "Randers NV" },
+      { "postcode": "8930", "cityName": "Randers NØ" },
+      { "postcode": "8940", "cityName": "Randers SV" },
+      { "postcode": "8960", "cityName": "Randers SØ" },
+      { "postcode": "8970", "cityName": "Havndal" },
+      { "postcode": "8981", "cityName": "Spentrup" },
+      { "postcode": "8983", "cityName": "Gjerlev J" },
+      { "postcode": "8990", "cityName": "Fårup" },
+      { "postcode": "9550", "cityName": "Mariager" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Silkeborg",
+    "code": "740",
+    "postcodes": [
+      { "postcode": "7362", "cityName": "Hampen" },
+      { "postcode": "7441", "cityName": "Bording" },
+      { "postcode": "7442", "cityName": "Engesvang" },
+      { "postcode": "7470", "cityName": "Karup J" },
+      { "postcode": "8450", "cityName": "Hammel" },
+      { "postcode": "8472", "cityName": "Sporup" },
+      { "postcode": "8600", "cityName": "Silkeborg" },
+      { "postcode": "8620", "cityName": "Kjellerup" },
+      { "postcode": "8632", "cityName": "Lemming" },
+      { "postcode": "8641", "cityName": "Sorring" },
+      { "postcode": "8643", "cityName": "Ans By" },
+      { "postcode": "8653", "cityName": "Them" },
+      { "postcode": "8654", "cityName": "Bryrup" },
+      { "postcode": "8680", "cityName": "Ry" },
+      { "postcode": "8740", "cityName": "Brædstrup" },
+      { "postcode": "8800", "cityName": "Viborg" },
+      { "postcode": "8840", "cityName": "Rødkærsbro" },
+      { "postcode": "8881", "cityName": "Thorsø" },
+      { "postcode": "8882", "cityName": "Fårvang" },
+      { "postcode": "8883", "cityName": "Gjern" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Samsø",
+    "code": "741",
+    "postcodes": [
+      { "postcode": "8305", "cityName": "Samsø" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Skanderborg",
+    "code": "746",
+    "postcodes": [
+      { "postcode": "8362", "cityName": "Hørning" },
+      { "postcode": "8464", "cityName": "Galten" },
+      { "postcode": "8471", "cityName": "Sabro" },
+      { "postcode": "8472", "cityName": "Sporup" },
+      { "postcode": "8600", "cityName": "Silkeborg" },
+      { "postcode": "8660", "cityName": "Skanderborg" },
+      { "postcode": "8670", "cityName": "Låsby" },
+      { "postcode": "8680", "cityName": "Ry" },
+      { "postcode": "8751", "cityName": "Gedved" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Århus",
+    "code": "751",
+    "postcodes": [
+      { "postcode": "8000", "cityName": "Aarhus C" },
+      { "postcode": "8200", "cityName": "Aarhus N" },
+      { "postcode": "8210", "cityName": "Aarhus V" },
+      { "postcode": "8220", "cityName": "Brabrand" },
+      { "postcode": "8230", "cityName": "Åbyhøj" },
+      { "postcode": "8240", "cityName": "Risskov" },
+      { "postcode": "8250", "cityName": "Egå" },
+      { "postcode": "8260", "cityName": "Viby J" },
+      { "postcode": "8270", "cityName": "Højbjerg" },
+      { "postcode": "8300", "cityName": "Odder" },
+      { "postcode": "8310", "cityName": "Tranbjerg J" },
+      { "postcode": "8320", "cityName": "Mårslet" },
+      { "postcode": "8330", "cityName": "Beder" },
+      { "postcode": "8340", "cityName": "Malling" },
+      { "postcode": "8355", "cityName": "Solbjerg" },
+      { "postcode": "8361", "cityName": "Hasselager" },
+      { "postcode": "8362", "cityName": "Hørning" },
+      { "postcode": "8380", "cityName": "Trige" },
+      { "postcode": "8381", "cityName": "Tilst" },
+      { "postcode": "8382", "cityName": "Hinnerup" },
+      { "postcode": "8462", "cityName": "Harlev J" },
+      { "postcode": "8464", "cityName": "Galten" },
+      { "postcode": "8471", "cityName": "Sabro" },
+      { "postcode": "8520", "cityName": "Lystrup" },
+      { "postcode": "8530", "cityName": "Hjortshøj" },
+      { "postcode": "8541", "cityName": "Skødstrup" },
+      { "postcode": "8543", "cityName": "Hornslet" },
+      { "postcode": "8660", "cityName": "Skanderborg" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Ikast-Brande",
+    "code": "756",
+    "postcodes": [
+      { "postcode": "7323", "cityName": "Give" },
+      { "postcode": "7330", "cityName": "Brande" },
+      { "postcode": "7361", "cityName": "Ejstrupholm" },
+      { "postcode": "7362", "cityName": "Hampen" },
+      { "postcode": "7400", "cityName": "Herning" },
+      { "postcode": "7430", "cityName": "Ikast" },
+      { "postcode": "7441", "cityName": "Bording" },
+      { "postcode": "7442", "cityName": "Engesvang" },
+      { "postcode": "7451", "cityName": "Sunds" },
+      { "postcode": "8600", "cityName": "Silkeborg" },
+      { "postcode": "8654", "cityName": "Bryrup" },
+      { "postcode": "8765", "cityName": "Klovborg" },
+      { "postcode": "8766", "cityName": "Nørre Snede" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Ringkøbing-Skjern",
+    "code": "760",
+    "postcodes": [
+      { "postcode": "6830", "cityName": "Nørre Nebel" },
+      { "postcode": "6870", "cityName": "Ølgod" },
+      { "postcode": "6880", "cityName": "Tarm" },
+      { "postcode": "6893", "cityName": "Hemmet" },
+      { "postcode": "6900", "cityName": "Skjern" },
+      { "postcode": "6920", "cityName": "Videbæk" },
+      { "postcode": "6933", "cityName": "Kibæk" },
+      { "postcode": "6940", "cityName": "Lem St" },
+      { "postcode": "6950", "cityName": "Ringkøbing" },
+      { "postcode": "6960", "cityName": "Hvide Sande" },
+      { "postcode": "6971", "cityName": "Spjald" },
+      { "postcode": "6973", "cityName": "Ørnhøj" },
+      { "postcode": "6980", "cityName": "Tim" },
+      { "postcode": "6990", "cityName": "Ulfborg" },
+      { "postcode": "7270", "cityName": "Stakroge" },
+      { "postcode": "7280", "cityName": "Sønder Felding" },
+      { "postcode": "7400", "cityName": "Herning" },
+      { "postcode": "7480", "cityName": "Vildbjerg" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Hedensted",
+    "code": "766",
+    "postcodes": [
+      { "postcode": "7100", "cityName": "Vejle" },
+      { "postcode": "7120", "cityName": "Vejle Øst" },
+      { "postcode": "7130", "cityName": "Juelsminde" },
+      { "postcode": "7140", "cityName": "Stouby" },
+      { "postcode": "7150", "cityName": "Barrit" },
+      { "postcode": "7160", "cityName": "Tørring" },
+      { "postcode": "7171", "cityName": "Uldum" },
+      { "postcode": "7173", "cityName": "Vonge" },
+      { "postcode": "8700", "cityName": "Horsens" },
+      { "postcode": "8721", "cityName": "Daugård" },
+      { "postcode": "8722", "cityName": "Hedensted" },
+      { "postcode": "8723", "cityName": "Løsning" },
+      { "postcode": "8762", "cityName": "Flemming" },
+      { "postcode": "8763", "cityName": "Rask Mølle" },
+      { "postcode": "8766", "cityName": "Nørre Snede" },
+      { "postcode": "8781", "cityName": "Stenderup" },
+      { "postcode": "8783", "cityName": "Hornsyld" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Morsø",
+    "code": "773",
+    "postcodes": [
+      { "postcode": "7900", "cityName": "Nykøbing M" },
+      { "postcode": "7950", "cityName": "Erslev" },
+      { "postcode": "7960", "cityName": "Karby" },
+      { "postcode": "7970", "cityName": "Redsted M" },
+      { "postcode": "7980", "cityName": "Vils" },
+      { "postcode": "7990", "cityName": "Øster Assels" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Skive",
+    "code": "779",
+    "postcodes": [
+      { "postcode": "7800", "cityName": "Skive" },
+      { "postcode": "7830", "cityName": "Vinderup" },
+      { "postcode": "7840", "cityName": "Højslev" },
+      { "postcode": "7860", "cityName": "Spøttrup" },
+      { "postcode": "7870", "cityName": "Roslev" },
+      { "postcode": "7884", "cityName": "Fur" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Thisted",
+    "code": "787",
+    "postcodes": [
+      { "postcode": "7700", "cityName": "Thisted" },
+      { "postcode": "7730", "cityName": "Hanstholm" },
+      { "postcode": "7741", "cityName": "Frøstrup" },
+      { "postcode": "7742", "cityName": "Vesløs" },
+      { "postcode": "7752", "cityName": "Snedsted" },
+      { "postcode": "7755", "cityName": "Bedsted Thy" },
+      { "postcode": "7760", "cityName": "Hurup Thy" },
+      { "postcode": "7770", "cityName": "Vestervig" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Viborg",
+    "code": "791",
+    "postcodes": [
+      { "postcode": "7470", "cityName": "Karup J" },
+      { "postcode": "7800", "cityName": "Skive" },
+      { "postcode": "7840", "cityName": "Højslev" },
+      { "postcode": "7850", "cityName": "Stoholm Jyll" },
+      { "postcode": "8620", "cityName": "Kjellerup" },
+      { "postcode": "8643", "cityName": "Ans By" },
+      { "postcode": "8800", "cityName": "Viborg" },
+      { "postcode": "8830", "cityName": "Tjele" },
+      { "postcode": "8831", "cityName": "Løgstrup" },
+      { "postcode": "8832", "cityName": "Skals" },
+      { "postcode": "8840", "cityName": "Rødkærsbro" },
+      { "postcode": "8850", "cityName": "Bjerringbro" },
+      { "postcode": "8860", "cityName": "Ulstrup" },
+      { "postcode": "8900", "cityName": "Randers C" },
+      { "postcode": "8920", "cityName": "Randers NV" },
+      { "postcode": "9500", "cityName": "Hobro" },
+      { "postcode": "9620", "cityName": "Aalestrup" },
+      { "postcode": "9631", "cityName": "Gedsted" },
+      { "postcode": "9632", "cityName": "Møldrup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Brønderslev",
+    "code": "810",
+    "postcodes": [
+      { "postcode": "9320", "cityName": "Hjallerup" },
+      { "postcode": "9330", "cityName": "Dronninglund" },
+      { "postcode": "9340", "cityName": "Asaa" },
+      { "postcode": "9352", "cityName": "Dybvad" },
+      { "postcode": "9370", "cityName": "Hals" },
+      { "postcode": "9382", "cityName": "Tylstrup" },
+      { "postcode": "9440", "cityName": "Aabybro" },
+      { "postcode": "9480", "cityName": "Løkken" },
+      { "postcode": "9700", "cityName": "Brønderslev" },
+      { "postcode": "9740", "cityName": "Jerslev J" },
+      { "postcode": "9750", "cityName": "Østervrå" },
+      { "postcode": "9760", "cityName": "Vrå" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Frederikshavn",
+    "code": "813",
+    "postcodes": [
+      { "postcode": "9300", "cityName": "Sæby" },
+      { "postcode": "9330", "cityName": "Dronninglund" },
+      { "postcode": "9340", "cityName": "Asaa" },
+      { "postcode": "9352", "cityName": "Dybvad" },
+      { "postcode": "9750", "cityName": "Østervrå" },
+      { "postcode": "9830", "cityName": "Tårs" },
+      { "postcode": "9870", "cityName": "Sindal" },
+      { "postcode": "9881", "cityName": "Bindslev" },
+      { "postcode": "9900", "cityName": "Frederikshavn" },
+      { "postcode": "9970", "cityName": "Strandby" },
+      { "postcode": "9981", "cityName": "Jerup" },
+      { "postcode": "9982", "cityName": "Ålbæk" },
+      { "postcode": "9990", "cityName": "Skagen" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Vesthimmerlands",
+    "code": "820",
+    "postcodes": [
+      { "postcode": "9240", "cityName": "Nibe" },
+      { "postcode": "9541", "cityName": "Suldrup" },
+      { "postcode": "9600", "cityName": "Aars" },
+      { "postcode": "9610", "cityName": "Nørager" },
+      { "postcode": "9620", "cityName": "Aalestrup" },
+      { "postcode": "9631", "cityName": "Gedsted" },
+      { "postcode": "9640", "cityName": "Farsø" },
+      { "postcode": "9670", "cityName": "Løgstør" },
+      { "postcode": "9681", "cityName": "Ranum" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Læsø",
+    "code": "825",
+    "postcodes": [
+      { "postcode": "9940", "cityName": "Læsø" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Rebild",
+    "code": "840",
+    "postcodes": [
+      { "postcode": "9230", "cityName": "Svenstrup J" },
+      { "postcode": "9240", "cityName": "Nibe" },
+      { "postcode": "9260", "cityName": "Gistrup" },
+      { "postcode": "9293", "cityName": "Kongerslev" },
+      { "postcode": "9500", "cityName": "Hobro" },
+      { "postcode": "9510", "cityName": "Arden" },
+      { "postcode": "9520", "cityName": "Skørping" },
+      { "postcode": "9530", "cityName": "Støvring" },
+      { "postcode": "9541", "cityName": "Suldrup" },
+      { "postcode": "9560", "cityName": "Hadsund" },
+      { "postcode": "9574", "cityName": "Bælum" },
+      { "postcode": "9575", "cityName": "Terndrup" },
+      { "postcode": "9600", "cityName": "Aars" },
+      { "postcode": "9610", "cityName": "Nørager" },
+      { "postcode": "9620", "cityName": "Aalestrup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Mariagerfjord",
+    "code": "846",
+    "postcodes": [
+      { "postcode": "8970", "cityName": "Havndal" },
+      { "postcode": "8990", "cityName": "Fårup" },
+      { "postcode": "9500", "cityName": "Hobro" },
+      { "postcode": "9510", "cityName": "Arden" },
+      { "postcode": "9550", "cityName": "Mariager" },
+      { "postcode": "9560", "cityName": "Hadsund" },
+      { "postcode": "9620", "cityName": "Aalestrup" },
+      { "postcode": "9632", "cityName": "Møldrup" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Jammerbugt",
+    "code": "849",
+    "postcodes": [
+      { "postcode": "9381", "cityName": "Sulsted" },
+      { "postcode": "9382", "cityName": "Tylstrup" },
+      { "postcode": "9430", "cityName": "Vadum" },
+      { "postcode": "9440", "cityName": "Aabybro" },
+      { "postcode": "9460", "cityName": "Brovst" },
+      { "postcode": "9480", "cityName": "Løkken" },
+      { "postcode": "9490", "cityName": "Pandrup" },
+      { "postcode": "9492", "cityName": "Blokhus" },
+      { "postcode": "9493", "cityName": "Saltum" },
+      { "postcode": "9670", "cityName": "Løgstør" },
+      { "postcode": "9690", "cityName": "Fjerritslev" },
+      { "postcode": "9700", "cityName": "Brønderslev" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Aalborg",
+    "code": "851",
+    "postcodes": [
+      { "postcode": "9000", "cityName": "Aalborg" },
+      { "postcode": "9200", "cityName": "Aalborg SV" },
+      { "postcode": "9210", "cityName": "Aalborg SØ" },
+      { "postcode": "9220", "cityName": "Aalborg Øst" },
+      { "postcode": "9230", "cityName": "Svenstrup J" },
+      { "postcode": "9240", "cityName": "Nibe" },
+      { "postcode": "9260", "cityName": "Gistrup" },
+      { "postcode": "9270", "cityName": "Klarup" },
+      { "postcode": "9280", "cityName": "Storvorde" },
+      { "postcode": "9293", "cityName": "Kongerslev" },
+      { "postcode": "9310", "cityName": "Vodskov" },
+      { "postcode": "9320", "cityName": "Hjallerup" },
+      { "postcode": "9362", "cityName": "Gandrup" },
+      { "postcode": "9370", "cityName": "Hals" },
+      { "postcode": "9380", "cityName": "Vestbjerg" },
+      { "postcode": "9381", "cityName": "Sulsted" },
+      { "postcode": "9382", "cityName": "Tylstrup" },
+      { "postcode": "9400", "cityName": "Nørresundby" },
+      { "postcode": "9430", "cityName": "Vadum" },
+      { "postcode": "9440", "cityName": "Aabybro" },
+      { "postcode": "9530", "cityName": "Støvring" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  },
+  {
+    "name": "Hjørring",
+    "code": "860",
+    "postcodes": [
+      { "postcode": "9480", "cityName": "Løkken" },
+      { "postcode": "9740", "cityName": "Jerslev J" },
+      { "postcode": "9750", "cityName": "Østervrå" },
+      { "postcode": "9760", "cityName": "Vrå" },
+      { "postcode": "9800", "cityName": "Hjørring" },
+      { "postcode": "9830", "cityName": "Tårs" },
+      { "postcode": "9850", "cityName": "Hirtshals" },
+      { "postcode": "9870", "cityName": "Sindal" },
+      { "postcode": "9881", "cityName": "Bindslev" },
+      { "postcode": "9900", "cityName": "Frederikshavn" },
+      { "postcode": "9982", "cityName": "Ålbæk" },
+      { "postcode": "9999", "cityName": "Ukendt" }
+    ]
+  }
+]

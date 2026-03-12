@@ -12,6 +12,7 @@ type Props = {
   value: string[];
   onChange: (values: string[]) => void;
   placeholder?: string;
+  searchLabel: string;
 };
 
 export default function SearchableMultiSelect({
@@ -19,6 +20,7 @@ export default function SearchableMultiSelect({
   value,
   onChange,
   placeholder = "Søg...",
+  searchLabel,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
@@ -51,14 +53,15 @@ export default function SearchableMultiSelect({
   }, [options, search]);
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative ">
       {/* Trigger */}
       <div
         onClick={() => setOpen((p) => !p)}
-        className="border border-black/20 rounded-md p-2 min-h-[44] flex flex-wrap gap-2 cursor-pointer"
+        className="max-h-[200] overflow-y-auto
+        border border-black/20 rounded-md p-2 min-h-[44] flex flex-wrap gap-2 cursor-pointer"
       >
         {value.length === 0 && (
-          <span className="text-black/40">{placeholder}</span>
+          <span className="text-black/40!">{placeholder}</span>
         )}
 
         {value.map((v) => {
@@ -92,7 +95,7 @@ export default function SearchableMultiSelect({
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Søg postnummer eller by..."
+              placeholder={searchLabel}
               className="w-full border border-black/20 rounded px-2 py-1 outline-none"
             />
           </div>

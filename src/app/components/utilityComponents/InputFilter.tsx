@@ -20,7 +20,7 @@ const InputFilter = ({
   return (
     <input
       data-input={dataInput}
-      className="border-3 border-(--black)/20 mt-auto p-2 pl-5 w-full h-[40px] rounded-[6px] transition-all border-(--white)"
+      className="border-3 border-(--black)/20 mt-auto p-2 pl-5 w-full h-[40] rounded-[6] transition-all"
       type={type}
       placeholder={placeholder}
       defaultValue={defaultValue}

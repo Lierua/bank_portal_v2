@@ -26,7 +26,7 @@ const SetStatus = ({ request, setRequests }: Props) => {
 
   return (
     <div className="grid items-center [&>*]:mx-auto gap-8 py-8">
-      <div className="w-[90%] h-[2px] rounded-full bg-(--black)/50"></div>
+      <div className="w-[90%] h-[2p] rounded-full bg-(--black)/50"></div>
 
       <FaRegHandshake className="text-[90px] mt-8" />
 

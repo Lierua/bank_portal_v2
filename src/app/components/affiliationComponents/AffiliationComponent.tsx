@@ -19,7 +19,7 @@ const AffiliationComponent = ({ setSection, banks }: Props) => {
       <div
         className="grid 
         grid-cols-[minmax(0,220px)_minmax(0,175px)_minmax(0,140px)_minmax(0,175px)]
-        border-(--black)/10 border-b-2 pl-10 h-[40px] text-(--black)/60 gap-2"
+        border-(--black)/10 border-b-2 pl-10 h-[40] text-(--black)/60 gap-2"
       >
         <h3>Filial</h3>
         <h3>Område</h3>
@@ -32,7 +32,7 @@ const AffiliationComponent = ({ setSection, banks }: Props) => {
         {!bank?.affiliations.length && (
           <div
             className="
-            grid border-(--black)/10 border-b-2 pl-10 h-[40px] text-(--black)/40
+            grid border-(--black)/10 border-b-2 pl-10 h-[40] text-(--black)/40
             "
           >
             <h3 className="my-auto italic">Ingen filialer oprettet endnu</h3>

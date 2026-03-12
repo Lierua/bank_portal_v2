@@ -12,45 +12,25 @@ export default function FilterSettings() {
       `}
     >
       {/* CONTENT */}
-      <div className="pb-5 pt-4 space-y-4 overflow-y-auto">
+      <div className="pb-5 space-y-4 overflow-y-auto">
         {/* LOAN */}
         <FilterSection title="Lån">
-          <div className="grid grid-cols-5 gap-7">
+          <div className="grid grid-cols-4 gap-7">
             <InputBlock label="Lånebeløb (min)">
               <InputFilter dataInput="loanAmountMin" type="number" />
             </InputBlock>
 
             <SelectFilter
-              label="Låneformål"
-              dataInput="loanKind"
-              options={["Bolig", "Andet"]}
-            />
-          </div>
-        </FilterSection>
-
-        <FilterSection title="Bolig">
-          <div className="grid grid-cols-5 gap-7">
-            <SelectFilter
               label="Boligtype"
               dataInput="Bolig type"
               options={["Ejerbolig", "Andelsbolig", "Sommerhus"]}
             />
-
-            <SelectFilter
-              label="Region"
-              dataInput="region"
-              options={["H", "MJY", "NJ", "SD", "SYD"]}
-            />
-
-            <InputBlock label="Postnummer">
-              <InputFilter dataInput="postalCode" type="text" />
-            </InputBlock>
           </div>
         </FilterSection>
 
         {/* ECONOMY */}
         <FilterSection title="Økonomi">
-          <div className="grid grid-cols-5 gap-7">
+          <div className="grid grid-cols-4 gap-7">
             <InputBlock label="Indkomst (min)">
               <InputFilter dataInput="incomeMin" type="number" />
             </InputBlock>
@@ -70,7 +50,7 @@ export default function FilterSettings() {
 
         {/* PERSON */}
         <FilterSection title="Personlige oplysninger">
-          <div className="grid grid-cols-5 gap-7">
+          <div className="grid grid-cols-4 gap-7">
             <SelectFilter
               label="Uddannelse"
               dataInput="educationLevel"

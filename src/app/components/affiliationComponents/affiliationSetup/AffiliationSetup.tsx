@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
-import postNumbers from "@/data/postNumre.json";
+import postCodes from "@/data/postCodes.json";
 
 import type { FilialAgent } from "@/app/types/filial";
 
@@ -10,6 +10,7 @@ import FilterSettings from "./FilterSettings";
 import MultiSelect from "../../utilityComponents/formUtilities/MultiSelect";
 import SearchableMultiSelect from "../../utilityComponents/formUtilities/SearchMultiSelect";
 import InputFilter from "../../utilityComponents/InputFilter";
+import { IoIosArrowDown } from "react-icons/io";
 
 type Props = {
   setSection: React.Dispatch<React.SetStateAction<string>>;
@@ -18,18 +19,92 @@ type Props = {
 
 const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
   const regions = [
-    { code: "KBH", name: "København", label: "København (KBH)" },
-    { code: "SJL", name: "Sjælland", label: "Sjælland (SJL)" },
-    { code: "FYN", name: "Fyn", label: "Fyn (FYN)" },
-    { code: "LF", name: "Lolland-Falster", label: "Lolland-Falster (LF)" },
-    { code: "SJY", name: "Sydjylland", label: "Sydjylland (SJY)" },
-    { code: "MJY", name: "Midtjylland", label: "Midtjylland (MJY)" },
-    { code: "NJY", name: "Nordjylland", label: "Nordjylland (NJY)" },
+    { code: "KBH", label: "København (KBH)" },
+    { code: "SJL", label: "Sjælland (SJL)" },
+    { code: "FYN", label: "Fyn (FYN)" },
+    { code: "LF", label: "Lolland-Falster (LF)" },
+    { code: "SJY", label: "Sydjylland (SJY)" },
+    { code: "MJY", label: "Midtjylland (MJY)" },
+    { code: "NJY", label: "Nordjylland (NJY)" },
   ];
+
+  /* =========================
+BUILD LOOKUPS FROM JSON
+========================= */
+
+  const kommuneOptions = useMemo(
+    () =>
+      postCodes.map((k) => ({
+        value: k.name,
+        label: k.name,
+      })),
+    [],
+  );
+
+  const kommuneToPostcodes = useMemo(() => {
+    const map: Record<string, string[]> = {};
+
+    postCodes.forEach((k) => {
+      map[k.name] = k.postcodes
+        .map((p) => p.postcode)
+        .filter((p) => p !== "9999"); // skip unknown
+    });
+
+    return map;
+  }, []);
+
+  const postcodeOptions = useMemo(() => {
+    const seen = new Set<string>();
+    const list: { value: string; label: string }[] = [];
+
+    postCodes.forEach((k) => {
+      k.postcodes.forEach((p) => {
+        if (p.postcode === "9999") return;
+
+        if (!seen.has(p.postcode)) {
+          seen.add(p.postcode);
+
+          list.push({
+            value: p.postcode,
+            label: `${p.postcode} - ${p.cityName}`,
+          });
+        }
+      });
+    });
+
+    return list;
+  }, []);
+
+  /* =========================
+STATE
+========================= */
 
   const [name, setName] = useState("");
   const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
-  const [selectedPostcodes, setSelectedPostcodes] = useState<string[]>([]);
+  const [selectedKommuner, setSelectedKommuner] = useState<string[]>([]);
+  const [manualPostcodes, setManualPostcodes] = useState<string[]>([]);
+  const [excludedPostcodes, setExcludedPostcodes] = useState<string[]>([]);
+  const [open, setOpen] = useState(true);
+  /* =========================
+DERIVED POSTCODES
+========================= */
+
+  const kommunePostcodes = useMemo(() => {
+    const all = selectedKommuner.flatMap((k) => kommuneToPostcodes[k] ?? []);
+    return [...new Set(all)];
+  }, [selectedKommuner, kommuneToPostcodes]);
+
+  const selectedPostcodes = useMemo(() => {
+    const merged = new Set([...manualPostcodes, ...kommunePostcodes]);
+
+    excludedPostcodes.forEach((p) => merged.delete(p));
+
+    return [...merged];
+  }, [manualPostcodes, kommunePostcodes, excludedPostcodes]);
+
+  /* =========================
+ACTIONS
+========================= */
 
   function handleCreateFilial() {
     if (!name.trim()) {
@@ -54,17 +129,21 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
 
     addAffiliation(newAgent);
 
-    setName("");
-    setSelectedRegions([]);
-    setSelectedPostcodes([]);
+    handleReset();
     setSection("Affiliate");
   }
 
   function handleReset() {
     setName("");
     setSelectedRegions([]);
-    setSelectedPostcodes([]);
+    setSelectedKommuner([]);
+    setManualPostcodes([]);
+    setExcludedPostcodes([]);
   }
+
+  /* =========================
+    UI
+========================= */
 
   return (
     <div className="bg-white p-10">
@@ -74,9 +153,8 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
       >
         ← Tilbage
       </button>
-
       <div className="border-2 border-black/20 rounded-[5px] p-8 space-y-8">
-        <Section title="Navn for filial">
+        <Section title="Filial">
           <div className="mt-2 col-span-2">
             <InputFilter
               dataInput="affiliationName"
@@ -88,51 +166,82 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
           </div>
         </Section>
 
-        <div className="h-[2px] w-full bg-(--black)/20" />
+        <div className="h-[2] w-full bg-(--black)/20" />
 
-        <Section title="Område">
-          <p className="col-span-2 text-(--black)/60!">
-            Definér det område filialet får låneansøgninger fra. Dette kan være
-            regioner eller specifikke postnumre.
-          </p>
+        <Section title="Indstillinger">
+          <div
+            className={`border border-(--black)/10 rounded-lg ${open ? "" : "overflow-hidden"} col-span-2 mt-6`}
+          >
+            <button
+              onClick={() => setOpen((p) => !p)}
+              className="w-full flex justify-between items-center px-4 py-3 bg-(--black)/5 hover:bg-(--black)/10"
+            >
+              <span className="font-semibold">Område</span>
 
-          <div className="flex flex-col gap-2">
-            <h3>Regioner</h3>
-            <MultiSelect
-              options={regions.map((r) => ({
-                value: r.code,
-                label: r.label,
-              }))}
-              value={selectedRegions}
-              onChange={setSelectedRegions}
-              placeholder="Vælg regioner"
-            />
+              <IoIosArrowDown
+                className={`transition-transform duration-300 ${
+                  open ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            <div
+              className={`grid grid-cols-2 gap-4
+                      transition-all duration-300
+                      ${open ? "max-h-[1000] p-4" : "max-h-0 px-4"}
+                    `}
+            >
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold pl-2">Regioner</p>
+                <MultiSelect
+                  options={regions.map((r) => ({
+                    value: r.code,
+                    label: r.label,
+                  }))}
+                  value={selectedRegions}
+                  onChange={setSelectedRegions}
+                  placeholder="Vælg regioner"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold pl-2">Kommuner</p>
+                <SearchableMultiSelect
+                  options={kommuneOptions}
+                  value={selectedKommuner}
+                  onChange={setSelectedKommuner}
+                  placeholder="Kommune"
+                  searchLabel="Søg kommune..."
+                />
+              </div>
+
+              <div className="flex flex-col gap-2 col-span-2">
+                <p className="font-semibold pl-2">Postnumre</p>
+                <SearchableMultiSelect
+                  options={postcodeOptions}
+                  value={selectedPostcodes}
+                  onChange={(vals) => {
+                    const nextExcluded = kommunePostcodes.filter(
+                      (p) => !vals.includes(p),
+                    );
+
+                    const nextManual = vals.filter(
+                      (p) => !kommunePostcodes.includes(p),
+                    );
+
+                    setExcludedPostcodes(nextExcluded);
+                    setManualPostcodes(nextManual);
+                  }}
+                  placeholder="Postnummer"
+                  searchLabel="Søg postnummer eller by..."
+                />
+              </div>
+            </div>
           </div>
-
-          <div className="flex flex-col gap-2">
-            <h3>Postnumre</h3>
-            <SearchableMultiSelect
-              options={postNumbers.map((p) => ({
-                value: p.postNumber,
-                label: `${p.postNumber} ${p.city}`,
-              }))}
-              value={selectedPostcodes}
-              onChange={setSelectedPostcodes}
-              placeholder="Vælg postnumre"
-            />
+          <div className="col-span-2">
+            <FilterSettings />
           </div>
         </Section>
-
-        <div className="h-[2px] w-full bg-(--black)/20" />
-
-        <div className="[&>*>*]:grid-cols-1">
-          <Section title="Filter indstillinger">
-            <p className="col-span-2 text-(--black)/60!">
-              Nedenfor kan du definere ønskede filterkrav for ansøgninger.
-            </p>
-            <FilterSettings />
-          </Section>
-        </div>
 
         <div className="flex gap-3 justify-end pt-2">
           <button
@@ -156,10 +265,6 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
 
 export default AffiliationSetup;
 
-/* =========================
-   Section Wrapper
-========================= */
-
 function Section({
   title,
   children,
@@ -168,7 +273,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <div className="space-y-1">
+    <div className="">
       <h2 className="text-2xl font-semibold">{title}</h2>
       <div className="grid grid-cols-2 gap-6">{children}</div>
     </div>

@@ -41,7 +41,14 @@ export default function MultiSelect({
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
   }, []);
-
+  const allSelected = value.length === options.length;
+  function toggleAll() {
+    if (allSelected) {
+      onChange([]);
+    } else {
+      onChange(options.map((o) => o.value));
+    }
+  }
   return (
     <div ref={ref} className="relative">
       {/* Trigger */}
@@ -79,6 +86,23 @@ export default function MultiSelect({
       {/* Dropdown */}
       {open && (
         <div className="absolute z-20 mt-2 w-full bg-white border border-black/20 rounded-md shadow max-h-60 overflow-auto">
+          {/* SELECT ALL */}
+          <div
+            onClick={toggleAll}
+            className="flex items-center gap-3 px-3 py-2 hover:bg-black/5 cursor-pointer border-b"
+          >
+            <div
+              className={`w-4 h-4 border rounded flex items-center justify-center ${
+                allSelected ? "bg-(--contrast) border-(--contrast)" : ""
+              }`}
+            >
+              {allSelected && <div className="w-2 h-2 bg-white rounded-sm" />}
+            </div>
+
+            <span className="font-medium">Vælg alle</span>
+          </div>
+
+          {/* OPTIONS */}
           {options.map((opt) => {
             const checked = value.includes(opt.value);
 
