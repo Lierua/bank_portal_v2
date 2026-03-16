@@ -101,6 +101,13 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
     setAgents((prev) => [...prev, agent]);
   }
 
+  function deleteAgent(id: number) {
+    setAgents((prev) => prev.filter((a) => a.id !== id));
+  }
+
+  function updateAgent(updated: SearchAgent) {
+    setAgents((prev) => prev.map((a) => (a.id === updated.id ? updated : a)));
+  }
   /* ================= CREATE FILIAL ================= */
 
   function handleCreateFilial() {
@@ -210,8 +217,12 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
             <p className="italic text-black/60">- Ingen agenter endnu</p>
           )}
           <div className="flex flex-col">
-            {agents.map((a) => (
-              <AgentItem key={a.id} agent={a} />
+            {agents.map((agent) => (
+              <AgentItem
+                agent={agent}
+                onDelete={deleteAgent}
+                onUpdate={updateAgent}
+              />
             ))}
           </div>
           <NewAgent addAgent={addAgent} />

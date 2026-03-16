@@ -1,16 +1,28 @@
 "use client";
 
 import type { SearchAgent, FilterSettings } from "@/app/types/filial";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import InputFilter from "../../utilityComponents/InputFilter";
 
 type Props = {
   agent: SearchAgent;
+  onChange: (filters: FilterSettings) => void;
 };
 
-export default function FilterSavedSettings({ agent }: Props) {
-  const f: FilterSettings = agent.filters ?? {};
+export default function FilterSavedSettings({ agent, onChange }: Props) {
+  const [filters, setFilters] = useState<FilterSettings>(agent.filters ?? {});
+
+  useEffect(() => {
+    setFilters(agent.filters ?? {});
+  }, [agent]);
+
+  function updateField(key: keyof FilterSettings, value: any) {
+    const next = { ...filters, [key]: value };
+
+    setFilters(next);
+    onChange(next);
+  }
 
   return (
     <div className="overflow-hidden transition-all duration-300">
@@ -22,15 +34,18 @@ export default function FilterSavedSettings({ agent }: Props) {
               <InputFilter
                 dataInput="loanAmountMin"
                 type="number"
-                defaultValue={f.loanAmountMin}
+                value={filters.loanAmountMin ?? ""}
+                onChange={(e) =>
+                  updateField("loanAmountMin", Number(e.target.value))
+                }
               />
             </InputBlock>
 
             <SelectFilter
               label="Boligtype"
-              dataInput="housingType"
+              value={filters.housingType}
+              onChange={(v) => updateField("housingType", v)}
               options={["Ejerbolig", "Andelsbolig", "Sommerhus"]}
-              defaultValue={f.housingType}
             />
           </div>
         </FilterSection>
@@ -42,7 +57,10 @@ export default function FilterSavedSettings({ agent }: Props) {
               <InputFilter
                 dataInput="incomeMin"
                 type="number"
-                defaultValue={f.incomeMin}
+                value={filters.incomeMin ?? ""}
+                onChange={(e) =>
+                  updateField("incomeMin", Number(e.target.value))
+                }
               />
             </InputBlock>
 
@@ -50,7 +68,10 @@ export default function FilterSavedSettings({ agent }: Props) {
               <InputFilter
                 dataInput="fixedExpensesMax"
                 type="number"
-                defaultValue={f.fixedExpensesMax}
+                value={filters.fixedExpensesMax ?? ""}
+                onChange={(e) =>
+                  updateField("fixedExpensesMax", Number(e.target.value))
+                }
               />
             </InputBlock>
 
@@ -58,7 +79,10 @@ export default function FilterSavedSettings({ agent }: Props) {
               <InputFilter
                 dataInput="wealthMin"
                 type="number"
-                defaultValue={f.wealthMin}
+                value={filters.wealthMin ?? ""}
+                onChange={(e) =>
+                  updateField("wealthMin", Number(e.target.value))
+                }
               />
             </InputBlock>
 
@@ -66,7 +90,10 @@ export default function FilterSavedSettings({ agent }: Props) {
               <InputFilter
                 dataInput="debtsMax"
                 type="number"
-                defaultValue={f.debtsMax}
+                value={filters.debtsMax ?? ""}
+                onChange={(e) =>
+                  updateField("debtsMax", Number(e.target.value))
+                }
               />
             </InputBlock>
           </div>
@@ -77,23 +104,23 @@ export default function FilterSavedSettings({ agent }: Props) {
           <div className="grid grid-cols-2 gap-7">
             <SelectFilter
               label="Uddannelse"
-              dataInput="educationLevel"
+              value={filters.educationLevel}
+              onChange={(v) => updateField("educationLevel", v)}
               options={["HighSchool", "Vocational", "Bachelor", "Master"]}
-              defaultValue={f.educationLevel}
             />
 
             <SelectFilter
               label="Jobstatus"
-              dataInput="jobStatus"
+              value={filters.jobStatus}
+              onChange={(v) => updateField("jobStatus", v)}
               options={["FullTime", "PartTime", "SelfEmployed"]}
-              defaultValue={f.jobStatus}
             />
 
             <SelectFilter
               label="Boligsituation"
-              dataInput="housingSituation"
+              value={filters.housingSituation}
+              onChange={(v) => updateField("housingSituation", v)}
               options={["Lejer", "Ejer"]}
-              defaultValue={f.housingSituation}
             />
           </div>
         </FilterSection>
@@ -104,37 +131,33 @@ export default function FilterSavedSettings({ agent }: Props) {
 
 function SelectFilter({
   label,
-  dataInput,
   options,
-  placeholder = "Vælg…",
-  defaultValue,
+  value,
+  onChange,
 }: {
   label: string;
-  dataInput: string;
   options: string[];
-  placeholder?: string;
-  defaultValue?: string;
+  value?: string;
+  onChange: (v: string) => void;
 }) {
   return (
     <div className="flex flex-col gap-1">
       <p className="font-semibold pl-2">{label}</p>
 
       <select
-        data-input={dataInput}
-        defaultValue={defaultValue ?? ""}
+        value={value ?? ""}
+        onChange={(e) => onChange(e.target.value)}
         className="h-[40px] rounded-md border border-(--black)/20 px-3"
       >
-        <option value="" disabled>
-          {placeholder}
-        </option>
-
         <option value="">Alle</option>
+        {options.map((opt) => (
+          <option key={opt}>{opt}</option>
+        ))}
       </select>
     </div>
   );
 }
 
-/* ------------------------- Input Wrapper -------------------------- */
 function InputBlock({
   label,
   children,
@@ -144,12 +167,12 @@ function InputBlock({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <p className="font-semibold pl-2">{label}</p> {children}
+      <p className="font-semibold pl-2">{label}</p>
+      {children}
     </div>
   );
 }
 
-/* ------------------------- Accordion Section -------------------------- */
 function FilterSection({
   title,
   children,
@@ -177,9 +200,9 @@ function FilterSection({
       </button>
 
       <div
-        className={` transition-all duration-300 overflow-hidden ${
+        className={`transition-all duration-300 overflow-hidden ${
           open ? "max-h-[1000] p-4" : "max-h-0 px-4"
-        } `}
+        }`}
       >
         {children}
       </div>
