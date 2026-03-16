@@ -1,16 +1,15 @@
 "use client";
 
 import { useState, useMemo } from "react";
-
 import postCodes from "@/data/postCodes.json";
 
-import type { FilialAgent } from "@/app/types/filial";
+import type { FilialAgent, SearchAgent } from "@/app/types/filial";
 
-import FilterSettings from "./FilterSettings";
 import MultiSelect from "../../utilityComponents/formUtilities/MultiSelect";
 import SearchableMultiSelect from "../../utilityComponents/formUtilities/SearchMultiSelect";
 import InputFilter from "../../utilityComponents/InputFilter";
-import { IoIosArrowDown } from "react-icons/io";
+import NewAgent from "./NewAgent";
+import AgentItem from "./AgentItem";
 
 type Props = {
   setSection: React.Dispatch<React.SetStateAction<string>>;
@@ -28,9 +27,7 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
     { code: "NJY", label: "Nordjylland (NJY)" },
   ];
 
-  /* =========================
-BUILD LOOKUPS FROM JSON
-========================= */
+  /* ================= LOOKUPS ================= */
 
   const kommuneOptions = useMemo(
     () =>
@@ -47,7 +44,7 @@ BUILD LOOKUPS FROM JSON
     postCodes.forEach((k) => {
       map[k.name] = k.postcodes
         .map((p) => p.postcode)
-        .filter((p) => p !== "9999"); // skip unknown
+        .filter((p) => p !== "9999");
     });
 
     return map;
@@ -75,19 +72,17 @@ BUILD LOOKUPS FROM JSON
     return list;
   }, []);
 
-  /* =========================
-STATE
-========================= */
+  /* ================= STATE ================= */
 
   const [name, setName] = useState("");
+  const [agents, setAgents] = useState<SearchAgent[]>([]);
+
   const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
   const [selectedKommuner, setSelectedKommuner] = useState<string[]>([]);
   const [manualPostcodes, setManualPostcodes] = useState<string[]>([]);
   const [excludedPostcodes, setExcludedPostcodes] = useState<string[]>([]);
-  const [open, setOpen] = useState(true);
-  /* =========================
-DERIVED POSTCODES
-========================= */
+
+  /* ================= DERIVED ================= */
 
   const kommunePostcodes = useMemo(() => {
     const all = selectedKommuner.flatMap((k) => kommuneToPostcodes[k] ?? []);
@@ -96,66 +91,52 @@ DERIVED POSTCODES
 
   const selectedPostcodes = useMemo(() => {
     const merged = new Set([...manualPostcodes, ...kommunePostcodes]);
-
     excludedPostcodes.forEach((p) => merged.delete(p));
-
     return [...merged];
   }, [manualPostcodes, kommunePostcodes, excludedPostcodes]);
 
-  /* =========================
-ACTIONS
-========================= */
+  /* ================= AGENT ACTION ================= */
+
+  function addAgent(agent: SearchAgent) {
+    setAgents((prev) => [...prev, agent]);
+  }
+
+  /* ================= CREATE FILIAL ================= */
 
   function handleCreateFilial() {
-    if (!name.trim()) {
-      alert("Navn er påkrævet");
-      return;
-    }
+    if (!name.trim()) return alert("Navn påkrævet");
 
     if (!selectedRegions.length && !selectedPostcodes.length) {
-      alert("Vælg mindst én region eller ét postnummer");
-      return;
+      return alert("Vælg område");
     }
 
-    const newAgent: FilialAgent = {
+    const filial: FilialAgent = {
       id: Date.now(),
       name: name.trim(),
       area: {
         regions: selectedRegions,
         postcodes: selectedPostcodes,
       },
-      filters: {},
+      agents,
     };
 
-    addAffiliation(newAgent);
-
-    handleReset();
+    addAffiliation(filial);
     setSection("Affiliate");
   }
 
-  function handleReset() {
-    setName("");
-    setSelectedRegions([]);
-    setSelectedKommuner([]);
-    setManualPostcodes([]);
-    setExcludedPostcodes([]);
-  }
-
-  /* =========================
-    UI
-========================= */
+  /* ================= UI ================= */
 
   return (
-    <div className="bg-white p-10">
+    <div className="bg-white p-10 space-y-6 items-start">
       <button
         onClick={() => setSection("Affiliate")}
-        className="mb-8 text-sm hover:text-(--contrast)"
+        className="text-sm hover:text-(--contrast) mr-auto"
       >
         ← Tilbage
       </button>
       <div className="border-2 border-black/20 rounded-[5px] p-8 space-y-8">
         <Section title="Filial">
-          <div className="mt-2 col-span-2">
+          <div className="mt-2 col-span-2 max-w-[500]">
             <InputFilter
               dataInput="affiliationName"
               type="text"
@@ -165,99 +146,82 @@ ACTIONS
             />
           </div>
         </Section>
+        <div className="max-w-[1000]">
+          <Section title="Område">
+            <p className="col-span-2 text-(--black)/60!">
+              Definér det område filialet får låneansøgninger fra.
+            </p>
 
-        <div className="h-[2] w-full bg-(--black)/20" />
-
-        <Section title="Indstillinger">
-          <div
-            className={`border border-(--black)/10 rounded-lg ${open ? "" : "overflow-hidden"} col-span-2 mt-6`}
-          >
-            <button
-              onClick={() => setOpen((p) => !p)}
-              className="w-full flex justify-between items-center px-4 py-3 bg-(--black)/5 hover:bg-(--black)/10"
-            >
-              <span className="font-semibold">Område</span>
-
-              <IoIosArrowDown
-                className={`transition-transform duration-300 ${
-                  open ? "rotate-180" : ""
-                }`}
+            <div className="flex flex-col gap-2">
+              <p className="font-semibold pl-2">Regioner</p>
+              <MultiSelect
+                options={regions.map((r) => ({
+                  value: r.code,
+                  label: r.label,
+                }))}
+                value={selectedRegions}
+                onChange={setSelectedRegions}
+                placeholder="Vælg regioner"
               />
-            </button>
-
-            <div
-              className={`grid grid-cols-2 gap-4
-                      transition-all duration-300
-                      ${open ? "max-h-[1000] p-4" : "max-h-0 px-4"}
-                    `}
-            >
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold pl-2">Regioner</p>
-                <MultiSelect
-                  options={regions.map((r) => ({
-                    value: r.code,
-                    label: r.label,
-                  }))}
-                  value={selectedRegions}
-                  onChange={setSelectedRegions}
-                  placeholder="Vælg regioner"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold pl-2">Kommuner</p>
-                <SearchableMultiSelect
-                  options={kommuneOptions}
-                  value={selectedKommuner}
-                  onChange={setSelectedKommuner}
-                  placeholder="Kommune"
-                  searchLabel="Søg kommune..."
-                />
-              </div>
-
-              <div className="flex flex-col gap-2 col-span-2">
-                <p className="font-semibold pl-2">Postnumre</p>
-                <SearchableMultiSelect
-                  options={postcodeOptions}
-                  value={selectedPostcodes}
-                  onChange={(vals) => {
-                    const nextExcluded = kommunePostcodes.filter(
-                      (p) => !vals.includes(p),
-                    );
-
-                    const nextManual = vals.filter(
-                      (p) => !kommunePostcodes.includes(p),
-                    );
-
-                    setExcludedPostcodes(nextExcluded);
-                    setManualPostcodes(nextManual);
-                  }}
-                  placeholder="Postnummer"
-                  searchLabel="Søg postnummer eller by..."
-                />
-              </div>
             </div>
-          </div>
-          <div className="col-span-2">
-            <FilterSettings />
-          </div>
-        </Section>
 
-        <div className="flex gap-3 justify-end pt-2">
-          <button
-            onClick={handleReset}
-            className="px-4 py-2 rounded-md border border-(--black)/20 hover:bg-(--black)/5"
-          >
-            Nulstil
-          </button>
+            <div className="flex flex-col gap-2">
+              <p className="font-semibold pl-2">Kommuner</p>
+              <SearchableMultiSelect
+                options={kommuneOptions}
+                value={selectedKommuner}
+                onChange={setSelectedKommuner}
+                placeholder="Kommune"
+                searchLabel="Søg kommune..."
+              />
+            </div>
 
-          <button
-            onClick={handleCreateFilial}
-            className="px-4 py-2 rounded-md bg-(--contrast) text-white"
-          >
-            Opret filial
-          </button>
+            <div className="flex flex-col gap-2 col-span-2">
+              <p className="font-semibold pl-2">Postnumre</p>
+              <SearchableMultiSelect
+                options={postcodeOptions}
+                value={selectedPostcodes}
+                onChange={(vals) => {
+                  const nextExcluded = kommunePostcodes.filter(
+                    (p) => !vals.includes(p),
+                  );
+
+                  const nextManual = vals.filter(
+                    (p) => !kommunePostcodes.includes(p),
+                  );
+
+                  setExcludedPostcodes(nextExcluded);
+                  setManualPostcodes(nextManual);
+                }}
+                placeholder="Postnummer"
+                searchLabel="Søg postnummer eller by..."
+              />
+            </div>
+          </Section>
         </div>
+        {/* ================= AGENTS ================= */}
+
+        <Section title="Filter Agenter">
+          <p className="col-span-2 text-(--black)/60!">
+            Opret filteragenter, så filialen nemt og hurtigt kan anvende de
+            ønskede filtre.
+          </p>
+          {agents.length === 0 && (
+            <p className="italic text-black/60">- Ingen agenter endnu</p>
+          )}
+          <div className="flex flex-col">
+            {agents.map((a) => (
+              <AgentItem key={a.id} agent={a} />
+            ))}
+          </div>
+          <NewAgent addAgent={addAgent} />
+        </Section>
+        <button
+          onClick={handleCreateFilial}
+          className="bg-(--contrast) text-white px-4 py-2 rounded"
+        >
+          Opret Filial
+        </button>
       </div>
     </div>
   );
@@ -273,7 +237,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <div className="">
+    <div className="space-y-1">
       <h2 className="text-2xl font-semibold">{title}</h2>
       <div className="grid grid-cols-2 gap-6">{children}</div>
     </div>

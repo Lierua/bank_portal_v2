@@ -1,7 +1,6 @@
 "use client";
 
 import AffiliationItem from "./AffiliationItem";
-import NewAffiliation from "./NewAffiliation";
 
 import type { Bank } from "@/app/types/filial";
 
@@ -42,7 +41,7 @@ const AffiliationComponent = ({ setSection, banks }: Props) => {
         {bank?.affiliations.map((aff) => {
           const regionText =
             aff.area.regions.length > 0
-              ? aff.area.regions.join(", ")
+              ? `${aff.area.regions.length > 3 ? `Bruger specificeret` : aff.area.regions.join(", ")}`
               : `${aff.area.postcodes.length} postnumre`;
 
           return (
@@ -57,7 +56,15 @@ const AffiliationComponent = ({ setSection, banks }: Props) => {
 
         {/* NEW */}
         <div onClick={() => setSection("AffiliationSetup")}>
-          <NewAffiliation />
+          <div
+            className=" grid
+      cursor-pointer transition-all duration-200 ease-in shrink-0
+      hover:bg-blue-100 hover:border-blue-100
+      border-(--black)/10 border-b-2 pl-10 h-[40] text-(--black)/80
+      "
+          >
+            <h3 className="my-auto">+ Tilføj et nyt filial</h3>
+          </div>
         </div>
       </div>
     </div>

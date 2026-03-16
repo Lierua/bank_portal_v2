@@ -2,7 +2,6 @@
 
 import type { Request } from "@/app/types/request";
 import { MdInbox } from "react-icons/md";
-import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
 import ButtonOne from "../utilityComponents/ButtonOne";
 import SetSideStatus from "./SetSideStatus";
