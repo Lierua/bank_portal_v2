@@ -221,7 +221,7 @@ const RequestContent = ({ search }: { search: string }) => {
                   ? "scale-x-100"
                   : "scale-x-0 group-hover:scale-x-100"
               }
-              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[140] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           />
         </div>
 
@@ -242,7 +242,7 @@ const RequestContent = ({ search }: { search: string }) => {
                   ? "scale-x-100"
                   : "scale-x-0 group-hover:scale-x-100"
               }
-              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[140] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           />
         </div>
 
@@ -263,7 +263,7 @@ const RequestContent = ({ search }: { search: string }) => {
                   ? "scale-x-100"
                   : "scale-x-0 group-hover:scale-x-100"
               }
-              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[140] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           />
         </div>
 
@@ -284,7 +284,7 @@ const RequestContent = ({ search }: { search: string }) => {
                   ? "scale-x-100"
                   : "scale-x-0 group-hover:scale-x-100"
               }
-              w-[150] h-[40] z-10 bg-(--contrast) row-1 col-1`}
+              w-[140] h-[40] z-10 bg-(--contrast) row-1 col-1`}
           />
         </div>
       </div>
