@@ -34,6 +34,16 @@ const AffiliationSetup = ({
     { code: "NJY", label: "Nordjylland (NJY)" },
   ];
 
+  const handlers = [
+    { value: "0", label: "Mads Jensen" },
+    { value: "1", label: "Frederik Nielsen" },
+    { value: "2", label: "Andreas Hansen" },
+    { value: "3", label: "Mathilde Sørensen" },
+    { value: "4", label: "Emma Pedersen" },
+    { value: "5", label: "Lucas Andersen" },
+    { value: "6", label: "Sofie Kristensen" },
+  ];
+
   const isEditMode = !!affiliation;
 
   /* ================= LOOKUPS ================= */
@@ -99,6 +109,9 @@ const AffiliationSetup = ({
 
   const [selectedKommuner, setSelectedKommuner] = useState<string[]>([]);
   const [excludedPostcodes, setExcludedPostcodes] = useState<string[]>([]);
+  const [selectedHandlers, setSelectedHandlers] = useState<string[]>(
+    () => affiliation?.handlers ?? [],
+  );
 
   /* ================= DERIVED ================= */
 
@@ -140,6 +153,7 @@ const AffiliationSetup = ({
         postcodes: selectedPostcodes,
       },
       agents,
+      handlers: selectedHandlers,
     };
 
     if (isEditMode && updateAffiliation) {
@@ -227,6 +241,24 @@ const AffiliationSetup = ({
                 }}
                 placeholder="Postnummer"
                 searchLabel="Søg postnummer eller by..."
+              />
+            </div>
+          </Section>
+        </div>
+        <div className="max-w-[1000]">
+          <Section title="Sagsbehandler for filial">
+            <p className="col-span-2 text-(--black)/60!">
+              Udvælg hvem skal behandelde for filialen.
+            </p>
+
+            <div className="flex flex-col gap-2 col-span-2">
+              <p className="font-semibold pl-2">Sagsbehandler</p>
+              <SearchableMultiSelect
+                options={handlers}
+                value={selectedHandlers}
+                onChange={setSelectedHandlers}
+                placeholder="Sagsbehandler..."
+                searchLabel="Søg Sagsbehandler..."
               />
             </div>
           </Section>

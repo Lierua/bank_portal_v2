@@ -12,7 +12,7 @@ export type FilialAgent = {
     regions: string[];
     postcodes: string[];
   };
-
+  handlers: string[];
   agents: SearchAgent[];
 };
 
