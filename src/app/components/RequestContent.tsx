@@ -26,6 +26,8 @@ const RequestContent = ({ search }: { search: string }) => {
   const [requestPara, setRequestPara] = useState("Alle");
   const [section, setSection] = useState("Ansøgninger");
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [selectedAffiliation, setSelectedAffiliation] =
+    useState<FilialAgent | null>(null);
 
   const [banks, setBanks] = useState<Bank[]>([
     {
@@ -148,6 +150,23 @@ const RequestContent = ({ search }: { search: string }) => {
     );
 
     console.log("Updated banks:", banks);
+  };
+
+  const updateAffiliation = (updated: FilialAgent) => {
+    setBanks((prev) =>
+      prev.map((bank) =>
+        bank.id === 1
+          ? {
+              ...bank,
+              affiliations: bank.affiliations.map((aff) =>
+                aff.id === updated.id ? updated : aff,
+              ),
+            }
+          : bank,
+      ),
+    );
+
+    setSelectedAffiliation(updated);
   };
 
   return (
@@ -348,7 +367,11 @@ const RequestContent = ({ search }: { search: string }) => {
 
       {/* Filial oversigt */}
       {section === "Affiliate" && (
-        <AffiliationComponent setSection={setSection} banks={banks} />
+        <AffiliationComponent
+          setSection={setSection}
+          banks={banks}
+          setSelectedAffiliation={setSelectedAffiliation}
+        />
       )}
 
       {/* Filial setup */}
@@ -356,6 +379,16 @@ const RequestContent = ({ search }: { search: string }) => {
         <AffiliationSetup
           setSection={setSection}
           addAffiliation={addAffiliation}
+        />
+      )}
+
+      {/* Filial detalje */}
+      {section === "AffiliateDetails" && selectedAffiliation && (
+        <AffiliationSetup
+          setSection={setSection}
+          addAffiliation={addAffiliation}
+          affiliation={selectedAffiliation}
+          updateAffiliation={updateAffiliation}
         />
       )}
     </div>

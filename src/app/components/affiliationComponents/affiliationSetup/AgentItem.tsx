@@ -28,7 +28,7 @@ const AgentItem = ({ agent, onDelete, onUpdate }: Props) => {
 
   return (
     <div
-      className={`transition-all duration-200 ease-in
+      className={`transition-all duration-200 ease-in max-w-[500]
       flex flex-col gap-4 overflow-hidden ${
         open ? "max-h-[700]" : "max-h-[45.5]"
       }`}

@@ -14,9 +14,16 @@ import AgentItem from "./AgentItem";
 type Props = {
   setSection: React.Dispatch<React.SetStateAction<string>>;
   addAffiliation: (agent: FilialAgent) => void;
+  updateAffiliation?: (agent: FilialAgent) => void;
+  affiliation?: FilialAgent;
 };
 
-const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
+const AffiliationSetup = ({
+  setSection,
+  addAffiliation,
+  affiliation,
+  updateAffiliation,
+}: Props) => {
   const regions = [
     { code: "KBH", label: "København (KBH)" },
     { code: "SJL", label: "Sjælland (SJL)" },
@@ -26,6 +33,8 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
     { code: "MJY", label: "Midtjylland (MJY)" },
     { code: "NJY", label: "Nordjylland (NJY)" },
   ];
+
+  const isEditMode = !!affiliation;
 
   /* ================= LOOKUPS ================= */
 
@@ -74,12 +83,21 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
 
   /* ================= STATE ================= */
 
-  const [name, setName] = useState("");
-  const [agents, setAgents] = useState<SearchAgent[]>([]);
+  const [name, setName] = useState(() => affiliation?.name ?? "");
 
-  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
+  const [agents, setAgents] = useState<SearchAgent[]>(
+    () => affiliation?.agents ?? [],
+  );
+
+  const [selectedRegions, setSelectedRegions] = useState<string[]>(
+    () => affiliation?.area.regions ?? [],
+  );
+
+  const [manualPostcodes, setManualPostcodes] = useState<string[]>(
+    () => affiliation?.area.postcodes ?? [],
+  );
+
   const [selectedKommuner, setSelectedKommuner] = useState<string[]>([]);
-  const [manualPostcodes, setManualPostcodes] = useState<string[]>([]);
   const [excludedPostcodes, setExcludedPostcodes] = useState<string[]>([]);
 
   /* ================= DERIVED ================= */
@@ -108,18 +126,15 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
   function updateAgent(updated: SearchAgent) {
     setAgents((prev) => prev.map((a) => (a.id === updated.id ? updated : a)));
   }
-  /* ================= CREATE FILIAL ================= */
 
-  function handleCreateFilial() {
+  /* ================= SAVE FILIAL ================= */
+
+  function handleSaveFilial() {
     if (!name.trim()) return alert("Navn påkrævet");
 
-    if (!selectedRegions.length && !selectedPostcodes.length) {
-      return alert("Vælg område");
-    }
-
     const filial: FilialAgent = {
-      id: Date.now(),
-      name: name.trim(),
+      id: affiliation?.id ?? Date.now(),
+      name,
       area: {
         regions: selectedRegions,
         postcodes: selectedPostcodes,
@@ -127,7 +142,12 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
       agents,
     };
 
-    addAffiliation(filial);
+    if (isEditMode && updateAffiliation) {
+      updateAffiliation(filial);
+    } else {
+      addAffiliation(filial);
+    }
+
     setSection("Affiliate");
   }
 
@@ -141,18 +161,23 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
       >
         ← Tilbage
       </button>
+
       <div className="border-2 border-black/20 rounded-[5px] p-8 space-y-8">
-        <Section title="Filial">
-          <div className="mt-2 col-span-2 max-w-[500]">
-            <InputFilter
-              dataInput="affiliationName"
-              type="text"
-              placeholder="Indtast navn"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-        </Section>
+        <div className="[&>*>h2]:text-4xl! [&>*>h2]:font-semibold! [&>*>h2]:text-(--black)!">
+          <Section title="Filial">
+            <div className="mt-2 col-span-2 max-w-[500]">
+              <div className="text-[20px]! [&>*]:h-[50] [&>*]:font-semibold">
+                <InputFilter
+                  dataInput="affiliationName"
+                  type="text"
+                  placeholder="Indtast navn"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+            </div>
+          </Section>
+        </div>
         <div className="max-w-[1000]">
           <Section title="Område">
             <p className="col-span-2 text-(--black)/60!">
@@ -206,32 +231,39 @@ const AffiliationSetup = ({ setSection, addAffiliation }: Props) => {
             </div>
           </Section>
         </div>
-        {/* ================= AGENTS ================= */}
+        <div className="border-2 border-black/20 rounded-lg p-4">
+          <Section title="Filter Agenter">
+            <p className="col-span-2 text-(--black)/60!">
+              Opret filteragenter, så filialen nemt og hurtigt kan anvende de
+              ønskede filtre.
+            </p>
 
-        <Section title="Filter Agenter">
-          <p className="col-span-2 text-(--black)/60!">
-            Opret filteragenter, så filialen nemt og hurtigt kan anvende de
-            ønskede filtre.
-          </p>
-          {agents.length === 0 && (
-            <p className="italic text-black/60">- Ingen agenter endnu</p>
-          )}
-          <div className="flex flex-col">
-            {agents.map((agent) => (
-              <AgentItem
-                agent={agent}
-                onDelete={deleteAgent}
-                onUpdate={updateAgent}
-              />
-            ))}
-          </div>
-          <NewAgent addAgent={addAgent} />
-        </Section>
+            {agents.length === 0 && (
+              <h3 className="italic text-black/40!">
+                Ingen agenter er blevet oprettet
+              </h3>
+            )}
+
+            <div className="flex flex-col">
+              {agents.map((agent) => (
+                <AgentItem
+                  key={agent.id}
+                  agent={agent}
+                  onDelete={deleteAgent}
+                  onUpdate={updateAgent}
+                />
+              ))}
+            </div>
+
+            <NewAgent addAgent={addAgent} />
+          </Section>
+        </div>
+
         <button
-          onClick={handleCreateFilial}
+          onClick={handleSaveFilial}
           className="bg-(--contrast) text-white px-4 py-2 rounded"
         >
-          Opret Filial
+          {isEditMode ? "Opdater Filial" : "Opret Filial"}
         </button>
       </div>
     </div>

@@ -2,14 +2,21 @@
 
 import AffiliationItem from "./AffiliationItem";
 
-import type { Bank } from "@/app/types/filial";
+import type { Bank, FilialAgent } from "@/app/types/filial";
 
 type Props = {
+  setSelectedAffiliation: React.Dispatch<
+    React.SetStateAction<FilialAgent | null>
+  >;
   setSection: React.Dispatch<React.SetStateAction<string>>;
   banks: Bank[];
 };
 
-const AffiliationComponent = ({ setSection, banks }: Props) => {
+const AffiliationComponent = ({
+  setSection,
+  setSelectedAffiliation,
+  banks,
+}: Props) => {
   const bank = banks.find((b) => b.id === 1);
 
   return (
@@ -41,16 +48,26 @@ const AffiliationComponent = ({ setSection, banks }: Props) => {
         {bank?.affiliations.map((aff) => {
           const regionText =
             aff.area.regions.length > 0
-              ? `${aff.area.regions.length > 3 ? `Bruger specificeret` : aff.area.regions.join(", ")}`
+              ? `${
+                  aff.area.regions.length > 3
+                    ? `Bruger specificeret`
+                    : aff.area.regions.join(", ")
+                }`
               : `${aff.area.postcodes.length} postnumre`;
 
           return (
-            <AffiliationItem
+            <div
               key={aff.id}
-              name={aff.name}
-              region={regionText}
-              members={0}
-            />
+              onClick={() => {
+                (setSection("AffiliateDetails"), setSelectedAffiliation(aff));
+              }}
+            >
+              <AffiliationItem
+                name={aff.name}
+                region={regionText}
+                members={0}
+              />
+            </div>
           );
         })}
 
