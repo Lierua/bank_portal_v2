@@ -193,13 +193,13 @@ const AffiliationSetup = ({
           </Section>
         </div>
         <div className="max-w-[1000]">
-          <Section title="Område">
+          <Section title="Markedsområde">
             <p className="col-span-2 text-(--black)/60!">
               Definér det område filialet får låneansøgninger fra.
             </p>
 
             <div className="flex flex-col gap-2">
-              <p className="font-semibold pl-2">Regioner</p>
+              <p className="font-semibold pl-2">Region</p>
               <MultiSelect
                 options={regions.map((r) => ({
                   value: r.code,
@@ -207,23 +207,23 @@ const AffiliationSetup = ({
                 }))}
                 value={selectedRegions}
                 onChange={setSelectedRegions}
-                placeholder="Vælg regioner"
+                placeholder="Vælg region"
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <p className="font-semibold pl-2">Kommuner</p>
+              <p className="font-semibold pl-2">Kommune</p>
               <SearchableMultiSelect
                 options={kommuneOptions}
                 value={selectedKommuner}
                 onChange={setSelectedKommuner}
-                placeholder="Kommune"
+                placeholder="Vælg kommune"
                 searchLabel="Søg kommune..."
               />
             </div>
 
             <div className="flex flex-col gap-2 col-span-2">
-              <p className="font-semibold pl-2">Postnumre</p>
+              <p className="font-semibold pl-2">Postnumner</p>
               <SearchableMultiSelect
                 options={postcodeOptions}
                 value={selectedPostcodes}
@@ -239,7 +239,7 @@ const AffiliationSetup = ({
                   setExcludedPostcodes(nextExcluded);
                   setManualPostcodes(nextManual);
                 }}
-                placeholder="Postnummer"
+                placeholder="Vælg postnummer"
                 searchLabel="Søg postnummer eller by..."
               />
             </div>
@@ -264,9 +264,9 @@ const AffiliationSetup = ({
           </Section>
         </div>
         <div className="border-2 border-black/20 rounded-lg p-4">
-          <Section title="Filter Agenter">
+          <Section title="Søgeagenter">
             <p className="col-span-2 text-(--black)/60!">
-              Opret filteragenter, så filialen nemt og hurtigt kan anvende de
+              Opret søgeagent, så filialen nemt og hurtigt kan anvende de
               ønskede filtre.
             </p>
 
