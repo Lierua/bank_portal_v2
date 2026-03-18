@@ -60,7 +60,7 @@ const RequestItem = ({
         ${hasOpened ? "opacity-80" : "bg-blue-100/50"}
         ${isSelected ? "bg-blue-200/70 border-blue-200/70" : ""}
         ${isTakenByOther ? "opacity-50" : ""}
-        grid grid-cols-[40px_minmax(0,220px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_1fr_minmax(0,110px)]
+        grid grid-cols-[40px_minmax(0,220px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_minmax(0,175px)_minmax(0,110px)_1fr]
         h-[48] items-center border-b border-gray-200`}
     >
       <div className="grid">
@@ -94,7 +94,6 @@ const RequestItem = ({
       ) : (
         <p className="truncate pr-1"></p>
       )}
-      <p></p>
 
       <p
         className="text-center mx-auto"
@@ -109,6 +108,7 @@ const RequestItem = ({
               })
             : getDate(request.budget.createdAt))}
       </p>
+      <p></p>
     </div>
   );
 };

@@ -178,13 +178,13 @@ const AffiliationSetup = ({
 
       <div className="border-2 border-black/20 rounded-[5px] p-8 space-y-8">
         <div className="[&>*>h2]:text-4xl! [&>*>h2]:font-semibold! [&>*>h2]:text-(--black)!">
-          <Section title="Filial">
+          <Section title="Afdeling">
             <div className="mt-2 col-span-2 max-w-[500]">
               <div className="text-[20px]! [&>*]:h-[50] [&>*]:font-semibold">
                 <InputFilter
                   dataInput="affiliationName"
                   type="text"
-                  placeholder="Indtast navn"
+                  placeholder="Indtast afdelingsnavn"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -195,7 +195,7 @@ const AffiliationSetup = ({
         <div className="max-w-[1000]">
           <Section title="Markedsområde">
             <p className="col-span-2 text-(--black)/60!">
-              Definér det område filialet får låneansøgninger fra.
+              Definér markedsområde for afdelingen
             </p>
 
             <div className="flex flex-col gap-2">
@@ -246,35 +246,33 @@ const AffiliationSetup = ({
           </Section>
         </div>
         <div className="max-w-[1000]">
-          <Section title="Sagsbehandler for filial">
+          <Section title="Bruger">
             <p className="col-span-2 text-(--black)/60!">
-              Udvælg hvem skal behandelde for filialen.
+              Definér bruger for filialen
             </p>
 
             <div className="flex flex-col gap-2 col-span-2">
-              <p className="font-semibold pl-2">Sagsbehandler</p>
               <SearchableMultiSelect
                 options={handlers}
                 value={selectedHandlers}
                 onChange={setSelectedHandlers}
-                placeholder="Sagsbehandler..."
-                searchLabel="Søg Sagsbehandler..."
+                placeholder="Vælg bruger"
+                searchLabel="Søg bruger..."
               />
             </div>
           </Section>
+          <button
+            onClick={handleSaveFilial}
+            className="bg-(--contrast) text-white px-4 py-2 mt-10 rounded"
+          >
+            {isEditMode ? "Opdater afdeling" : "Opret afdeling"}
+          </button>
         </div>
         <div className="border-2 border-black/20 rounded-lg p-4">
           <Section title="Søgeagenter">
             <p className="col-span-2 text-(--black)/60!">
-              Opret søgeagent, så filialen nemt og hurtigt kan anvende de
-              ønskede filtre.
+              Opret søgeagent for afdeling
             </p>
-
-            {agents.length === 0 && (
-              <h3 className="italic text-black/40!">
-                Ingen agenter er blevet oprettet
-              </h3>
-            )}
 
             <div className="flex flex-col">
               {agents.map((agent) => (
@@ -290,13 +288,6 @@ const AffiliationSetup = ({
             <NewAgent addAgent={addAgent} />
           </Section>
         </div>
-
-        <button
-          onClick={handleSaveFilial}
-          className="bg-(--contrast) text-white px-4 py-2 rounded"
-        >
-          {isEditMode ? "Opdater Filial" : "Opret Filial"}
-        </button>
       </div>
     </div>
   );
@@ -313,7 +304,7 @@ function Section({
 }) {
   return (
     <div className="space-y-1">
-      <h2 className="text-2xl font-semibold">{title}</h2>
+      <h2 className="text-2xl font-semibold!">{title}</h2>
       <div className="grid grid-cols-2 gap-6">{children}</div>
     </div>
   );

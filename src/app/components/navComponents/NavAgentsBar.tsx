@@ -1,4 +1,5 @@
-import { VscSettings } from "react-icons/vsc";
+import Image from "next/image";
+import FilterIcon from "@/app/assets/icons/FilterIcon";
 
 export default function NavAgentsBar({
   showExtraFilters,
@@ -24,13 +25,22 @@ export default function NavAgentsBar({
               >
                 {a}
               </div>
-              <VscSettings
+              <div
                 onClick={() =>
                   setShowExtraFilters(showExtraFilters === a ? "closed" : a)
                 }
-                className={`pt-1 text-4xl cursor-pointer transition-colors 
-                  ${showExtraFilters === a ? "text-(--contrast) translate(-1,-1)" : "text-(--black)"}`}
-              />
+                className="grid"
+              >
+                <FilterIcon
+                  className={`
+                  w-[20] h-[20]
+                  cursor-pointer 
+                  transition-all duration-200
+                  hover:scale-110 hover:text-(--contrast)
+                  ${showExtraFilters === a ? "text-(--contrast) translate-y-[-1]" : "text-(--black)"}
+                  `}
+                />
+              </div>
             </div>
           ))}
         </div>

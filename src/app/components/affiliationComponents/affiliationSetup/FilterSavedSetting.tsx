@@ -75,7 +75,7 @@ export default function FilterSavedSettings({ agent, onChange }: Props) {
               />
             </InputBlock>
 
-            <InputBlock label="Formue (min)">
+            <InputBlock label="Formue (min.)">
               <InputFilter
                 dataInput="wealthMin"
                 type="number"
@@ -86,7 +86,7 @@ export default function FilterSavedSettings({ agent, onChange }: Props) {
               />
             </InputBlock>
 
-            <InputBlock label="Gæld (max)">
+            <InputBlock label="Gæld (maks.)">
               <InputFilter
                 dataInput="debtsMax"
                 type="number"

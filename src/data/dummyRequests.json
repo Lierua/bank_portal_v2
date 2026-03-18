@@ -3,9 +3,9 @@
     "id": 1,
     "loanDetails": {
       "score": 680,
-      "amount": 150000,
+      "amount": 15000000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Baker Street 221B",
           "postalCode": "8000",
@@ -78,9 +78,9 @@
     "id": 2,
     "loanDetails": {
       "score": 720,
-      "amount": 250000,
+      "amount": 2500000,
       "purpose": {
-        "loanKind": "CarLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Nørrebrogade 45",
           "postalCode": "2200",
@@ -153,9 +153,9 @@
     "id": 3,
     "loanDetails": {
       "score": 610,
-      "amount": 100000,
+      "amount": 2000000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Andelsbolig",
         "location": {
           "address": "Vestergade 12",
           "postalCode": "8000",
@@ -228,9 +228,9 @@
     "id": 4,
     "loanDetails": {
       "score": 540,
-      "amount": 200000,
+      "amount": 2500000,
       "purpose": {
-        "loanKind": "RenovationLoan",
+        "loanKind": "Andelsbolig",
         "location": {
           "address": "Østerbrogade 88",
           "postalCode": "2100",
@@ -303,9 +303,9 @@
     "id": 5,
     "loanDetails": {
       "score": 790,
-      "amount": 500000,
+      "amount": 1500000,
       "purpose": {
-        "loanKind": "Mortgage",
+        "loanKind": "Andelsbolig",
         "location": {
           "address": "Skovvej 7",
           "postalCode": "9000",
@@ -378,9 +378,9 @@
     "id": 6,
     "loanDetails": {
       "score": 500,
-      "amount": 75000,
+      "amount": 7500000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Havnegade 33",
           "postalCode": "6700",
@@ -453,9 +453,9 @@
     "id": 7,
     "loanDetails": {
       "score": 660,
-      "amount": 180000,
+      "amount": 1800000,
       "purpose": {
-        "loanKind": "CarLoan",
+        "loanKind": "Sommerhus",
         "location": {
           "address": "Enghavevej 19",
           "postalCode": "1674",
@@ -528,9 +528,9 @@
     "id": 8,
     "loanDetails": {
       "score": 705,
-      "amount": 300000,
+      "amount": 3200000,
       "purpose": {
-        "loanKind": "RenovationLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Slotsgade 4",
           "postalCode": "3400",
@@ -603,9 +603,9 @@
     "id": 9,
     "loanDetails": {
       "score": 630,
-      "amount": 120000,
+      "amount": 12500000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Kirkegade 21",
           "postalCode": "5000",
@@ -678,9 +678,9 @@
     "id": 10,
     "loanDetails": {
       "score": 760,
-      "amount": 400000,
+      "amount": 4000000,
       "purpose": {
-        "loanKind": "Mortgage",
+        "loanKind": "Sommerhus",
         "location": {
           "address": "Parkvej 15",
           "postalCode": "7100",
@@ -753,9 +753,9 @@
     "id": 11,
     "loanDetails": {
       "score": 580,
-      "amount": 90000,
+      "amount": 9200000,
       "purpose": {
-        "loanKind": "CarLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Bredgade 101",
           "postalCode": "7400",
@@ -829,9 +829,9 @@
     "id": 100,
     "loanDetails": {
       "score": 680,
-      "amount": 150000,
+      "amount": 1500000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Sommerhus",
         "location": {
           "address": "Baker Street 221B",
           "postalCode": "8000",
@@ -904,9 +904,9 @@
     "id": 200,
     "loanDetails": {
       "score": 720,
-      "amount": 250000,
+      "amount": 2500000,
       "purpose": {
-        "loanKind": "CarLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Nørrebrogade 45",
           "postalCode": "2200",
@@ -979,9 +979,9 @@
     "id": 300,
     "loanDetails": {
       "score": 610,
-      "amount": 100000,
+      "amount": 1500000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Andelsbolig",
         "location": {
           "address": "Vestergade 12",
           "postalCode": "8000",
@@ -1054,9 +1054,9 @@
     "id": 400,
     "loanDetails": {
       "score": 540,
-      "amount": 200000,
+      "amount": 2700000,
       "purpose": {
-        "loanKind": "RenovationLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Østerbrogade 88",
           "postalCode": "2100",
@@ -1129,9 +1129,9 @@
     "id": 500,
     "loanDetails": {
       "score": 790,
-      "amount": 500000,
+      "amount": 2500000,
       "purpose": {
-        "loanKind": "Mortgage",
+        "loanKind": "Andelsbolig",
         "location": {
           "address": "Skovvej 7",
           "postalCode": "9000",
@@ -1204,9 +1204,9 @@
     "id": 600,
     "loanDetails": {
       "score": 500,
-      "amount": 75000,
+      "amount": 1750000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Andelsbolig",
         "location": {
           "address": "Havnegade 33",
           "postalCode": "6700",
@@ -1279,9 +1279,9 @@
     "id": 700,
     "loanDetails": {
       "score": 660,
-      "amount": 180000,
+      "amount": 18000000,
       "purpose": {
-        "loanKind": "CarLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Enghavevej 19",
           "postalCode": "1674",
@@ -1354,9 +1354,9 @@
     "id": 800,
     "loanDetails": {
       "score": 705,
-      "amount": 300000,
+      "amount": 4300000,
       "purpose": {
-        "loanKind": "RenovationLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Slotsgade 4",
           "postalCode": "3400",
@@ -1429,9 +1429,9 @@
     "id": 900,
     "loanDetails": {
       "score": 630,
-      "amount": 120000,
+      "amount": 1200000,
       "purpose": {
-        "loanKind": "ConsumerLoan",
+        "loanKind": "Sommerhus",
         "location": {
           "address": "Kirkegade 21",
           "postalCode": "5000",
@@ -1504,9 +1504,9 @@
     "id": 1000,
     "loanDetails": {
       "score": 760,
-      "amount": 400000,
+      "amount": 2400000,
       "purpose": {
-        "loanKind": "Mortgage",
+        "loanKind": "Andelsbolig",
         "location": {
           "address": "Parkvej 15",
           "postalCode": "7100",
@@ -1569,7 +1569,7 @@
           }
         ]
       },
-      "wealth": 900000,
+      "wealth": 950000000,
       "debts": 200000
     },
     "status": "",
@@ -1579,9 +1579,9 @@
     "id": 1100,
     "loanDetails": {
       "score": 580,
-      "amount": 90000,
+      "amount": 9720000,
       "purpose": {
-        "loanKind": "CarLoan",
+        "loanKind": "Ejerbolig",
         "location": {
           "address": "Bredgade 101",
           "postalCode": "7400",

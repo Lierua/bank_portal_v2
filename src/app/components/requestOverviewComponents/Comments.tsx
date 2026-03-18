@@ -8,22 +8,16 @@ import ButtonOne from "../utilityComponents/ButtonOne";
 -------------------------- */
 const initialComments = [
   {
-    id: 1,
-    author: "Line Christiansen",
-    message: "Mangler dokumentation for indkomst.",
-    createdAt: "2 timer siden",
-  },
-  {
     id: 2,
     author: "Anders Rasmussen",
-    message: "Ser fornuftig ud ift. gældsfaktor.",
+    message: "Ser fornuftig ud ift. gældsfaktor",
     createdAt: "I går",
   },
 
   {
     id: 3,
     author: "Mads Karllade",
-    message: "Mangler x, y, c, z",
+    message: "Mangler x, y, z",
     createdAt: "I går",
   },
 ];
@@ -112,7 +106,7 @@ const Comments = ({ large }: Props) => {
           <input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Ansøgnings note..."
+            placeholder="Kommentar..."
             type="text"
             className="flex-1  rounded-md px-3 py-2 text-sm focus:outline-none"
             onKeyDown={(e) => {

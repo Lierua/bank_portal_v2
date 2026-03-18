@@ -43,13 +43,12 @@ const NewAgent = ({ addAgent }: Props) => {
 
   return (
     <div className=" space-y-4 col-span-2">
-      <h3 className="span-2 text-(--black)/80">Tilføj ny agent</h3>
       <div className="flex flex-col gap-2 max-w-[500] mb-8">
         <div className="text-[20px]! [&>*]:h-[50]">
           <InputFilter
             dataInput="agentName"
             type="text"
-            placeholder="Agent navn"
+            placeholder="Indtast navn"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />

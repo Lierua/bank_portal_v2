@@ -1,17 +1,55 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import InputFilter from "../../utilityComponents/InputFilter";
+import postCodes from "@/data/postCodes.json";
 
+import type { FilialAgent } from "@/app/types/filial";
 import type { FilterSettings as FilterSettingsType } from "@/app/types/filial";
+
+import SearchableMultiSelect from "../../utilityComponents/formUtilities/SearchMultiSelect";
+import MultiSelect from "../../utilityComponents/formUtilities/MultiSelect";
 
 type Props = {
   filters: FilterSettingsType;
   setFilters: React.Dispatch<React.SetStateAction<FilterSettingsType>>;
+  affiliation?: FilialAgent;
 };
 
-export default function FilterSettings({ filters, setFilters }: Props) {
+export default function FilterSettings({
+  filters,
+  setFilters,
+  affiliation,
+}: Props) {
+  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
+  const [selectedKommuner, setSelectedKommuner] = useState<string[]>([]);
+  const [manualPostcodes, setManualPostcodes] = useState<string[]>([]);
+  const [excludedPostcodes, setExcludedPostcodes] = useState<string[]>([]);
+
+  /* ================= REGION MASTER ================= */
+
+  const regions = [
+    { code: "KBH", label: "København (KBH)" },
+    { code: "SJL", label: "Sjælland (SJL)" },
+    { code: "FYN", label: "Fyn (FYN)" },
+    { code: "LF", label: "Lolland-Falster (LF)" },
+    { code: "SJY", label: "Sydjylland (SJY)" },
+    { code: "MJY", label: "Midtjylland (MJY)" },
+    { code: "NJY", label: "Nordjylland (NJY)" },
+  ];
+
+  const [agentRegion, setAgentRegion] = useState();
+
+  /* ================= REGION LIMIT ================= */
+
+  const allowedRegions = useMemo(() => {
+    if (!affiliation?.area?.regions?.length) return regions;
+    return regions.filter((r) => affiliation.area.regions.includes(r.code));
+  }, [affiliation]);
+
+  /* ================= FILTER UPDATE ================= */
+
   function update(key: keyof FilterSettingsType, value: any) {
     setFilters((prev) => ({
       ...prev,
@@ -19,6 +57,65 @@ export default function FilterSettings({ filters, setFilters }: Props) {
     }));
   }
 
+  /* ================= LOOKUPS ================= */
+
+  const kommuneOptions = useMemo(
+    () =>
+      postCodes.map((k) => ({
+        value: k.name,
+        label: k.name,
+      })),
+    [],
+  );
+
+  const kommuneToPostcodes = useMemo(() => {
+    const map: Record<string, string[]> = {};
+
+    postCodes.forEach((k) => {
+      map[k.name] = k.postcodes
+        .map((p) => p.postcode)
+        .filter((p) => p !== "9999");
+    });
+
+    return map;
+  }, []);
+
+  const postcodeOptions = useMemo(() => {
+    const seen = new Set<string>();
+    const list: { value: string; label: string }[] = [];
+
+    postCodes.forEach((k) => {
+      k.postcodes.forEach((p) => {
+        if (p.postcode === "9999") return;
+
+        if (!seen.has(p.postcode)) {
+          seen.add(p.postcode);
+
+          list.push({
+            value: p.postcode,
+            label: `${p.postcode} - ${p.cityName}`,
+          });
+        }
+      });
+    });
+
+    return list;
+  }, []);
+
+  /* ================= DERIVED ================= */
+
+  const kommunePostcodes = useMemo(() => {
+    const all = selectedKommuner.flatMap((k) => kommuneToPostcodes[k] ?? []);
+    return [...new Set(all)];
+  }, [selectedKommuner, kommuneToPostcodes]);
+
+  const selectedPostcodes = useMemo(() => {
+    const merged = new Set([...manualPostcodes, ...kommunePostcodes]);
+    excludedPostcodes.forEach((p) => merged.delete(p));
+    return [...merged];
+  }, [manualPostcodes, kommunePostcodes, excludedPostcodes]);
+
+  /* ================= RENDER ================= */
   return (
     <div className="overflow-hidden transition-all duration-300">
       <div className="pb-5 space-y-4 overflow-y-auto">
@@ -43,11 +140,60 @@ export default function FilterSettings({ filters, setFilters }: Props) {
               options={["Ejerbolig", "Andelsbolig", "Sommerhus"]}
             />
           </div>
-        </FilterSection>
+        </FilterSection>{" "}
+        <FilterSection title="Markedsområde" defaultOpen>
+          <div className="flex flex-col gap-2">
+            <p className="font-semibold pl-2">Region</p>
 
+            <MultiSelect
+              options={allowedRegions.map((r) => ({
+                value: r.code,
+                label: r.label,
+              }))}
+              value={selectedRegions}
+              onChange={setSelectedRegions}
+              placeholder="Vælg region"
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <p className="font-semibold pl-2">Kommune</p>
+
+            <SearchableMultiSelect
+              options={kommuneOptions}
+              value={selectedKommuner}
+              onChange={setSelectedKommuner}
+              placeholder="Vælg kommune"
+              searchLabel="Søg kommune..."
+            />
+          </div>
+
+          <div className="flex flex-col gap-2 col-span-2">
+            <p className="font-semibold pl-2">Postnumre</p>
+
+            <SearchableMultiSelect
+              options={postcodeOptions}
+              value={selectedPostcodes}
+              onChange={(vals) => {
+                const nextExcluded = kommunePostcodes.filter(
+                  (p) => !vals.includes(p),
+                );
+
+                const nextManual = vals.filter(
+                  (p) => !kommunePostcodes.includes(p),
+                );
+
+                setExcludedPostcodes(nextExcluded);
+                setManualPostcodes(nextManual);
+              }}
+              placeholder="Vælg postnummer"
+              searchLabel="Søg postnummer eller by..."
+            />
+          </div>
+        </FilterSection>
         <FilterSection title="Økonomi">
           <div className="grid grid-cols-4 gap-7">
-            <InputBlock label="Indkomst (min)">
+            <InputBlock label="Indkomst (min.)">
               <InputFilter
                 dataInput="incomeMin"
                 type="number"
@@ -56,7 +202,7 @@ export default function FilterSettings({ filters, setFilters }: Props) {
               />
             </InputBlock>
 
-            <InputBlock label="Faste udgifter (max)">
+            <InputBlock label="Faste udgifter (maks.)">
               <InputFilter
                 dataInput="fixedExpensesMax"
                 type="number"
@@ -67,7 +213,7 @@ export default function FilterSettings({ filters, setFilters }: Props) {
               />
             </InputBlock>
 
-            <InputBlock label="Formue (min)">
+            <InputBlock label="Formue (min.)">
               <InputFilter
                 dataInput="wealthMin"
                 type="number"
@@ -76,7 +222,7 @@ export default function FilterSettings({ filters, setFilters }: Props) {
               />
             </InputBlock>
 
-            <InputBlock label="Gæld (max)">
+            <InputBlock label="Gæld (maks.)">
               <InputFilter
                 dataInput="debtsMax"
                 type="number"
@@ -86,7 +232,6 @@ export default function FilterSettings({ filters, setFilters }: Props) {
             </InputBlock>
           </div>
         </FilterSection>
-
         <FilterSection title="Personlige oplysninger">
           <div className="grid grid-cols-4 gap-7">
             <SelectFilter

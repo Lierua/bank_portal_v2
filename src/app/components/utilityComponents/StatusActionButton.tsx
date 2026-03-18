@@ -39,7 +39,7 @@ const StatusActionButton = ({
       disabled={disabled}
       className={`${baseStyles} ${disabled ? disabledStyles : activeStyles}`}
     >
-      {type === "behandel" ? "Behandel" : isApprove ? "Godkend" : "Afslå"}
+      {type === "behandel" ? "Tilføj" : isApprove ? "Godkend" : "Afslå"}
     </button>
   );
 };

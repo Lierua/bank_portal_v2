@@ -212,7 +212,7 @@ const RequestContent = ({ search }: { search: string }) => {
             }}
             className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
           >
-            Ansøgninger
+            Emner
           </p>
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
@@ -233,7 +233,7 @@ const RequestContent = ({ search }: { search: string }) => {
             }}
             className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
           >
-            Mine Emner
+            Mine emner
           </p>
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]
@@ -275,7 +275,7 @@ const RequestContent = ({ search }: { search: string }) => {
             }}
             className="pl-[10] my-auto text-(--white)! z-11 font-semibold cursor-pointer row-1 col-1"
           >
-            Filial Setup
+            Afdelinger
           </p>
           <div
             className={`transition-all duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] mb-[-2]

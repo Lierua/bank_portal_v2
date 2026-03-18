@@ -91,11 +91,14 @@ export default function SideOverview({
             />
 
             <Info label="Gældsfaktor" value={request.gaeldsfaktor} />
-            <Info label="Indkomst" value={request.indkomst} />
+            <Info
+              label="Indkomst"
+              value={`${request.indkomst.toLocaleString("da-DK")} kr.`}
+            />
 
             <Info
               label="Rådighedsbeløb"
-              value={`${request.postalCode} – ${request.raadighedsBeloeb}`}
+              value={`${request.raadighedsBeloeb.toLocaleString("da-DK")} kr.`}
             />
           </div>
           <div className="mt-auto flex flex-col gap-1">
