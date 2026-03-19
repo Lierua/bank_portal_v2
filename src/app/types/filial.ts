@@ -26,6 +26,11 @@ export type FilterSettings = {
   loanAmountMin?: number;
   housingType?: string;
 
+  area?: {
+    regions: string[];
+    postcodes: string[];
+  };
+
   incomeMin?: number;
   fixedExpensesMax?: number;
   wealthMin?: number;

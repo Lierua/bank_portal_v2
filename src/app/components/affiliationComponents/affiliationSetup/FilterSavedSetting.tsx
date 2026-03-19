@@ -4,6 +4,9 @@ import type { SearchAgent, FilterSettings } from "@/app/types/filial";
 import { useState, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import InputFilter from "../../utilityComponents/InputFilter";
+import InputBlock from "../../utilityComponents/InputBlock";
+import FilterSection from "../../utilityComponents/FilterSection";
+import SelectFilter from "../../utilityComponents/SelectFilter";
 
 type Props = {
   agent: SearchAgent;
@@ -42,6 +45,7 @@ export default function FilterSavedSettings({ agent, onChange }: Props) {
             </InputBlock>
 
             <SelectFilter
+              dataInput="housingType"
               label="Boligtype"
               value={filters.housingType}
               onChange={(v) => updateField("housingType", v)}
@@ -103,6 +107,7 @@ export default function FilterSavedSettings({ agent, onChange }: Props) {
         <FilterSection title="Personlige oplysninger">
           <div className="grid grid-cols-2 gap-7">
             <SelectFilter
+              dataInput="educationLevel"
               label="Uddannelse"
               value={filters.educationLevel}
               onChange={(v) => updateField("educationLevel", v)}
@@ -110,6 +115,7 @@ export default function FilterSavedSettings({ agent, onChange }: Props) {
             />
 
             <SelectFilter
+              dataInput="jobStatus"
               label="Jobstatus"
               value={filters.jobStatus}
               onChange={(v) => updateField("jobStatus", v)}
@@ -117,6 +123,7 @@ export default function FilterSavedSettings({ agent, onChange }: Props) {
             />
 
             <SelectFilter
+              dataInput="housingSituation"
               label="Boligsituation"
               value={filters.housingSituation}
               onChange={(v) => updateField("housingSituation", v)}
@@ -124,87 +131,6 @@ export default function FilterSavedSettings({ agent, onChange }: Props) {
             />
           </div>
         </FilterSection>
-      </div>
-    </div>
-  );
-}
-
-function SelectFilter({
-  label,
-  options,
-  value,
-  onChange,
-}: {
-  label: string;
-  options: string[];
-  value?: string;
-  onChange: (v: string) => void;
-}) {
-  return (
-    <div className="flex flex-col gap-1">
-      <p className="font-semibold pl-2">{label}</p>
-
-      <select
-        value={value ?? ""}
-        onChange={(e) => onChange(e.target.value)}
-        className="h-[40px] rounded-md border border-(--black)/20 px-3"
-      >
-        <option value="">Alle</option>
-        {options.map((opt) => (
-          <option key={opt}>{opt}</option>
-        ))}
-      </select>
-    </div>
-  );
-}
-
-function InputBlock({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex flex-col gap-1">
-      <p className="font-semibold pl-2">{label}</p>
-      {children}
-    </div>
-  );
-}
-
-function FilterSection({
-  title,
-  children,
-  defaultOpen = false,
-}: {
-  title: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
-}) {
-  const [open, setOpen] = useState(defaultOpen);
-
-  return (
-    <div className="border border-(--black)/10 rounded-lg overflow-hidden">
-      <button
-        onClick={() => setOpen((p) => !p)}
-        className="w-full flex justify-between items-center px-4 py-3 bg-(--black)/5 hover:bg-(--black)/10"
-      >
-        <span className="font-semibold">{title}</span>
-
-        <IoIosArrowDown
-          className={`transition-transform duration-300 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-
-      <div
-        className={`transition-all duration-300 overflow-hidden ${
-          open ? "max-h-[1000] p-4" : "max-h-0 px-4"
-        }`}
-      >
-        {children}
       </div>
     </div>
   );

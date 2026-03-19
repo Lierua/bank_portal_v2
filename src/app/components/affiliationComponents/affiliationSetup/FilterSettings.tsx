@@ -1,7 +1,6 @@
 "use client";
 
-import { useMemo, useEffect, useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { useMemo, useState } from "react";
 import InputFilter from "../../utilityComponents/InputFilter";
 import postCodes from "@/data/postCodes.json";
 
@@ -10,19 +9,35 @@ import type { FilterSettings as FilterSettingsType } from "@/app/types/filial";
 
 import SearchableMultiSelect from "../../utilityComponents/formUtilities/SearchMultiSelect";
 import MultiSelect from "../../utilityComponents/formUtilities/MultiSelect";
+import SelectFilter from "../../utilityComponents/SelectFilter";
+import InputBlock from "../../utilityComponents/InputBlock";
+import FilterSection from "../../utilityComponents/FilterSection";
 
 type Props = {
   filters: FilterSettingsType;
   setFilters: React.Dispatch<React.SetStateAction<FilterSettingsType>>;
   affiliation?: FilialAgent;
+  selectedRegions: string[];
+  selectedPostcodes: string[];
+
+  agentRegion: string[];
+  setAgentRegion: React.Dispatch<React.SetStateAction<string[]>>;
+
+  agentKommune: string[];
+  setAgentKommune: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 export default function FilterSettings({
   filters,
   setFilters,
   affiliation,
+  selectedRegions,
+  selectedPostcodes,
+  agentRegion,
+  setAgentRegion,
+  agentKommune,
+  setAgentKommune,
 }: Props) {
-  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
   const [selectedKommuner, setSelectedKommuner] = useState<string[]>([]);
   const [manualPostcodes, setManualPostcodes] = useState<string[]>([]);
   const [excludedPostcodes, setExcludedPostcodes] = useState<string[]>([]);
@@ -39,14 +54,11 @@ export default function FilterSettings({
     { code: "NJY", label: "Nordjylland (NJY)" },
   ];
 
-  const [agentRegion, setAgentRegion] = useState();
-
   /* ================= REGION LIMIT ================= */
 
-  const allowedRegions = useMemo(() => {
-    if (!affiliation?.area?.regions?.length) return regions;
-    return regions.filter((r) => affiliation.area.regions.includes(r.code));
-  }, [affiliation]);
+  const allowedRegions = regions.filter((r) =>
+    selectedRegions.includes(r.code),
+  );
 
   /* ================= FILTER UPDATE ================= */
 
@@ -105,20 +117,14 @@ export default function FilterSettings({
   /* ================= DERIVED ================= */
 
   const kommunePostcodes = useMemo(() => {
-    const all = selectedKommuner.flatMap((k) => kommuneToPostcodes[k] ?? []);
+    const all = agentKommune.flatMap((k) => kommuneToPostcodes[k] ?? []);
     return [...new Set(all)];
-  }, [selectedKommuner, kommuneToPostcodes]);
-
-  const selectedPostcodes = useMemo(() => {
-    const merged = new Set([...manualPostcodes, ...kommunePostcodes]);
-    excludedPostcodes.forEach((p) => merged.delete(p));
-    return [...merged];
-  }, [manualPostcodes, kommunePostcodes, excludedPostcodes]);
+  }, [agentKommune, kommuneToPostcodes]);
 
   /* ================= RENDER ================= */
   return (
-    <div className="overflow-hidden transition-all duration-300">
-      <div className="pb-5 space-y-4 overflow-y-auto">
+    <div className="transition-all duration-300">
+      <div className="pb-5 space-y-4 ">
         <FilterSection title="Lån">
           <div className="grid grid-cols-4 gap-7">
             <InputBlock label="Lånebeløb (min)">
@@ -141,7 +147,7 @@ export default function FilterSettings({
             />
           </div>
         </FilterSection>{" "}
-        <FilterSection title="Markedsområde" defaultOpen>
+        <FilterSection title="Markedsområde">
           <div className="flex flex-col gap-2">
             <p className="font-semibold pl-2">Region</p>
 
@@ -150,8 +156,8 @@ export default function FilterSettings({
                 value: r.code,
                 label: r.label,
               }))}
-              value={selectedRegions}
-              onChange={setSelectedRegions}
+              value={agentRegion}
+              onChange={setAgentRegion}
               placeholder="Vælg region"
             />
           </div>
@@ -161,8 +167,8 @@ export default function FilterSettings({
 
             <SearchableMultiSelect
               options={kommuneOptions}
-              value={selectedKommuner}
-              onChange={setSelectedKommuner}
+              value={agentKommune}
+              onChange={setAgentKommune}
               placeholder="Vælg kommune"
               searchLabel="Søg kommune..."
             />
@@ -259,109 +265,6 @@ export default function FilterSettings({
             />
           </div>
         </FilterSection>
-      </div>
-    </div>
-  );
-}
-
-/* -------------------------
-   Select Filter
--------------------------- */
-function SelectFilter({
-  label,
-  dataInput,
-  options,
-  placeholder = "Vælg…",
-  value,
-  onChange,
-}: {
-  label: string;
-  dataInput: string;
-  options: string[];
-  placeholder?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-}) {
-  return (
-    <div className="flex flex-col gap-1">
-      <p className="font-semibold pl-2">{label}</p>
-
-      <select
-        data-input={dataInput}
-        value={value ?? ""}
-        onChange={(e) => onChange?.(e.target.value)}
-        className="h-[40] rounded-md border border-(--black)/20 px-3"
-      >
-        <option value="" disabled>
-          {placeholder}
-        </option>
-
-        <option value="">Alle</option>
-
-        {options.map((opt) => (
-          <option key={opt} value={opt}>
-            {opt}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-}
-
-/* -------------------------
-   Input Wrapper
--------------------------- */
-function InputBlock({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex flex-col gap-1">
-      <p className="font-semibold pl-2">{label}</p>
-      {children}
-    </div>
-  );
-}
-
-/* -------------------------
-   Accordion Section
--------------------------- */
-function FilterSection({
-  title,
-  children,
-  defaultOpen = false,
-}: {
-  title: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
-}) {
-  const [open, setOpen] = useState(defaultOpen);
-
-  return (
-    <div className="border border-(--black)/10 rounded-lg overflow-hidden">
-      <button
-        onClick={() => setOpen((p) => !p)}
-        className="w-full flex justify-between items-center px-4 py-3 bg-(--black)/5 hover:bg-(--black)/10"
-      >
-        <span className="font-semibold">{title}</span>
-
-        <IoIosArrowDown
-          className={`transition-transform duration-300 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-
-      <div
-        className={`
-          transition-all duration-300 overflow-hidden
-          ${open ? "max-h-[1000] p-4" : "max-h-0 px-4"}
-        `}
-      >
-        {children}
       </div>
     </div>
   );

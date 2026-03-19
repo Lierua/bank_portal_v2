@@ -140,6 +140,9 @@ const AffiliationSetup = ({
     setAgents((prev) => prev.map((a) => (a.id === updated.id ? updated : a)));
   }
 
+  const [agentRegion, setAgentRegion] = useState<string[]>(selectedRegions);
+  const [agentKommune, setAgentKommune] = useState<string[]>(selectedKommuner);
+
   /* ================= SAVE FILIAL ================= */
 
   function handleSaveFilial() {
@@ -161,7 +164,7 @@ const AffiliationSetup = ({
     } else {
       addAffiliation(filial);
     }
-
+    console.log(filial);
     setSection("Affiliate");
   }
 
@@ -206,7 +209,10 @@ const AffiliationSetup = ({
                   label: r.label,
                 }))}
                 value={selectedRegions}
-                onChange={setSelectedRegions}
+                onChange={(vals) => {
+                  setSelectedRegions(vals);
+                  setAgentRegion(vals);
+                }}
                 placeholder="Vælg region"
               />
             </div>
@@ -216,7 +222,10 @@ const AffiliationSetup = ({
               <SearchableMultiSelect
                 options={kommuneOptions}
                 value={selectedKommuner}
-                onChange={setSelectedKommuner}
+                onChange={(vals) => {
+                  setSelectedKommuner(vals);
+                  setAgentKommune(vals);
+                }}
                 placeholder="Vælg kommune"
                 searchLabel="Søg kommune..."
               />
@@ -285,7 +294,15 @@ const AffiliationSetup = ({
               ))}
             </div>
 
-            <NewAgent addAgent={addAgent} />
+            <NewAgent
+              addAgent={addAgent}
+              selectedRegions={selectedRegions}
+              selectedPostcodes={selectedPostcodes}
+              agentRegion={agentRegion}
+              setAgentRegion={setAgentRegion}
+              agentKommune={agentKommune}
+              setAgentKommune={setAgentKommune}
+            />
           </Section>
         </div>
       </div>

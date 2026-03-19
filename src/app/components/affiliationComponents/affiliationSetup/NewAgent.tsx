@@ -11,9 +11,25 @@ import type {
 
 type Props = {
   addAgent: (agent: SearchAgent) => void;
-};
 
-const NewAgent = ({ addAgent }: Props) => {
+  selectedRegions: string[];
+  selectedPostcodes: string[];
+
+  agentRegion: string[];
+  setAgentRegion: React.Dispatch<React.SetStateAction<string[]>>;
+
+  agentKommune: string[];
+  setAgentKommune: React.Dispatch<React.SetStateAction<string[]>>;
+};
+const NewAgent = ({
+  addAgent,
+  selectedRegions,
+  selectedPostcodes,
+  agentRegion,
+  setAgentRegion,
+  agentKommune,
+  setAgentKommune,
+}: Props) => {
   const [name, setName] = useState("");
 
   const [filters, setFilters] = useState<FilterSettingsType>({});
@@ -55,7 +71,16 @@ const NewAgent = ({ addAgent }: Props) => {
         </div>
       </div>
 
-      <FilterSettings filters={filters} setFilters={setFilters} />
+      <FilterSettings
+        filters={filters}
+        setFilters={setFilters}
+        selectedRegions={selectedRegions}
+        selectedPostcodes={selectedPostcodes}
+        agentRegion={agentRegion}
+        setAgentRegion={setAgentRegion}
+        agentKommune={agentKommune}
+        setAgentKommune={setAgentKommune}
+      />
 
       <div className="flex gap-3 justify-start pt-2">
         <button
@@ -66,7 +91,10 @@ const NewAgent = ({ addAgent }: Props) => {
         </button>
 
         <button
-          onClick={handleCreateAgent}
+          onClick={() => {
+            handleCreateAgent();
+            console.log(`selectedRegions ${selectedRegions}`);
+          }}
           className="px-4 py-2 rounded-md bg-(--contrast) text-white"
         >
           Opret agent
