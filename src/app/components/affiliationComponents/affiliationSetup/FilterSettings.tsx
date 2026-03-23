@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useEffect } from "react";
 import InputFilter from "../../utilityComponents/InputFilter";
 import postCodes from "@/data/postCodes.json";
 
@@ -16,32 +16,32 @@ import FilterSection from "../../utilityComponents/FilterSection";
 type Props = {
   filters: FilterSettingsType;
   setFilters: React.Dispatch<React.SetStateAction<FilterSettingsType>>;
-  affiliation?: FilialAgent;
+
   selectedRegions: string[];
-  selectedPostcodes: string[];
+  selectedKommuner: string[];
 
   agentRegion: string[];
   setAgentRegion: React.Dispatch<React.SetStateAction<string[]>>;
 
   agentKommune: string[];
   setAgentKommune: React.Dispatch<React.SetStateAction<string[]>>;
+
+  agentPostcodes: string[];
+  setAgentPostcodes: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 export default function FilterSettings({
   filters,
   setFilters,
-  affiliation,
   selectedRegions,
-  selectedPostcodes,
+  selectedKommuner,
   agentRegion,
   setAgentRegion,
   agentKommune,
   setAgentKommune,
+  agentPostcodes,
+  setAgentPostcodes,
 }: Props) {
-  const [selectedKommuner, setSelectedKommuner] = useState<string[]>([]);
-  const [manualPostcodes, setManualPostcodes] = useState<string[]>([]);
-  const [excludedPostcodes, setExcludedPostcodes] = useState<string[]>([]);
-
   /* ================= REGION MASTER ================= */
 
   const regions = [
@@ -54,49 +54,30 @@ export default function FilterSettings({
     { code: "NJY", label: "Nordjylland (NJY)" },
   ];
 
-  /* ================= REGION LIMIT ================= */
+  /* ================= LIMIT REGION ================= */
 
   const allowedRegions = regions.filter((r) =>
     selectedRegions.includes(r.code),
   );
 
-  /* ================= FILTER UPDATE ================= */
+  /* ================= LIMIT KOMMUNER ================= */
 
-  function update(key: keyof FilterSettingsType, value: any) {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: value,
-    }));
-  }
+  const allowedKommuner = useMemo(() => {
+    return postCodes.filter((k) => selectedKommuner.includes(k.name));
+  }, [selectedKommuner]);
 
-  /* ================= LOOKUPS ================= */
+  const allowedKommunerOptions = allowedKommuner.map((k) => ({
+    value: k.name,
+    label: k.name,
+  }));
 
-  const kommuneOptions = useMemo(
-    () =>
-      postCodes.map((k) => ({
-        value: k.name,
-        label: k.name,
-      })),
-    [],
-  );
+  /* ================= LIMIT POSTCODES ================= */
 
-  const kommuneToPostcodes = useMemo(() => {
-    const map: Record<string, string[]> = {};
-
-    postCodes.forEach((k) => {
-      map[k.name] = k.postcodes
-        .map((p) => p.postcode)
-        .filter((p) => p !== "9999");
-    });
-
-    return map;
-  }, []);
-
-  const postcodeOptions = useMemo(() => {
+  const allowedPostcodes = useMemo(() => {
     const seen = new Set<string>();
     const list: { value: string; label: string }[] = [];
 
-    postCodes.forEach((k) => {
+    allowedKommuner.forEach((k) => {
       k.postcodes.forEach((p) => {
         if (p.postcode === "9999") return;
 
@@ -112,15 +93,26 @@ export default function FilterSettings({
     });
 
     return list;
-  }, []);
+  }, [allowedKommuner]);
 
-  /* ================= DERIVED ================= */
+  /* ================= AUTO CLEAN POSTCODES ================= */
 
-  const kommunePostcodes = useMemo(() => {
-    const all = agentKommune.flatMap((k) => kommuneToPostcodes[k] ?? []);
-    return [...new Set(all)];
-  }, [agentKommune, kommuneToPostcodes]);
+  useEffect(() => {
+    const allowedSet = new Set(
+      allowedKommuner.flatMap((k) => k.postcodes.map((p) => p.postcode)),
+    );
 
+    setAgentPostcodes((prev) => prev.filter((p) => allowedSet.has(p)));
+  }, [allowedKommuner, setAgentPostcodes]);
+
+  /* ================= FILTER UPDATE ================= */
+
+  function update(key: keyof FilterSettingsType, value: any) {
+    setFilters((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  }
   /* ================= RENDER ================= */
   return (
     <div className="transition-all duration-300">
@@ -148,6 +140,7 @@ export default function FilterSettings({
           </div>
         </FilterSection>{" "}
         <FilterSection title="Markedsområde">
+          {/* REGION */}
           <div className="flex flex-col gap-2">
             <p className="font-semibold pl-2">Region</p>
 
@@ -162,11 +155,12 @@ export default function FilterSettings({
             />
           </div>
 
+          {/* KOMMUNE */}
           <div className="flex flex-col gap-2">
             <p className="font-semibold pl-2">Kommune</p>
 
             <SearchableMultiSelect
-              options={kommuneOptions}
+              options={allowedKommunerOptions}
               value={agentKommune}
               onChange={setAgentKommune}
               placeholder="Vælg kommune"
@@ -174,24 +168,14 @@ export default function FilterSettings({
             />
           </div>
 
+          {/* POSTCODE */}
           <div className="flex flex-col gap-2 col-span-2">
             <p className="font-semibold pl-2">Postnumre</p>
 
             <SearchableMultiSelect
-              options={postcodeOptions}
-              value={selectedPostcodes}
-              onChange={(vals) => {
-                const nextExcluded = kommunePostcodes.filter(
-                  (p) => !vals.includes(p),
-                );
-
-                const nextManual = vals.filter(
-                  (p) => !kommunePostcodes.includes(p),
-                );
-
-                setExcludedPostcodes(nextExcluded);
-                setManualPostcodes(nextManual);
-              }}
+              options={allowedPostcodes}
+              value={agentPostcodes}
+              onChange={setAgentPostcodes}
               placeholder="Vælg postnummer"
               searchLabel="Søg postnummer eller by..."
             />

@@ -20,6 +20,12 @@ type Props = {
 
   agentKommune: string[];
   setAgentKommune: React.Dispatch<React.SetStateAction<string[]>>;
+
+  selectedKommuner: string[];
+  setSelectedKommuner: React.Dispatch<React.SetStateAction<string[]>>;
+
+  agentPostcodes: string[];
+  setAgentPostcodes: React.Dispatch<React.SetStateAction<string[]>>;
 };
 const NewAgent = ({
   addAgent,
@@ -29,6 +35,10 @@ const NewAgent = ({
   setAgentRegion,
   agentKommune,
   setAgentKommune,
+  selectedKommuner,
+  setSelectedKommuner,
+  agentPostcodes,
+  setAgentPostcodes,
 }: Props) => {
   const [name, setName] = useState("");
 
@@ -75,11 +85,13 @@ const NewAgent = ({
         filters={filters}
         setFilters={setFilters}
         selectedRegions={selectedRegions}
-        selectedPostcodes={selectedPostcodes}
         agentRegion={agentRegion}
         setAgentRegion={setAgentRegion}
         agentKommune={agentKommune}
         setAgentKommune={setAgentKommune}
+        selectedKommuner={selectedKommuner}
+        agentPostcodes={agentPostcodes}
+        setAgentPostcodes={setAgentPostcodes}
       />
 
       <div className="flex gap-3 justify-start pt-2">

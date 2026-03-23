@@ -142,6 +142,8 @@ const AffiliationSetup = ({
 
   const [agentRegion, setAgentRegion] = useState<string[]>(selectedRegions);
   const [agentKommune, setAgentKommune] = useState<string[]>(selectedKommuner);
+  const [agentPostcodes, setAgentPostcodes] =
+    useState<string[]>(selectedPostcodes);
 
   /* ================= SAVE FILIAL ================= */
 
@@ -302,6 +304,10 @@ const AffiliationSetup = ({
               setAgentRegion={setAgentRegion}
               agentKommune={agentKommune}
               setAgentKommune={setAgentKommune}
+              selectedKommuner={selectedKommuner}
+              setSelectedKommuner={setSelectedKommuner}
+              agentPostcodes={agentPostcodes}
+              setAgentPostcodes={setAgentPostcodes}
             />
           </Section>
         </div>
