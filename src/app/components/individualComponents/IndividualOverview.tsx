@@ -6,8 +6,8 @@ import Comments from "../requestOverviewComponents/Comments";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import type { Section } from "@/app/types/navigation";
 import LKIcon from "@/app/assets/icons/LKIcon";
-import BrugerIcon from "@/app/assets/icons/BrugerIcon";
 import ButtonOne from "../utilityComponents/ButtonOne";
+import BrugerIcon from "@/app/assets/icons/BrugerIcon";
 
 const MY_AGENT_ID = 2;
 
