@@ -5,13 +5,14 @@ import { MdInbox } from "react-icons/md";
 import { IoCloseOutline } from "react-icons/io5";
 import ButtonOne from "../utilityComponents/ButtonOne";
 import SetSideStatus from "./SetSideStatus";
+import type { Section } from "@/app/types/navigation";
 import Comments from "./Comments";
 
 const MY_AGENT_ID = 2;
 
 type Props = {
   request: Request | null;
-  setSection: React.Dispatch<React.SetStateAction<string>>;
+  setSection: React.Dispatch<React.SetStateAction<Section>>;
   setRequests: React.Dispatch<React.SetStateAction<Request[]>>;
   setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
   toggleFlag: (id: number) => void;
@@ -86,18 +87,18 @@ export default function SideOverview({
               </h1>
             </div>
             <Info
-              label="Lånebeløb"
+              label="A. Lånedetaljer"
               value={`${request.amount.toLocaleString("da-DK")} kr.`}
             />
 
-            <Info label="Gældsfaktor" value={request.gaeldsfaktor} />
+            <Info label="B. Gældsfaktor" value={request.gaeldsfaktor} />
             <Info
-              label="Indkomst"
-              value={`${request.indkomst.toLocaleString("da-DK")} kr.`}
+              label="C. Udbetaling"
+              value={`${request.opsparing.toLocaleString("da-DK")} kr.`}
             />
 
             <Info
-              label="Rådighedsbeløb"
+              label="D. Rådighedsbeløb pr. md."
               value={`${request.raadighedsBeloeb.toLocaleString("da-DK")} kr.`}
             />
           </div>
@@ -112,10 +113,7 @@ export default function SideOverview({
               toggleFlag={toggleFlag}
             />
 
-            <ButtonOne
-              label="Se detaljer"
-              onClick={() => setSection("person")}
-            />
+            <ButtonOne label="Detaljer" onClick={() => setSection("person")} />
           </div>
         </div>
       </div>
@@ -126,8 +124,8 @@ export default function SideOverview({
 function Info({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex justify-between border-b border-(--black)/10 pb-2">
-      <span className="text-(--black)/60">{label}</span>
-      <span className="font-semibold">{value}</span>
+      <span className="text-(--black)! font-semibold! ">{label}:</span>
+      <span className=" text-(--black)/70!">{value}</span>
     </div>
   );
 }

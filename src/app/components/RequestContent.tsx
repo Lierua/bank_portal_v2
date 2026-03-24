@@ -5,6 +5,8 @@ import { FaRegFileAlt, FaRegFileArchive } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { RiListSettingsLine } from "react-icons/ri";
 
+import { mapRequest } from "@/app/mappers/mapRequest";
+
 import RequestList from "./requestOverviewComponents/RequestList";
 import IndividualOverview from "./individualComponents/IndividualOverview";
 import SideOverviewCopy from "./requestOverviewComponents/SideOverview copy";
@@ -17,6 +19,7 @@ import rawRequests from "@/data/dummyRequests.json";
 
 import type { RawRequest, Request } from "@/app/types/request";
 import type { Bank, FilialAgent } from "@/app/types/filial";
+import type { Section } from "../types/navigation";
 
 /* =========================
    Component
@@ -24,7 +27,7 @@ import type { Bank, FilialAgent } from "@/app/types/filial";
 
 const RequestContent = ({ search }: { search: string }) => {
   const [requestPara, setRequestPara] = useState("Alle");
-  const [section, setSection] = useState("Ansøgninger");
+  const [section, setSection] = useState<Section>("Ansøgninger");
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [selectedAffiliation, setSelectedAffiliation] =
     useState<FilialAgent | null>(null);
@@ -37,70 +40,12 @@ const RequestContent = ({ search }: { search: string }) => {
     },
   ]);
 
-  const mapStatus = (status: string): Request["status"] => {
-    switch (status) {
-      case "Approved":
-        return "Godkendt";
-      case "Rejected":
-        return "Afslået";
-      case "UnderReview":
-        return "Behandles";
-      default:
-        return "Afventer";
-    }
-  };
-
   /* =========================
-     Transform JSON → UI Data
+     JSON → UI Data (CLEAN)
   ========================= */
 
-  const [requests, setRequests] = useState<Request[]>(
-    (rawRequests as RawRequest[]).map((r) => {
-      const disposableIncome =
-        r.economicData.monthlyIncome - r.economicData.fixedExpenses;
-
-      const debtFactor =
-        r.economicData.monthlyIncome > 0
-          ? r.loanDetails.amount / r.economicData.monthlyIncome
-          : 0;
-
-      return {
-        id: r.id,
-        name: r.personalInfo.name,
-        amount: r.loanDetails.amount,
-        forWhat: r.loanDetails.purpose.loanKind,
-        location: r.loanDetails.purpose.location.address,
-        postalCode: r.loanDetails.purpose.location.postalCode,
-        region: r.loanDetails.purpose.location.region,
-        score: r.loanDetails.score,
-        jobTitle: r.employment.jobTitle,
-        jobStatus: r.employment.jobStatus,
-        educationLevel: r.employment.educationLevel,
-        housingSituation: r.personalInfo.housingSituation,
-        email: r.personalInfo.email,
-        status: mapStatus(r.status),
-        indkomst: r.economicData.monthlyIncome,
-        raadighedsBeloeb: disposableIncome,
-        gaeldsfaktor: Number(debtFactor.toFixed(2)),
-        opsparing: r.economicData.wealth,
-        flagged: r.flagged ?? null,
-        budget: r.economicData.budget
-          ? {
-              totalPlanned: r.economicData.budget.totalPlanned,
-              createdAt: r.economicData.budget.createdAt,
-              lines: r.economicData.budget.lines.map((l) => ({
-                id: l.id,
-                categoryKey: l.categoryKey,
-                displayName: l.displayName,
-                plannedAmount: l.plannedAmount,
-                avg: l.avg,
-                lowRange: l.lowRange,
-                highRange: l.highRange,
-              })),
-            }
-          : undefined,
-      };
-    }),
+  const [requests, setRequests] = useState<Request[]>(() =>
+    (rawRequests as RawRequest[]).map(mapRequest),
   );
 
   const selectedRequest =
@@ -148,8 +93,6 @@ const RequestContent = ({ search }: { search: string }) => {
           : bank,
       ),
     );
-
-    console.log("Updated banks:", banks);
   };
 
   const updateAffiliation = (updated: FilialAgent) => {
@@ -168,7 +111,6 @@ const RequestContent = ({ search }: { search: string }) => {
 
     setSelectedAffiliation(updated);
   };
-
   return (
     <div className="body-banner rounded-tl-lg overflow-hidden h-[calc(100dvh-166px)] flex-1 lk-box-shadow">
       {/* Top Menu */}

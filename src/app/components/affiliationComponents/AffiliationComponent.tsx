@@ -3,12 +3,13 @@
 import AffiliationItem from "./AffiliationItem";
 
 import type { Bank, FilialAgent } from "@/app/types/filial";
+import type { Section } from "@/app/types/navigation";
 
 type Props = {
   setSelectedAffiliation: React.Dispatch<
     React.SetStateAction<FilialAgent | null>
   >;
-  setSection: React.Dispatch<React.SetStateAction<string>>;
+  setSection: React.Dispatch<React.SetStateAction<Section>>;
   banks: Bank[];
 };
 
@@ -27,9 +28,9 @@ const AffiliationComponent = ({
         grid-cols-[minmax(0,220px)_minmax(0,175px)_minmax(0,140px)_minmax(0,175px)]
         border-(--black)/10 border-b-2 pl-10 h-[40] text-(--black)/60 gap-2"
       >
-        <h3>Filial</h3>
+        <h3>Afdeling</h3>
         <h3>Område</h3>
-        <h3 className="truncate w-fit">Antal Behandlere</h3>
+        <h3 className="truncate w-fit">Brugere</h3>
         <h3></h3>
       </div>
 
@@ -41,7 +42,7 @@ const AffiliationComponent = ({
             grid border-(--black)/10 border-b-2 pl-10 h-[40] text-(--black)/40
             "
           >
-            <h3 className="my-auto italic">Ingen filialer oprettet endnu</h3>
+            <h3 className="my-auto italic">Ingen afdelinger oprettet endnu</h3>
           </div>
         )}
 
@@ -80,7 +81,7 @@ const AffiliationComponent = ({
       border-(--black)/10 border-b-2 pl-10 h-[40] text-(--black)/80
       "
           >
-            <h3 className="my-auto">+ Tilføj et nyt filial</h3>
+            <h3 className="my-auto">+ Tilføj et nyt afdeling</h3>
           </div>
         </div>
       </div>

@@ -62,8 +62,8 @@ export default function RequestStatusFilterCopy({
             key={filter.value}
             onClick={() => setRequestPara(filter.value)}
             className={`
-              w-[180] h-[100]
-              px-4 py-2 rounded-[10]
+              w-[150] h-[80]
+              px-4 py-1 rounded-[10]
               grid content-between text-left
 
               transition-all duration-200 ease-in

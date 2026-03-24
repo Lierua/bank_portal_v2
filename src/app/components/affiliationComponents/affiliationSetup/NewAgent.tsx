@@ -11,8 +11,8 @@ import type {
 
 type Props = {
   addAgent: (agent: SearchAgent) => void;
-
   selectedRegions: string[];
+  selectedKommuner: string[];
   selectedPostcodes: string[];
 
   agentRegion: string[];
@@ -21,9 +21,6 @@ type Props = {
   agentKommune: string[];
   setAgentKommune: React.Dispatch<React.SetStateAction<string[]>>;
 
-  selectedKommuner: string[];
-  setSelectedKommuner: React.Dispatch<React.SetStateAction<string[]>>;
-
   agentPostcodes: string[];
   setAgentPostcodes: React.Dispatch<React.SetStateAction<string[]>>;
 };
@@ -31,12 +28,11 @@ const NewAgent = ({
   addAgent,
   selectedRegions,
   selectedPostcodes,
+  selectedKommuner,
   agentRegion,
   setAgentRegion,
   agentKommune,
   setAgentKommune,
-  selectedKommuner,
-  setSelectedKommuner,
   agentPostcodes,
   setAgentPostcodes,
 }: Props) => {
@@ -54,12 +50,20 @@ const NewAgent = ({
       id: Date.now(),
       name: name.trim(),
       filters,
+      location: {
+        regions: agentRegion,
+        kommuner: agentKommune,
+        postcodes: agentPostcodes,
+      },
     };
 
     addAgent(newAgent);
 
     setName("");
     setFilters({});
+    setAgentRegion(selectedRegions);
+    setAgentKommune(selectedKommuner);
+    setAgentPostcodes(selectedPostcodes);
   }
 
   function handleReset() {
@@ -85,11 +89,11 @@ const NewAgent = ({
         filters={filters}
         setFilters={setFilters}
         selectedRegions={selectedRegions}
+        selectedKommuner={selectedKommuner}
         agentRegion={agentRegion}
         setAgentRegion={setAgentRegion}
         agentKommune={agentKommune}
         setAgentKommune={setAgentKommune}
-        selectedKommuner={selectedKommuner}
         agentPostcodes={agentPostcodes}
         setAgentPostcodes={setAgentPostcodes}
       />

@@ -16,11 +16,15 @@
     "personalInfo": {
       "name": "Mats Tornvald",
       "housingSituation": "Lejer",
-      "email": "Mats.TornvaldDue@example.com"
+      "email": "Mats.TornvaldDue@example.com",
+      "telephone": "+45 28 71 63 92",
+      "age": 34,
+      "numberOfKids": 1,
+      "engagementStatus": "Gift"
     },
     "employment": {
       "jobTitle": "Project Manager",
-      "jobStatus": "FullTime",
+      "jobStatus": "Fuld",
       "educationLevel": "Master"
     },
     "economicData": {
@@ -31,6 +35,89 @@
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "totalPlanned": 25000.0,
+        "netIncome": 22000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 65000,
+      "supplementaryWealth": 85000,
+      "wealth": 120000,
+      "debts": 40000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 2,
+    "loanDetails": {
+      "score": 720,
+      "amount": 2500000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Nørrebrogade 45",
+          "postalCode": "2200",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Mads Jensen",
+      "housingSituation": "Ejer",
+      "email": "mads.jensen@mail.dk",
+      "telephone": "+45 41 92 55 18",
+      "age": 41,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Softwareudvikler",
+      "jobStatus": "Fuld",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 48000,
+      "fixedExpenses": 20000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 24000.0,
         "totalPlanned": 25000.0,
         "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
@@ -68,81 +155,8 @@
           }
         ]
       },
-      "wealth": 120000,
-      "debts": 40000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 2,
-    "loanDetails": {
-      "score": 720,
-      "amount": 2500000,
-      "purpose": {
-        "loanKind": "Ejerbolig",
-        "location": {
-          "address": "Nørrebrogade 45",
-          "postalCode": "2200",
-          "region": "H"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Mads Jensen",
-      "housingSituation": "Ejer",
-      "email": "mads.jensen@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Softwareudvikler",
-      "jobStatus": "FullTime",
-      "educationLevel": "Bachelor"
-    },
-    "economicData": {
-      "monthlyIncome": 48000,
-      "fixedExpenses": 20000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
+      "supplementaryDebt": 42000,
+      "supplementaryWealth": 160000,
       "wealth": 250000,
       "debts": 75000
     },
@@ -166,11 +180,15 @@
     "personalInfo": {
       "name": "Sofie Nielsen",
       "housingSituation": "Lejer",
-      "email": "sofie.nielsen@mail.dk"
+      "email": "sofie.nielsen@mail.dk",
+      "telephone": "+45 53 88 19 77",
+      "age": 29,
+      "numberOfKids": 0,
+      "engagementStatus": "Ugift"
     },
     "employment": {
       "jobTitle": "Sygeplejerske",
-      "jobStatus": "PartTime",
+      "jobStatus": "DelTid",
       "educationLevel": "Bachelor"
     },
     "economicData": {
@@ -181,8 +199,9 @@
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 22000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -218,6 +237,8 @@
           }
         ]
       },
+      "supplementaryDebt": 38000,
+      "supplementaryWealth": 22000,
       "wealth": 50000,
       "debts": 60000
     },
@@ -241,11 +262,15 @@
     "personalInfo": {
       "name": "Lars Pedersen",
       "housingSituation": "Ejer",
-      "email": "lars.pedersen@mail.dk"
+      "email": "lars.pedersen@mail.dk",
+      "telephone": "+45 26 44 73 05",
+      "age": 47,
+      "numberOfKids": 3,
+      "engagementStatus": "Gift"
     },
     "employment": {
       "jobTitle": "Tømrer",
-      "jobStatus": "SelfEmployed",
+      "jobStatus": "Selvstændig",
       "educationLevel": "Vocational"
     },
     "economicData": {
@@ -256,8 +281,9 @@
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 15000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -293,6 +319,8 @@
           }
         ]
       },
+      "supplementaryDebt": 92000,
+      "supplementaryWealth": 45000,
       "wealth": 90000,
       "debts": 120000
     },
@@ -309,18 +337,22 @@
         "location": {
           "address": "Skovvej 7",
           "postalCode": "9000",
-          "region": "NJ"
+          "region": "NJY"
         }
       }
     },
     "personalInfo": {
       "name": "Camilla Andersen",
       "housingSituation": "Lejer",
-      "email": "camilla.andersen@mail.dk"
+      "email": "camilla.andersen@mail.dk",
+      "telephone": "+45 31 65 22 91",
+      "age": 38,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
     },
     "employment": {
       "jobTitle": "Læge",
-      "jobStatus": "FullTime",
+      "jobStatus": "Fuld",
       "educationLevel": "Master"
     },
     "economicData": {
@@ -331,8 +363,9 @@
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 26000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -368,6 +401,8 @@
           }
         ]
       },
+      "supplementaryDebt": 30000,
+      "supplementaryWealth": 420000,
       "wealth": 600000,
       "debts": 150000
     },
@@ -377,37 +412,42 @@
   {
     "id": 6,
     "loanDetails": {
-      "score": 500,
-      "amount": 7500000,
+      "score": 705,
+      "amount": 3200000,
       "purpose": {
         "loanKind": "Ejerbolig",
         "location": {
-          "address": "Havnegade 33",
-          "postalCode": "6700",
-          "region": "SD"
+          "address": "Kystvej 14",
+          "postalCode": "7100",
+          "region": "SJY"
         }
       }
     },
     "personalInfo": {
-      "name": "Jonas Kristensen",
-      "housingSituation": "Lejer",
-      "email": "jonas.kristensen@mail.dk"
+      "name": "Thomas Mikkelsen",
+      "housingSituation": "Ejer",
+      "email": "thomas.mikkelsen@mail.dk",
+      "telephone": "+45 22 48 71 66",
+      "age": 45,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
     },
     "employment": {
-      "jobTitle": "Lagermedarbejder",
-      "jobStatus": "FullTime",
-      "educationLevel": "HighSchool"
+      "jobTitle": "Maskiningeniør",
+      "jobStatus": "Fuld",
+      "educationLevel": "Bachelor"
     },
     "economicData": {
-      "monthlyIncome": 26000,
-      "fixedExpenses": 16000,
+      "monthlyIncome": 52000,
+      "fixedExpenses": 24000,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 13000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -443,8 +483,10 @@
           }
         ]
       },
-      "wealth": 15000,
-      "debts": 85000
+      "supplementaryDebt": 55000,
+      "supplementaryWealth": 210000,
+      "wealth": 310000,
+      "debts": 110000
     },
     "status": "",
     "flagged": null
@@ -452,37 +494,42 @@
   {
     "id": 7,
     "loanDetails": {
-      "score": 660,
-      "amount": 1800000,
+      "score": 590,
+      "amount": 900000,
       "purpose": {
-        "loanKind": "Sommerhus",
+        "loanKind": "Forbrug",
         "location": {
-          "address": "Enghavevej 19",
-          "postalCode": "1674",
-          "region": "H"
+          "address": "Stationsvej 3",
+          "postalCode": "5000",
+          "region": "FYN"
         }
       }
     },
     "personalInfo": {
-      "name": "Frederikke Holm",
+      "name": "Line Kristensen",
       "housingSituation": "Lejer",
-      "email": "frederikke.holm@mail.dk"
+      "email": "line.kristensen@mail.dk",
+      "telephone": "+45 61 73 19 02",
+      "age": 26,
+      "numberOfKids": 0,
+      "engagementStatus": "Ugift"
     },
     "employment": {
-      "jobTitle": "Marketingkoordinator",
-      "jobStatus": "FullTime",
-      "educationLevel": "Bachelor"
+      "jobTitle": "Butiksassistent",
+      "jobStatus": "DelTid",
+      "educationLevel": "Gymnasium"
     },
     "economicData": {
-      "monthlyIncome": 41000,
-      "fixedExpenses": 19000,
+      "monthlyIncome": 23000,
+      "fixedExpenses": 14000,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 19000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -518,8 +565,10 @@
           }
         ]
       },
-      "wealth": 80000,
-      "debts": 50000
+      "supplementaryDebt": 48000,
+      "supplementaryWealth": 12000,
+      "wealth": 18000,
+      "debts": 95000
     },
     "status": "",
     "flagged": null
@@ -527,37 +576,42 @@
   {
     "id": 8,
     "loanDetails": {
-      "score": 705,
-      "amount": 3200000,
+      "score": 760,
+      "amount": 4100000,
       "purpose": {
         "loanKind": "Ejerbolig",
         "location": {
-          "address": "Slotsgade 4",
-          "postalCode": "3400",
-          "region": "H"
+          "address": "Park Allé 22",
+          "postalCode": "8000",
+          "region": "MJY"
         }
       }
     },
     "personalInfo": {
-      "name": "Thomas Møller",
+      "name": "Rasmus Holm",
       "housingSituation": "Ejer",
-      "email": "thomas.moeller@mail.dk"
+      "email": "rasmus.holm@mail.dk",
+      "telephone": "+45 44 90 32 77",
+      "age": 39,
+      "numberOfKids": 1,
+      "engagementStatus": "Gift"
     },
     "employment": {
-      "jobTitle": "Ingeniør",
-      "jobStatus": "FullTime",
+      "jobTitle": "Arkitekt",
+      "jobStatus": "Selvstændig",
       "educationLevel": "Master"
     },
     "economicData": {
-      "monthlyIncome": 52000,
-      "fixedExpenses": 21000,
+      "monthlyIncome": 67000,
+      "fixedExpenses": 26000,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 22000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -593,7 +647,9 @@
           }
         ]
       },
-      "wealth": 300000,
+      "supplementaryDebt": 25000,
+      "supplementaryWealth": 520000,
+      "wealth": 700000,
       "debts": 90000
     },
     "status": "",
@@ -602,37 +658,42 @@
   {
     "id": 9,
     "loanDetails": {
-      "score": 630,
-      "amount": 12500000,
+      "score": 640,
+      "amount": 1800000,
       "purpose": {
-        "loanKind": "Ejerbolig",
+        "loanKind": "Andelsbolig",
         "location": {
-          "address": "Kirkegade 21",
-          "postalCode": "5000",
-          "region": "SD"
+          "address": "Birkevej 5",
+          "postalCode": "6700",
+          "region": "SJY"
         }
       }
     },
     "personalInfo": {
-      "name": "Maria Sørensen",
+      "name": "Henrik Poulsen",
       "housingSituation": "Lejer",
-      "email": "maria.soerensen@mail.dk"
+      "email": "henrik.poulsen@mail.dk",
+      "telephone": "+45 25 61 88 40",
+      "age": 52,
+      "numberOfKids": 3,
+      "engagementStatus": "Gift"
     },
     "employment": {
-      "jobTitle": "Butiksassistent",
-      "jobStatus": "PartTime",
-      "educationLevel": "HighSchool"
+      "jobTitle": "Lagerchef",
+      "jobStatus": "Fuld",
+      "educationLevel": "Vocational"
     },
     "economicData": {
-      "monthlyIncome": 29000,
-      "fixedExpenses": 15000,
+      "monthlyIncome": 41000,
+      "fixedExpenses": 21000,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 20200.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -668,8 +729,10 @@
           }
         ]
       },
-      "wealth": 40000,
-      "debts": 35000
+      "supplementaryDebt": 77000,
+      "supplementaryWealth": 68000,
+      "wealth": 120000,
+      "debts": 130000
     },
     "status": "",
     "flagged": null
@@ -677,37 +740,42 @@
   {
     "id": 10,
     "loanDetails": {
-      "score": 760,
-      "amount": 4000000,
+      "score": 815,
+      "amount": 5200000,
       "purpose": {
-        "loanKind": "Sommerhus",
+        "loanKind": "Ejerbolig",
         "location": {
-          "address": "Parkvej 15",
-          "postalCode": "7100",
-          "region": "SYD"
+          "address": "Strandpromenaden 9",
+          "postalCode": "2900",
+          "region": "H"
         }
       }
     },
     "personalInfo": {
-      "name": "Anders Rasmussen",
+      "name": "Frederikke Lund",
       "housingSituation": "Ejer",
-      "email": "anders.rasmussen@mail.dk"
+      "email": "frederikke.lund@mail.dk",
+      "telephone": "+45 32 14 77 03",
+      "age": 36,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
     },
     "employment": {
       "jobTitle": "Advokat",
-      "jobStatus": "FullTime",
+      "jobStatus": "Fuld",
       "educationLevel": "Master"
     },
     "economicData": {
-      "monthlyIncome": 72000,
-      "fixedExpenses": 28000,
+      "monthlyIncome": 78000,
+      "fixedExpenses": 30000,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 26500.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -743,8 +811,10 @@
           }
         ]
       },
-      "wealth": 900000,
-      "debts": 200000
+      "supplementaryDebt": 15000,
+      "supplementaryWealth": 850000,
+      "wealth": 950000,
+      "debts": 50000
     },
     "status": "",
     "flagged": null
@@ -752,713 +822,42 @@
   {
     "id": 11,
     "loanDetails": {
-      "score": 580,
-      "amount": 9200000,
+      "score": 575,
+      "amount": 650000,
       "purpose": {
-        "loanKind": "Ejerbolig",
+        "loanKind": "Forbrug",
         "location": {
-          "address": "Bredgade 101",
-          "postalCode": "7400",
-          "region": "MJY"
+          "address": "Havnegade 18",
+          "postalCode": "9900",
+          "region": "NJY"
         }
       }
     },
     "personalInfo": {
-      "name": "Line Christiansen",
+      "name": "Jonas Sørensen",
       "housingSituation": "Lejer",
-      "email": "line.christiansen@mail.dk"
+      "email": "jonas.sorensen@mail.dk",
+      "telephone": "+45 59 23 66 91",
+      "age": 24,
+      "numberOfKids": 0,
+      "engagementStatus": "Ugift"
     },
     "employment": {
-      "jobTitle": "Pædagog",
-      "jobStatus": "FullTime",
-      "educationLevel": "Bachelor"
-    },
-    "economicData": {
-      "monthlyIncome": 33000,
-      "fixedExpenses": 18000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 35000,
-      "debts": 95000
-    },
-    "status": "",
-    "flagged": null
-  },
-
-  {
-    "id": 100,
-    "loanDetails": {
-      "score": 680,
-      "amount": 1500000,
-      "purpose": {
-        "loanKind": "Sommerhus",
-        "location": {
-          "address": "Baker Street 221B",
-          "postalCode": "8000",
-          "region": "MJY"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Mats Tornvald",
-      "housingSituation": "Lejer",
-      "email": "Mats.TornvaldDue@example.com"
-    },
-    "employment": {
-      "jobTitle": "Project Manager",
-      "jobStatus": "FullTime",
-      "educationLevel": "Master"
-    },
-    "economicData": {
-      "monthlyIncome": 42000,
-      "fixedExpenses": 18000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 120000,
-      "debts": 40000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 200,
-    "loanDetails": {
-      "score": 720,
-      "amount": 2500000,
-      "purpose": {
-        "loanKind": "Ejerbolig",
-        "location": {
-          "address": "Nørrebrogade 45",
-          "postalCode": "2200",
-          "region": "H"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Mads Jensen",
-      "housingSituation": "Ejer",
-      "email": "mads.jensen@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Softwareudvikler",
-      "jobStatus": "FullTime",
-      "educationLevel": "Bachelor"
-    },
-    "economicData": {
-      "monthlyIncome": 48000,
-      "fixedExpenses": 20000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 250000,
-      "debts": 75000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 300,
-    "loanDetails": {
-      "score": 610,
-      "amount": 1500000,
-      "purpose": {
-        "loanKind": "Andelsbolig",
-        "location": {
-          "address": "Vestergade 12",
-          "postalCode": "8000",
-          "region": "MJY"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Sofie Nielsen",
-      "housingSituation": "Lejer",
-      "email": "sofie.nielsen@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Sygeplejerske",
-      "jobStatus": "PartTime",
-      "educationLevel": "Bachelor"
-    },
-    "economicData": {
-      "monthlyIncome": 32000,
-      "fixedExpenses": 17000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 50000,
-      "debts": 60000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 400,
-    "loanDetails": {
-      "score": 540,
-      "amount": 2700000,
-      "purpose": {
-        "loanKind": "Ejerbolig",
-        "location": {
-          "address": "Østerbrogade 88",
-          "postalCode": "2100",
-          "region": "H"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Lars Pedersen",
-      "housingSituation": "Ejer",
-      "email": "lars.pedersen@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Tømrer",
-      "jobStatus": "SelfEmployed",
+      "jobTitle": "Chauffør",
+      "jobStatus": "DelTid",
       "educationLevel": "Vocational"
     },
     "economicData": {
-      "monthlyIncome": 37000,
-      "fixedExpenses": 22000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 90000,
-      "debts": 120000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 500,
-    "loanDetails": {
-      "score": 790,
-      "amount": 2500000,
-      "purpose": {
-        "loanKind": "Andelsbolig",
-        "location": {
-          "address": "Skovvej 7",
-          "postalCode": "9000",
-          "region": "NJ"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Camilla Andersen",
-      "housingSituation": "Lejer",
-      "email": "camilla.andersen@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Læge",
-      "jobStatus": "FullTime",
-      "educationLevel": "Master"
-    },
-    "economicData": {
-      "monthlyIncome": 65000,
-      "fixedExpenses": 25000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 600000,
-      "debts": 150000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 600,
-    "loanDetails": {
-      "score": 500,
-      "amount": 1750000,
-      "purpose": {
-        "loanKind": "Andelsbolig",
-        "location": {
-          "address": "Havnegade 33",
-          "postalCode": "6700",
-          "region": "SD"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Jonas Kristensen",
-      "housingSituation": "Lejer",
-      "email": "jonas.kristensen@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Lagermedarbejder",
-      "jobStatus": "FullTime",
-      "educationLevel": "HighSchool"
-    },
-    "economicData": {
       "monthlyIncome": 26000,
-      "fixedExpenses": 16000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 15000,
-      "debts": 85000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 700,
-    "loanDetails": {
-      "score": 660,
-      "amount": 18000000,
-      "purpose": {
-        "loanKind": "Ejerbolig",
-        "location": {
-          "address": "Enghavevej 19",
-          "postalCode": "1674",
-          "region": "H"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Frederikke Holm",
-      "housingSituation": "Lejer",
-      "email": "frederikke.holm@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Marketingkoordinator",
-      "jobStatus": "FullTime",
-      "educationLevel": "Bachelor"
-    },
-    "economicData": {
-      "monthlyIncome": 41000,
-      "fixedExpenses": 19000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 80000,
-      "debts": 50000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 800,
-    "loanDetails": {
-      "score": 705,
-      "amount": 4300000,
-      "purpose": {
-        "loanKind": "Ejerbolig",
-        "location": {
-          "address": "Slotsgade 4",
-          "postalCode": "3400",
-          "region": "H"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Thomas Møller",
-      "housingSituation": "Ejer",
-      "email": "thomas.moeller@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Ingeniør",
-      "jobStatus": "FullTime",
-      "educationLevel": "Master"
-    },
-    "economicData": {
-      "monthlyIncome": 52000,
-      "fixedExpenses": 21000,
-      "budget": {
-        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "userId": "user-123",
-        "year": 2026,
-        "month": 2,
-        "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
-        "lines": [
-          {
-            "id": "11111111-1111-1111-1111-111111111111",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "housing",
-            "displayName": "Rent",
-            "isRecurring": true,
-            "plannedAmount": 9000.0,
-            "avg": 8800.0,
-            "p25": 8500.0,
-            "p75": 9200.0,
-            "lowRange": 8000.0,
-            "highRange": 10000.0,
-            "stdDev": 400.0,
-            "recurringAvg": 8900.0
-          },
-          {
-            "id": "22222222-2222-2222-2222-222222222222",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "budget": null,
-            "categoryKey": "food",
-            "displayName": "Groceries",
-            "isRecurring": true,
-            "plannedAmount": 3500.0,
-            "avg": 3300.0,
-            "p25": 3000.0,
-            "p75": 3700.0,
-            "lowRange": 2500.0,
-            "highRange": 4500.0,
-            "stdDev": 300.0,
-            "recurringAvg": 3400.0
-          }
-        ]
-      },
-      "wealth": 300000,
-      "debts": 90000
-    },
-    "status": "",
-    "flagged": null
-  },
-  {
-    "id": 900,
-    "loanDetails": {
-      "score": 630,
-      "amount": 1200000,
-      "purpose": {
-        "loanKind": "Sommerhus",
-        "location": {
-          "address": "Kirkegade 21",
-          "postalCode": "5000",
-          "region": "SD"
-        }
-      }
-    },
-    "personalInfo": {
-      "name": "Maria Sørensen",
-      "housingSituation": "Lejer",
-      "email": "maria.soerensen@mail.dk"
-    },
-    "employment": {
-      "jobTitle": "Butiksassistent",
-      "jobStatus": "PartTime",
-      "educationLevel": "HighSchool"
-    },
-    "economicData": {
-      "monthlyIncome": 29000,
       "fixedExpenses": 15000,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 22000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -1494,46 +893,53 @@
           }
         ]
       },
-      "wealth": 40000,
-      "debts": 35000
+      "supplementaryDebt": 62000,
+      "supplementaryWealth": 8000,
+      "wealth": 12000,
+      "debts": 87000
     },
     "status": "",
     "flagged": null
   },
   {
-    "id": 1000,
+    "id": 12,
     "loanDetails": {
-      "score": 760,
-      "amount": 2400000,
+      "score": 695,
+      "amount": 2100000,
       "purpose": {
         "loanKind": "Andelsbolig",
         "location": {
-          "address": "Parkvej 15",
-          "postalCode": "7100",
-          "region": "SYD"
+          "address": "Torvegade 44",
+          "postalCode": "1400",
+          "region": "H"
         }
       }
     },
     "personalInfo": {
-      "name": "Anders Rasmussen",
-      "housingSituation": "Ejer",
-      "email": "anders.rasmussen@mail.dk"
+      "name": "Julie Rasmussen",
+      "housingSituation": "Lejer",
+      "email": "julie.rasmussen@mail.dk",
+      "telephone": "+45 48 72 90 11",
+      "age": 31,
+      "numberOfKids": 1,
+      "engagementStatus": "Gift"
     },
     "employment": {
-      "jobTitle": "Advokat",
-      "jobStatus": "FullTime",
-      "educationLevel": "Master"
+      "jobTitle": "Grafisk Designer",
+      "jobStatus": "Fuld",
+      "educationLevel": "Bachelor"
     },
     "economicData": {
-      "monthlyIncome": 72000,
-      "fixedExpenses": 28000,
+      "monthlyIncome": 39000,
+      "fixedExpenses": 18500,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 22000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -1569,46 +975,53 @@
           }
         ]
       },
-      "wealth": 950000000,
-      "debts": 200000
+      "supplementaryDebt": 44000,
+      "supplementaryWealth": 95000,
+      "wealth": 140000,
+      "debts": 72000
     },
     "status": "",
     "flagged": null
   },
   {
-    "id": 1100,
+    "id": 13,
     "loanDetails": {
-      "score": 580,
-      "amount": 9720000,
+      "score": 745,
+      "amount": 3600000,
       "purpose": {
         "loanKind": "Ejerbolig",
         "location": {
-          "address": "Bredgade 101",
-          "postalCode": "7400",
+          "address": "Åboulevarden 8",
+          "postalCode": "8000",
           "region": "MJY"
         }
       }
     },
     "personalInfo": {
-      "name": "Line Christiansen",
-      "housingSituation": "Lejer",
-      "email": "line.christiansen@mail.dk"
+      "name": "Anders Frandsen",
+      "housingSituation": "Ejer",
+      "email": "anders.frandsen@mail.dk",
+      "telephone": "+45 27 61 34 82",
+      "age": 43,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
     },
     "employment": {
-      "jobTitle": "Pædagog",
-      "jobStatus": "FullTime",
-      "educationLevel": "Bachelor"
+      "jobTitle": "Revisor",
+      "jobStatus": "Fuld",
+      "educationLevel": "Master"
     },
     "economicData": {
-      "monthlyIncome": 33000,
-      "fixedExpenses": 18000,
+      "monthlyIncome": 61000,
+      "fixedExpenses": 25000,
       "budget": {
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "userId": "user-123",
         "year": 2026,
         "month": 2,
+        "netIncome": 22000.0,
         "totalPlanned": 25000.0,
-        "createdAt": "2026-02-17T10:15:30+00:00",
+        "createdAt": "2026-03-02T10:15:30+00:00",
         "lines": [
           {
             "id": "11111111-1111-1111-1111-111111111111",
@@ -1641,10 +1054,76 @@
             "highRange": 4500.0,
             "stdDev": 300.0,
             "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 31000,
+      "supplementaryWealth": 420000,
+      "wealth": 500000,
+      "debts": 85000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 14,
+    "loanDetails": {
+      "score": 565,
+      "amount": 800000,
+      "purpose": {
+        "loanKind": "Forbrug",
+        "location": {
+          "address": "Vesterbro 12",
+          "postalCode": "9000",
+          "region": "NJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Nicklas Thomsen",
+      "housingSituation": "Lejer",
+      "email": "nicklas.thomsen@mail.dk",
+      "telephone": "+45 64 21 88 73",
+      "age": 28,
+      "numberOfKids": 0,
+      "engagementStatus": "Ugift"
+    },
+    "employment": {
+      "jobTitle": "Servicemedarbejder",
+      "jobStatus": "DelTid",
+      "educationLevel": "Gymnasium"
+    },
+    "economicData": {
+      "monthlyIncome": 24000,
+      "fixedExpenses": 15500,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
           },
           {
-            "id": "3333333",
-            "budgetId": "3fa85f64-5717-4562-b3fc-2c963232eafa6",
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "budget": null,
             "categoryKey": "food",
             "displayName": "Groceries",
@@ -1660,8 +1139,1322 @@
           }
         ]
       },
-      "wealth": 35000,
+      "supplementaryDebt": 52000,
+      "supplementaryWealth": 9000,
+      "wealth": 15000,
+      "debts": 96000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 15,
+    "loanDetails": {
+      "score": 780,
+      "amount": 4700000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Skovbrynet 6",
+          "postalCode": "7100",
+          "region": "SJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Katrine Winther",
+      "housingSituation": "Ejer",
+      "email": "katrine.winther@mail.dk",
+      "telephone": "+45 39 57 04 29",
+      "age": 40,
+      "numberOfKids": 3,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Læge",
+      "jobStatus": "Fuld",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 72000,
+      "fixedExpenses": 29500,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 18000,
+      "supplementaryWealth": 630000,
+      "wealth": 820000,
+      "debts": 60000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 16,
+    "loanDetails": {
+      "score": 635,
+      "amount": 1600000,
+      "purpose": {
+        "loanKind": "Andelsbolig",
+        "location": {
+          "address": "Møllegade 21",
+          "postalCode": "5000",
+          "region": "FYN"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Peter Jørgensen",
+      "housingSituation": "Lejer",
+      "email": "peter.jorgensen@mail.dk",
+      "telephone": "+45 58 74 12 60",
+      "age": 50,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Elektriker",
+      "jobStatus": "Selvstændig",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 43000,
+      "fixedExpenses": 21000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 69000,
+      "supplementaryWealth": 72000,
+      "wealth": 130000,
+      "debts": 140000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 17,
+    "loanDetails": {
+      "score": 825,
+      "amount": 6100000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Kystparken 3",
+          "postalCode": "2900",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Christian Dahl",
+      "housingSituation": "Ejer",
+      "email": "christian.dahl@mail.dk",
+      "telephone": "+45 33 11 94 55",
+      "age": 46,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "CEO",
+      "jobStatus": "Fuld",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 95000,
+      "fixedExpenses": 35000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 10000,
+      "supplementaryWealth": 1100000,
+      "wealth": 1400000,
+      "debts": 40000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 18,
+    "loanDetails": {
+      "score": 655,
+      "amount": 1400000,
+      "purpose": {
+        "loanKind": "Andelsbolig",
+        "location": {
+          "address": "Engvej 19",
+          "postalCode": "6700",
+          "region": "SJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Maria Olesen",
+      "housingSituation": "Lejer",
+      "email": "maria.olesen@mail.dk",
+      "telephone": "+45 29 64 77 20",
+      "age": 33,
+      "numberOfKids": 1,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Pædagog",
+      "jobStatus": "Fuld",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 36000,
+      "fixedExpenses": 17500,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 52000,
+      "supplementaryWealth": 48000,
+      "wealth": 90000,
+      "debts": 115000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 19,
+    "loanDetails": {
+      "score": 600,
+      "amount": 700000,
+      "purpose": {
+        "loanKind": "Forbrug",
+        "location": {
+          "address": "Jernbanegade 4",
+          "postalCode": "5000",
+          "region": "FYN"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Kasper Møller",
+      "housingSituation": "Lejer",
+      "email": "kasper.moller@mail.dk",
+      "telephone": "+45 55 72 03 91",
+      "age": 27,
+      "numberOfKids": 0,
+      "engagementStatus": "Ugift"
+    },
+    "employment": {
+      "jobTitle": "Bartender",
+      "jobStatus": "DelTid",
+      "educationLevel": "Gymnasium"
+    },
+    "economicData": {
+      "monthlyIncome": 25000,
+      "fixedExpenses": 15000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 61000,
+      "supplementaryWealth": 7000,
+      "wealth": 12000,
+      "debts": 88000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 20,
+    "loanDetails": {
+      "score": 770,
+      "amount": 3900000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Lindevang 11",
+          "postalCode": "8000",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Sebastian Krogh",
+      "housingSituation": "Ejer",
+      "email": "sebastian.krogh@mail.dk",
+      "telephone": "+45 46 31 88 75",
+      "age": 37,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Civilingeniør",
+      "jobStatus": "Fuld",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 69000,
+      "fixedExpenses": 27000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 21000,
+      "supplementaryWealth": 480000,
+      "wealth": 640000,
+      "debts": 78000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 21,
+    "loanDetails": {
+      "score": 585,
+      "amount": 950000,
+      "purpose": {
+        "loanKind": "Forbrug",
+        "location": {
+          "address": "Fjordvej 2",
+          "postalCode": "9900",
+          "region": "NJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Mikkel Brix",
+      "housingSituation": "Lejer",
+      "email": "mikkel.brix@mail.dk",
+      "telephone": "+45 63 55 92 14",
+      "age": 30,
+      "numberOfKids": 0,
+      "engagementStatus": "Ugift"
+    },
+    "employment": {
+      "jobTitle": "Truckfører",
+      "jobStatus": "Fuld",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 31000,
+      "fixedExpenses": 18500,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 74000,
+      "supplementaryWealth": 11000,
+      "wealth": 25000,
+      "debts": 102000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 22,
+    "loanDetails": {
+      "score": 805,
+      "amount": 5400000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Strandengen 25",
+          "postalCode": "2900",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Louise Kjær",
+      "housingSituation": "Ejer",
+      "email": "louise.kjaer@mail.dk",
+      "telephone": "+45 34 20 76 58",
+      "age": 42,
+      "numberOfKids": 3,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Advokat",
+      "jobStatus": "Fuld",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 88000,
+      "fixedExpenses": 34000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 12000,
+      "supplementaryWealth": 920000,
+      "wealth": 1100000,
+      "debts": 60000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 23,
+    "loanDetails": {
+      "score": 645,
+      "amount": 1750000,
+      "purpose": {
+        "loanKind": "Andelsbolig",
+        "location": {
+          "address": "Søndergade 31",
+          "postalCode": "7100",
+          "region": "SJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Bent Eriksen",
+      "housingSituation": "Lejer",
+      "email": "bent.eriksen@mail.dk",
+      "telephone": "+45 57 89 41 07",
+      "age": 54,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "VVS-installatør",
+      "jobStatus": "Selvstændig",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 45000,
+      "fixedExpenses": 21500,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 83000,
+      "supplementaryWealth": 65000,
+      "wealth": 150000,
+      "debts": 160000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 24,
+    "loanDetails": {
+      "score": 710,
+      "amount": 2600000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Højvang 9",
+          "postalCode": "8000",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Anne Skov",
+      "housingSituation": "Ejer",
+      "email": "anne.skov@mail.dk",
+      "telephone": "+45 45 19 66 82",
+      "age": 35,
+      "numberOfKids": 1,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Lærer",
+      "jobStatus": "Fuld",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 42000,
+      "fixedExpenses": 20000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 37000,
+      "supplementaryWealth": 160000,
+      "wealth": 210000,
       "debts": 95000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 25,
+    "loanDetails": {
+      "score": 560,
+      "amount": 850000,
+      "purpose": {
+        "loanKind": "Forbrug",
+        "location": {
+          "address": "Engtoften 3",
+          "postalCode": "5000",
+          "region": "FYN"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Rikke Brandt",
+      "housingSituation": "Lejer",
+      "email": "rikke.brandt@mail.dk",
+      "telephone": "+45 62 18 73 44",
+      "age": 25,
+      "numberOfKids": 0,
+      "engagementStatus": "Ugift"
+    },
+    "employment": {
+      "jobTitle": "Frisør",
+      "jobStatus": "DelTid",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 23000,
+      "fixedExpenses": 15000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 58000,
+      "supplementaryWealth": 6000,
+      "wealth": 12000,
+      "debts": 93000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 26,
+    "loanDetails": {
+      "score": 785,
+      "amount": 4800000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Skovparken 17",
+          "postalCode": "2900",
+          "region": "H"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Martin Jeppesen",
+      "housingSituation": "Ejer",
+      "email": "martin.jeppesen@mail.dk",
+      "telephone": "+45 38 74 21 59",
+      "age": 44,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "IT Konsulent",
+      "jobStatus": "Selvstændig",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 76000,
+      "fixedExpenses": 31000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 24000,
+      "supplementaryWealth": 650000,
+      "wealth": 820000,
+      "debts": 70000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 27,
+    "loanDetails": {
+      "score": 630,
+      "amount": 1550000,
+      "purpose": {
+        "loanKind": "Andelsbolig",
+        "location": {
+          "address": "Havnevej 8",
+          "postalCode": "9900",
+          "region": "NJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Torben Laursen",
+      "housingSituation": "Lejer",
+      "email": "torben.laursen@mail.dk",
+      "telephone": "+45 52 61 80 13",
+      "age": 49,
+      "numberOfKids": 3,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Fisker",
+      "jobStatus": "Fuld",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 39000,
+      "fixedExpenses": 20500,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 87000,
+      "supplementaryWealth": 52000,
+      "wealth": 110000,
+      "debts": 150000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 28,
+    "loanDetails": {
+      "score": 820,
+      "amount": 6200000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Villavej 2",
+          "postalCode": "7100",
+          "region": "SJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Nicolai Stage",
+      "housingSituation": "Ejer",
+      "email": "nicolai.stage@mail.dk",
+      "telephone": "+45 31 78 65 02",
+      "age": 46,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Direktør",
+      "jobStatus": "Fuld",
+      "educationLevel": "Master"
+    },
+    "economicData": {
+      "monthlyIncome": 99000,
+      "fixedExpenses": 36000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 9000,
+      "supplementaryWealth": 1200000,
+      "wealth": 1500000,
+      "debts": 45000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 29,
+    "loanDetails": {
+      "score": 605,
+      "amount": 980000,
+      "purpose": {
+        "loanKind": "Forbrug",
+        "location": {
+          "address": "Søvej 14",
+          "postalCode": "6700",
+          "region": "SJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Emil Bjerre",
+      "housingSituation": "Lejer",
+      "email": "emil.bjerre@mail.dk",
+      "telephone": "+45 65 32 91 70",
+      "age": 32,
+      "numberOfKids": 1,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "Kok",
+      "jobStatus": "DelTid",
+      "educationLevel": "Vocational"
+    },
+    "economicData": {
+      "monthlyIncome": 29000,
+      "fixedExpenses": 17000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 64000,
+      "supplementaryWealth": 15000,
+      "wealth": 28000,
+      "debts": 97000
+    },
+    "status": "",
+    "flagged": null
+  },
+  {
+    "id": 30,
+    "loanDetails": {
+      "score": 735,
+      "amount": 3100000,
+      "purpose": {
+        "loanKind": "Ejerbolig",
+        "location": {
+          "address": "Bøgevej 10",
+          "postalCode": "8000",
+          "region": "MJY"
+        }
+      }
+    },
+    "personalInfo": {
+      "name": "Henriette Falk",
+      "housingSituation": "Ejer",
+      "email": "henriette.falk@mail.dk",
+      "telephone": "+45 49 21 77 63",
+      "age": 38,
+      "numberOfKids": 2,
+      "engagementStatus": "Gift"
+    },
+    "employment": {
+      "jobTitle": "HR Konsulent",
+      "jobStatus": "Fuld",
+      "educationLevel": "Bachelor"
+    },
+    "economicData": {
+      "monthlyIncome": 56000,
+      "fixedExpenses": 24000,
+      "budget": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "userId": "user-123",
+        "year": 2026,
+        "month": 2,
+        "netIncome": 22000.0,
+        "totalPlanned": 25000.0,
+        "createdAt": "2026-03-02T10:15:30+00:00",
+        "lines": [
+          {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "housing",
+            "displayName": "Rent",
+            "isRecurring": true,
+            "plannedAmount": 9000.0,
+            "avg": 8800.0,
+            "p25": 8500.0,
+            "p75": 9200.0,
+            "lowRange": 8000.0,
+            "highRange": 10000.0,
+            "stdDev": 400.0,
+            "recurringAvg": 8900.0
+          },
+          {
+            "id": "22222222-2222-2222-2222-222222222222",
+            "budgetId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "budget": null,
+            "categoryKey": "food",
+            "displayName": "Groceries",
+            "isRecurring": true,
+            "plannedAmount": 3500.0,
+            "avg": 3300.0,
+            "p25": 3000.0,
+            "p75": 3700.0,
+            "lowRange": 2500.0,
+            "highRange": 4500.0,
+            "stdDev": 300.0,
+            "recurringAvg": 3400.0
+          }
+        ]
+      },
+      "supplementaryDebt": 35000,
+      "supplementaryWealth": 260000,
+      "wealth": 330000,
+      "debts": 82000
     },
     "status": "",
     "flagged": null

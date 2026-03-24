@@ -1,6 +1,13 @@
 export type SearchAgent = {
   id: number;
   name: string;
+
+  location: {
+    regions: string[];
+    kommuner: string[];
+    postcodes: string[];
+  };
+
   filters: FilterSettings;
 };
 

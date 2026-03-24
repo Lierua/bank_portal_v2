@@ -1,6 +1,19 @@
-/* =========================
-   Backend JSON Type
-========================= */
+export type BudgetLine = {
+  id: string;
+  budgetId: string;
+  budget: null;
+  categoryKey: string;
+  displayName: string;
+  isRecurring: boolean;
+  plannedAmount: number;
+  avg: number;
+  p25: number;
+  p75: number;
+  lowRange: number;
+  highRange: number;
+  stdDev: number;
+  recurringAvg: number;
+};
 
 export type RawRequest = {
   id: number;
@@ -22,11 +35,16 @@ export type RawRequest = {
     name: string;
     housingSituation: string;
     email: string;
+
+    telephone: string;
+    age: number;
+    numberOfKids: number;
+    engagementStatus: "Ugift" | "Gift";
   };
 
   employment: {
     jobTitle: string;
-    jobStatus: string;
+    jobStatus: "Fuld" | "DelTid" | "Selvstændig";
     educationLevel: string;
   };
 
@@ -34,53 +52,67 @@ export type RawRequest = {
     monthlyIncome: number;
     fixedExpenses: number;
 
-    budget: {
+    supplementaryDebt: number;
+    supplementaryWealth: number;
+
+    wealth: number;
+    debts: number;
+
+    budget?: {
       id: string;
       userId: string;
       year: number;
       month: number;
       totalPlanned: number;
       createdAt: string;
-
       lines: BudgetLine[];
     };
-
-    wealth: number;
-    debts: number;
   };
 
-  flagged: number | null;
-  status: string;
+  flagged: number | string | null;
+  status: "" | "Godkendt" | "Afslået" | "Afventer" | "Behandles";
 };
-
-/* =========================
-   UI Type
-========================= */
 
 export type Request = {
   id: number;
+
   name: string;
+  telephone: string;
+  age: number;
+  numberOfKids: number;
+  engagementStatus: "Ugift" | "Gift";
+
   amount: number;
   forWhat: string;
+
   location: string;
   postalCode: string;
   region: string;
+
   score: number;
+
   jobTitle: string;
-  jobStatus: string;
+  jobStatus: "Fuld" | "DelTid" | "Selvstændig";
   educationLevel: string;
+
   housingSituation: string;
   email: string;
+
+  debt: number;
+  supplementaryDebt: number;
 
   status: "Godkendt" | "Afslået" | "Afventer" | "Behandles";
 
   indkomst: number;
   raadighedsBeloeb: number;
   gaeldsfaktor: number;
+
   opsparing: number;
+  supplementaryWealth: number;
 
   budget?: {
     totalPlanned: number;
+    netIncome: number;
     createdAt: string;
     lines: {
       id: string;
@@ -93,22 +125,5 @@ export type Request = {
     }[];
   };
 
-  flagged: number | null;
-};
-
-export type BudgetLine = {
-  id: string;
-  budgetId: string;
-  budget: null;
-  categoryKey: string;
-  displayName: string;
-  isRecurring: boolean;
-  plannedAmount: number;
-  avg: number;
-  p25: number;
-  p75: number;
-  lowRange: number;
-  highRange: number;
-  stdDev: number;
-  recurringAvg: number;
+  flagged: number | string | null;
 };

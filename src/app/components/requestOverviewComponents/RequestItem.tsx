@@ -1,6 +1,6 @@
 "use client";
 
-import type { Request } from "../../types/request";
+import type { Request } from "@/app/types/request";
 import { FaBookmark } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import {
