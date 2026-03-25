@@ -26,9 +26,14 @@ const OverRequestComponent = () => {
     setAgents((prev) => prev.filter((a) => a.id !== id));
   };
 
+  const addLocalAgent = (agent: SearchAgent) => {
+    setAgents((prev) => [...prev, agent]);
+  };
+
   return (
     <div className="pt-[15] gap-[15] flex flex-col min-h-screen">
       <NavComponent
+        addLocalAgent={addLocalAgent}
         search={search}
         setSearch={setSearch}
         agents={agents}
@@ -43,6 +48,8 @@ const OverRequestComponent = () => {
         updateAgent={updateAgent}
         deleteAgent={deleteAgent}
         activeAgent={activeAgent}
+        selectedAffiliation={selectedAffiliation}
+        setSelectedAffiliation={setSelectedAffiliation}
       />
     </div>
   );

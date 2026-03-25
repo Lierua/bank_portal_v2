@@ -25,6 +25,11 @@ import type { SearchAgent } from "@/app/types/filial";
 type Props = {
   search: string;
 
+  selectedAffiliation: FilialAgent | null;
+  setSelectedAffiliation: React.Dispatch<
+    React.SetStateAction<FilialAgent | null>
+  >;
+
   agents: SearchAgent[];
   addAgent: (agent: SearchAgent) => void;
   updateAgent: (agent: SearchAgent) => void;

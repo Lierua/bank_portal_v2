@@ -5,6 +5,7 @@ import NavHeader from "./NavHeader";
 import ExtraFiltersPanel from "./ExtraFiltersPanel";
 import NavAgentsBar from "./NavAgentsBar";
 import type { SearchAgent } from "@/app/types/filial";
+import LocalAgent from "./LocalAgent";
 
 type Props = {
   search: string;
@@ -13,6 +14,8 @@ type Props = {
   agents: SearchAgent[];
   activeAgent: SearchAgent | null;
   setActiveAgent: React.Dispatch<React.SetStateAction<SearchAgent | null>>;
+
+  addLocalAgent: (agent: SearchAgent) => void;
 };
 
 export default function NavComponent({
@@ -21,6 +24,7 @@ export default function NavComponent({
   agents,
   activeAgent,
   setActiveAgent,
+  addLocalAgent,
 }: Props) {
   const [showExtraFilters, setShowExtraFilters] = useState("closed");
   const [location, setLocation] = useState("");
@@ -43,6 +47,7 @@ export default function NavComponent({
       />
 
       <ExtraFiltersPanel show={showExtraFilters} />
+      <LocalAgent show={showExtraFilters} addLocalAgent={addLocalAgent} />
     </div>
   );
 }
