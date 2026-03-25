@@ -95,7 +95,7 @@ const RequestItem = ({
         <p className="truncate pr-1"></p>
       )}
 
-      <p
+      <div
         className="text-center mx-auto"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -107,7 +107,7 @@ const RequestItem = ({
                 month: "short",
               })
             : getDate(request.budget.createdAt))}
-      </p>
+      </div>
       <p></p>
     </div>
   );
