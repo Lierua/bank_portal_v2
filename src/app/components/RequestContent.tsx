@@ -20,12 +20,30 @@ import rawRequests from "@/data/dummyRequests.json";
 import type { RawRequest, Request } from "@/app/types/request";
 import type { Bank, FilialAgent } from "@/app/types/filial";
 import type { Section } from "../types/navigation";
+import type { SearchAgent } from "@/app/types/filial";
 
+type Props = {
+  search: string;
+
+  agents: SearchAgent[];
+  addAgent: (agent: SearchAgent) => void;
+  updateAgent: (agent: SearchAgent) => void;
+  deleteAgent: (id: number) => void;
+
+  activeAgent: SearchAgent | null;
+};
 /* =========================
    Component
 ========================= */
 
-const RequestContent = ({ search }: { search: string }) => {
+const RequestContent = ({
+  search,
+  agents,
+  addAgent,
+  updateAgent,
+  deleteAgent,
+  activeAgent,
+}: Props) => {
   const [requestPara, setRequestPara] = useState("Alle");
   const [section, setSection] = useState<Section>("Ansøgninger");
   const [selectedId, setSelectedId] = useState<number | null>(null);
@@ -321,6 +339,10 @@ const RequestContent = ({ search }: { search: string }) => {
         <AffiliationSetup
           setSection={setSection}
           addAffiliation={addAffiliation}
+          agents={agents}
+          addAgent={addAgent}
+          updateAgent={updateAgent}
+          deleteAgent={deleteAgent}
         />
       )}
 
@@ -331,6 +353,10 @@ const RequestContent = ({ search }: { search: string }) => {
           addAffiliation={addAffiliation}
           affiliation={selectedAffiliation}
           updateAffiliation={updateAffiliation}
+          agents={agents}
+          addAgent={addAgent}
+          updateAgent={updateAgent}
+          deleteAgent={deleteAgent}
         />
       )}
     </div>

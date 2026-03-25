@@ -138,16 +138,16 @@ export function getDate(dateString?: string) {
         <p>I går</p>
       </div>
     );
-  if (diffDays < 7) return `${diffDays} dage siden`;
+  if (diffDays < 7) return `${diffDays} dage`;
 
   const weeks = Math.floor(diffDays / 7);
   if (weeks === 1) return "1 uge siden";
-  if (weeks < 5) return `${weeks} uger siden`;
+  if (weeks < 5) return `${weeks} uger`;
 
   const months = Math.floor(diffDays / 30);
   if (months === 1) return "1 måned siden";
-  if (months < 12) return `${months} måneder siden`;
+  if (months < 12) return `${months} måneder`;
 
   const years = Math.floor(diffDays / 365);
-  return years === 1 ? "1 år siden" : `${years} år siden`;
+  return years === 1 ? "1 år siden" : `${years} år`;
 }

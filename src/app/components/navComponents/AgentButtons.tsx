@@ -1,70 +1,76 @@
 "use client";
 
-import FilterIcon from "@/app/assets/icons/FilterIcon";
-import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import type { SearchAgent } from "@/app/types/filial";
 
 type Props = {
-  label: string;
-  showExtraFilters: String;
+  agent: SearchAgent;
+
+  activeAgent: SearchAgent | null;
+  setActiveAgent: React.Dispatch<React.SetStateAction<SearchAgent | null>>;
+
+  showExtraFilters: string;
   setShowExtraFilters: React.Dispatch<React.SetStateAction<string>>;
-  active: String;
-  setActive: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const AgentButtons = ({
-  label,
+  agent,
+  activeAgent,
+  setActiveAgent,
   showExtraFilters,
   setShowExtraFilters,
-  active,
-  setActive,
 }: Props) => {
+  const isActive = activeAgent?.id === agent.id;
+
   return (
     <div
       className={`cursor-pointer flex items-center border-2 border-(--contrast) pr-4 rounded-full
-            transition-all duration-100 ease-in ${active == label && "bg-(--contrast)"}`}
-      key={label}
+        transition-all duration-100 ease-in ${isActive && "bg-(--contrast)"}`}
     >
+      {/* MAIN CLICK */}
       <div
-        onClick={() => setActive(`${label}`)}
-        className={`py-1 w-full text-(--contrast)  self-end mt-auto
-              transition-all duration-100 ease-in ${active === label && "text-white"}
-              text-center pl-6 pr-3 font-semibold`}
+        onClick={() =>
+          activeAgent == agent ? setActiveAgent(null) : setActiveAgent(agent)
+        }
+        className={`py-1 w-full text-(--contrast)
+          transition-all duration-100 ease-in ${isActive && "text-white"}
+          text-center pl-6 pr-3 font-semibold`}
       >
-        {label}
+        {agent.name}
       </div>
+
       <p
-        className={`pb-1 font-semibold! text-(--contrast)! ${active === label && "text-white!"}`}
+        className={`pb-1 font-semibold! text-(--contrast)! ${
+          isActive && "text-white!"
+        }`}
       >
         |
       </p>
+
+      {/* FILTER TOGGLE */}
       <div
         onClick={() =>
-          setShowExtraFilters(showExtraFilters === label ? "closed" : label)
+          setShowExtraFilters(
+            showExtraFilters === agent.id.toString()
+              ? "closed"
+              : agent.id.toString(),
+          )
         }
         className="grid"
       >
-        {/*                 <FilterIcon
-                  className={`
-                  w-[18] h-[18]
-                  cursor-pointer 
-                  transition-all duration-200
-                  hover:scale-110 hover:text-(--contrast)
-                  text-(--contrast)
-                  ${showExtraFilters === a ? " translate-y-[-1]" : "text-(--black)"}
-                  `}
-                /> */}
         <IoIosArrowDown
-          onClick={() => setActive(label)}
           className={`
-                  w-[18] h-[18] ml-3
-                  cursor-pointer 
-                  transition-all duration-200
-                  hover:scale-110
-                  text-(--contrast)
-                  ${active === label && "text-white"}
-                  ${showExtraFilters === label ? " translate-y-[-1] rotate-180" : "text-(--black) "}
-                  `}
+            w-[18] h-[18] ml-3
+            cursor-pointer 
+            transition-all duration-200
+            hover:scale-110
+            ${isActive ? "text-white" : "text-(--contrast)"}
+            ${
+              showExtraFilters === agent.id.toString()
+                ? "translate-y-[-1] rotate-180"
+                : ""
+            }
+          `}
         />
       </div>
     </div>

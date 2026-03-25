@@ -167,7 +167,7 @@ export default function IndividualOverview({
           </Section>
         </div>
         <div className="w-fit ">
-          <ButtonOne label="Download data sæt" className="" />
+          <ButtonOne label="Download datasæt" className="" />
         </div>
         <Section title="Kommentarer">
           <Comments large={true} />

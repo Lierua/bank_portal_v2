@@ -37,7 +37,12 @@ export default function SideOverview({
   const isMine = request.flagged === MY_AGENT_ID;
   const isTakenByOther =
     request.flagged !== null && request.flagged !== MY_AGENT_ID;
-
+  const faktor = (value?: number | null) =>
+    typeof value === "number"
+      ? `${value.toLocaleString("da-DK", {
+          maximumFractionDigits: 2,
+        })}`
+      : "-";
   return (
     <div className="bg-white">
       <div key={request.id} className="p-5 h-full animate-slide-fade-in">
@@ -91,7 +96,7 @@ export default function SideOverview({
               value={`${request.amount.toLocaleString("da-DK")} kr.`}
             />
 
-            <Info label="B. Gældsfaktor" value={request.gaeldsfaktor} />
+            <Info label="B. Gældsfaktor" value={faktor(request.gaeldsfaktor)} />
             <Info
               label="C. Udbetaling"
               value={`${request.opsparing.toLocaleString("da-DK")} kr.`}

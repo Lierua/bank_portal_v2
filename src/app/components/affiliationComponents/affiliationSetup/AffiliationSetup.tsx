@@ -17,6 +17,10 @@ type Props = {
   addAffiliation: (agent: FilialAgent) => void;
   updateAffiliation?: (agent: FilialAgent) => void;
   affiliation?: FilialAgent;
+  agents: SearchAgent[];
+  addAgent: (agent: SearchAgent) => void;
+  updateAgent: (agent: SearchAgent) => void;
+  deleteAgent: (id: number) => void;
 };
 
 const AffiliationSetup = ({
@@ -24,6 +28,10 @@ const AffiliationSetup = ({
   addAffiliation,
   affiliation,
   updateAffiliation,
+  addAgent,
+  updateAgent,
+  deleteAgent,
+  agents,
 }: Props) => {
   const regions = [
     { code: "KBH", label: "København (KBH)" },
@@ -96,10 +104,6 @@ const AffiliationSetup = ({
 
   const [name, setName] = useState(() => affiliation?.name ?? "");
 
-  const [agents, setAgents] = useState<SearchAgent[]>(
-    () => affiliation?.agents ?? [],
-  );
-
   const [selectedRegions, setSelectedRegions] = useState<string[]>(
     () => affiliation?.area.regions ?? [],
   );
@@ -134,20 +138,6 @@ const AffiliationSetup = ({
     return [...merged];
   }, [manualPostcodes, kommunePostcodes, excludedPostcodes]);
 
-  /* ================= AGENT ACTION ================= */
-
-  function addAgent(agent: SearchAgent) {
-    setAgents((prev) => [...prev, agent]);
-  }
-
-  function deleteAgent(id: number) {
-    setAgents((prev) => prev.filter((a) => a.id !== id));
-  }
-
-  function updateAgent(updated: SearchAgent) {
-    setAgents((prev) => prev.map((a) => (a.id === updated.id ? updated : a)));
-  }
-
   useEffect(() => {
     setAgentRegion(selectedRegions);
   }, [selectedRegions]);
@@ -181,6 +171,7 @@ const AffiliationSetup = ({
     } else {
       addAffiliation(filial);
     }
+    console.log(affiliation?.agents);
     console.log(filial);
     setSection("Affiliate");
   }
@@ -268,7 +259,7 @@ const AffiliationSetup = ({
         <div className="max-w-[1000]">
           <Section title="Bruger">
             <p className="col-span-2 text-(--black)/60!">
-              Definér bruger for filialen
+              Definér bruger for afdeling
             </p>
 
             <div className="flex flex-col gap-2 col-span-2">

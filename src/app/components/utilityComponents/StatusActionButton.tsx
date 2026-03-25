@@ -17,17 +17,16 @@ const StatusActionButton = ({
   const isApprove = type === "godkend";
 
   const baseStyles =
-    "shadow-[0_4px_10px_black]/30 px-4 text-center w-[150px] py-2 rounded-full text-sm transition-all duration-200 ease-in focus:outline-none";
+    " px-4 text-center w-[150px] py-2 rounded-full text-sm transition-all duration-200 ease-in focus:outline-none";
 
   let activeStyles;
 
   if (type === "behandel") {
-    activeStyles =
-      "bg-yellow-500 text-white hover:bg-yellow-400 active:shadow-[0_2px_5px_black]/30";
+    activeStyles = "bg-yellow-500 text-white hover:bg-yellow-400 ";
   } else {
     activeStyles = isApprove
-      ? "bg-[#12C46B] text-white hover:bg-green-400 active:shadow-[0_2px_5px_black]/30"
-      : "bg-[#C41230] text-white hover:bg-red-500 active:shadow-[0_2px_5px_black]/30";
+      ? "bg-[#12C46B] text-white hover:bg-green-400 "
+      : "bg-[#C41230] text-white hover:bg-red-500 ";
   }
 
   const disabledStyles =
