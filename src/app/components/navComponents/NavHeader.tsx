@@ -5,7 +5,7 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import SearchBar from "../utilityComponents/SearchBar";
 import DateRangePicker from "../utilityComponents/DateRangePicker";
-import LocationDropdown from "./LocationDropdown";
+import Image from "next/image";
 
 type Props = {
   search: string;
@@ -26,7 +26,12 @@ export default function NavHeader({ search, setSearch }: Props) {
   return (
     <div className="grid grid-cols-[70px_140px_1fr] h-[70] items-center">
       <div className="h-full bg-(--prime) text-4xl text-white flex items-center justify-center font-bold rounded-tl-lg">
-        lk
+        <Image
+          src={"/icons/lk_ikon_cirkel.png"}
+          alt="lk_ikon_cirkel"
+          width={45}
+          height={45}
+        />
       </div>
 
       <h2 className="pl-5 font-bold text-(--black)/90">Oversigt</h2>
